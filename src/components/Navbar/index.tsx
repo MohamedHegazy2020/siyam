@@ -46,7 +46,7 @@ const Navbar = () => {
             <Icon icon="material-symbols-light:search" width="32" height="32" />
           </Link>
           <Link className="hover:text-primary transition-colors duration-300" to="/contact">
-            <Icon icon="solar:cart-broken" width="32" height="32" />{' '}
+            <Icon icon="solar:cart-linear" width="32" height="32" />{' '}
           </Link>
         </div>
       </div>
