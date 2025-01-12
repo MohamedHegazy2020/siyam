@@ -6,7 +6,7 @@ import {  fadeIn } from '../../../utils/motion';
 export default function Hero() {
   return (
     <>
-      <motion.section layoutScroll className="relative w-full h-[200vh]">
+      <motion.div layoutScroll className="relative w-full h-[200vh]">
         <div className={`absolute inset-0 top-[25%] translate-y-[-25%]   left-0 right-0  mx-auto ${styles.paddingX} `}>
           <motion.h1 
           {... fadeIn(1 ,2 )}
@@ -19,7 +19,7 @@ export default function Hero() {
         <div className="">
 
         </div>
-      </motion.section>
+      </motion.div>
     </>
   );
 }
