@@ -1,6 +1,6 @@
 import { OrbitControls, Preload, useGLTF, useScroll } from '@react-three/drei';
 import CanvasLoader from './Loader';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { Suspense, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { slideIn } from '../../utils/motion';
@@ -55,21 +55,21 @@ function Model1({ isMobile = false }) {
   const modelRef = useRef();
 
   // Update position based on scroll
-  useFrame(() => {
-    if (modelRef.current&&scroll ) {
-      const scrollY = scroll.offset; // Gets the scroll offset (0 to 1)
+  // useFrame(() => {
+  //   if (modelRef.current&&scroll ) {
+  //     const scrollY = scroll.offset; // Gets the scroll offset (0 to 1)
 
-      console.log('Scroll Offset:', scrollY); // Debug: Check scroll offset
+  //     console.log('Scroll Offset:', scrollY); // Debug: Check scroll offset
 
-      // Move diagonally based on scroll
-      const newX = modelSettings.position[0] + scrollY * 5; // Adjust multiplier for speed
-      const newY = modelSettings.position[1] - scrollY * 5; // Move down
+  //     // Move diagonally based on scroll
+  //     const newX = modelSettings.position[0] + scrollY * 5; // Adjust multiplier for speed
+  //     const newY = modelSettings.position[1] - scrollY * 5; // Move down
 
-      console.log('New Position:', { newX, newY }); // Debug: Check calculated positions
+  //     console.log('New Position:', { newX, newY }); // Debug: Check calculated positions
 
-      modelRef.current.position.set(newX, newY, modelSettings.position[2]); // Update model position
-    }
-  });
+  //     modelRef.current.position.set(newX, newY, modelSettings.position[2]); // Update model position
+  //   }
+  // });
 
   return (
     <>
@@ -78,7 +78,7 @@ function Model1({ isMobile = false }) {
         {SPOT_LIGHT_CONFIG.map((lightConfig, index) => (
           <spotLight
             key={index}
-            position={isMobile ? lightConfig.mobile.position : lightConfig.desktop.position}
+            position={isMobile ? lightConfig.mobile.position as [number, number, number] : lightConfig.desktop.position as [number, number, number]}
             angle={9}
             penumbra={4}
             intensity={isMobile ? lightConfig.mobile.intensity : lightConfig.desktop.intensity}
