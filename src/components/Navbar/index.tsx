@@ -3,54 +3,67 @@ import { logo } from '../../assets';
 import styles from '../../utils/styles';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify-icon/react';
+import { tabs } from './tabs';
+
 
 const Navbar = () => {
-  const [activeTab, setActiveTab] = useState<string>('');
-  const tabs = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'Products', path: '/products' },
-    { name: 'Capabilities', path: '/capabilities' },
-  ];
-
+  const [activeTab, setActiveTab] = useState<string>('/');
+  
   return (
-    <nav className={`${styles.padding} w-full z-20  bg-white bg-opacity-30 backdrop-blur-sm`}>
-      <div className="flex items-center justify-between">
-        <Link to="/">
-          <img src={logo} alt="logo" className=" object-contain w-[120px]" />
-        </Link>
-
-        <div className="flex justify-center ">
-          <ul
-            className="flex items-center space-x-6 text-lg list-none
-            text-gray-800"
-          >
+    <>
+      <div className={`navbar bg-base-100  ${styles.padding} `}>
+        <div className="navbar-start">
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+              <Icon icon="mingcute:menu-fill" width="24" height="24" />
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+              {tabs.map((tab) => (
+                <li key={tab.name}>
+                  <Link
+                    to={tab.path}
+                    className={`link  link-hover ${activeTab === tab.path ? 'text-primary' : ''}`}
+                    onClick={() => setActiveTab(tab.path)}
+                  >
+                    {tab.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <Link to='/' className=" text-xl">
+            <img src={logo} alt="logo" className="w-24" />
+          </Link>
+        </div>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal text-lg px-1">
             {tabs.map((tab) => (
-              <li
-                key={tab.name}
-                className={
-                  activeTab === tab.path
-                    ? 'text-primary cursor-default'
-                    : 'hover:text-primary transition-colors duration-300 cursor-pointer'
-                }
-                onClick={() => setActiveTab(tab.path)}
-              >
-                <Link to={tab.path}>{tab.name}</Link>
+              <li key={tab.name}>
+                <Link
+                  to={tab.path}
+                  className={`link  link-hover ${activeTab === tab.path ? 'text-primary' : ''}`}
+                  onClick={() => setActiveTab(tab.path)}
+                >
+                  {tab.name}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
-        <div className="flex items-center gap-4">
-          <Link className="hover:text-primary transition-colors duration-300" to="/contact">
-            <Icon icon="material-symbols-light:search" width="32" height="32" />
+        <div className="navbar-end flex gap-2 ">
+          <Link to="/contact">
+            <Icon icon="mingcute:search-line" width="24" height="24" />
           </Link>
-          <Link className="hover:text-primary transition-colors duration-300" to="/contact">
-            <Icon icon="solar:cart-linear" width="32" height="32" />{' '}
+
+          <Link to="/contact">
+            <Icon icon="solar:cart-linear" width="24" height="24" />{' '}
           </Link>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 
