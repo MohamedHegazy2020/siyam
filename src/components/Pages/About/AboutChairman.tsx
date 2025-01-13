@@ -4,15 +4,15 @@ import PrimaryBtn from '../../blocks/PrimaryBtn';
 
 export default function AboutChairman() {
   return (
-    <>
+    <div className=" bg-gradient-radial">
       <ImageContentSection
         title="Ibrahim Siyam, Chairman"
         introduction="A Word From Our Chairman"
         image={chairman}
-        backgroundClassName=" bg-gradient-radial"
+        
         imageLast
       >
-        <p className='mb-4'>
+        <p className="mb-4">
           Since I started this business in 1992, as a small radiator factory in Jordan, our target has been to establish
           an outstanding brand and reputation for our products and services. We achieve this target by being honest with
           our customers, meeting their expectations, and investing in our capabilities. As the world is changing fast,
@@ -23,10 +23,10 @@ export default function AboutChairman() {
           would like to thank our customers, suppliers, employees and my family for their continious support to achieve
           this vision.
         </p>
-        <a href={qualityPolicy} target="_self" rel="noopener noreferrer" >
+        <a href={qualityPolicy} target="_self" rel="noopener noreferrer">
           <PrimaryBtn rounded>Quality Policy</PrimaryBtn>
         </a>
       </ImageContentSection>
-    </>
+    </div>
   );
 }

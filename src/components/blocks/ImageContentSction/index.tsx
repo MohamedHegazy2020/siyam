@@ -17,13 +17,13 @@ export default function ImageContentSection({
   children,
   title,
   imageLast,
-  backgroundClassName = 'bg-section-100',
+  backgroundClassName ,
   introduction,
 }: ImageContentSectionProps) {
   return (
     <div
       className={
-        styles.padding + '  grid grid-cols-1 md:grid-cols-2 gap-10 ' + ( backgroundClassName )
+        styles.padding + '  max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10  ' + ( backgroundClassName )
       }
     >
       <motion.div

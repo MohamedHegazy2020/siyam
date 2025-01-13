@@ -22,7 +22,7 @@ export default function ImageContentSubsection({
     <>
       {' '}
       
-        <div ref={ref} className={`grid grid-cols-1 md:grid-cols-2 ${styles.padding} gap-10`}>
+        <div ref={ref} className={`grid grid-cols-1 md:grid-cols-2 mx-auto max-w-7xl ${styles.padding} gap-10`}>
           <motion.div
             {...fadeIn(1, 1.5)}
             className={`${
