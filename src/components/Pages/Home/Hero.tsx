@@ -1,4 +1,3 @@
-import Model1Canvas from '../../canvas/Model1';
 import styles from '../../../utils/styles';
 import { motion } from 'framer-motion';
 import {  fadeIn } from '../../../utils/motion';

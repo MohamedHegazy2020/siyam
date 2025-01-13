@@ -7,7 +7,7 @@ export default function AboutHero() {
     <div className="hero min-h-screen bg-property-1">
       <div className="hero-overlay bg-black  bg-opacity-70"></div>
       <div className="hero-content text-white text-center ">
-        <motion.div {...slideIn('up', 0.5, 2)} className="max-w-xl">
+        <motion.div {...slideIn('up', 0.5, 2)} className="max-w-6xl">
           <motion.h1 {...fadeIn(2, 1.5)} className="mb-5 text-4xl md:text-5xl font-bold">
             Siyam Industrial Group is specialized in{' '}
             <motion.span
