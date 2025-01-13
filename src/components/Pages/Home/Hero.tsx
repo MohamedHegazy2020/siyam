@@ -6,8 +6,8 @@ import {  fadeIn } from '../../../utils/motion';
 export default function Hero() {
   return (
     <>
-      <motion.div layoutScroll className="relative w-full h-[200vh]">
-        <div className={`absolute inset-0 top-[25%] translate-y-[-25%]   left-0 right-0  mx-auto ${styles.paddingX} `}>
+      <motion.div  className="relative  w-full h-[100vh] ">
+        <div className={`absolute inset-0 top-[50%] translate-y-[-50%]   left-0 right-0  mx-auto ${styles.paddingX} `}>
           <motion.h1 
           {... fadeIn(1 ,2 )}
             className={` text-[80px] md:text-[240px] xl:text-[300px] bg-clip-text  text-center  uppercase font-sakana text-transparent bg-gradient-to-r from-primary to-secondary`}
@@ -15,7 +15,7 @@ export default function Hero() {
             siyam
           </motion.h1>
         </div>
-        <Model1Canvas />
+        {/* <Model1Canvas /> */}
         <div className="">
 
         </div>

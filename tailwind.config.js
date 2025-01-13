@@ -15,7 +15,11 @@ export default {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(#00B2FF , white )',
         'gradient-linear': 'linear-gradient(to right, #005594, #D9212C)',
-        'footer-texture': "url('./src/assets/images/background-texture.png')",
+        'gradient-linear-100': 'linear-gradient(to right, #005594, #00B2FF)',
+        'footer-texture': "url('/src/assets/background-texture.png')",
+        'property-1': "url('/src/assets/property-1.png')",
+        'section-100': "url('src/assets/1 (2) 1.png')",
+        'section-200':"url('src/assets/Back (1) 1.png')",
       },
       fontFamily: {
         bebas: ['Bebas', 'cursive'],
@@ -30,7 +34,6 @@ export default {
         light: {
           primary: '#005594',
           secondary: '#D9212C',
-          tertiary: '#00B2FF',
 
           accent: '#04233A',
           neutral: '#3d4451',

@@ -1,5 +1,10 @@
 import logo from './logo.png';
-import logo_1 from './Logo-1.png'
+import logo_1 from './Logo-1.png';
 import bg_texture from './background-texture.png';
-
-export { logo , logo_1 ,bg_texture };
+import property1 from './property-1.png';
+import usersIcon from './users_icon.png';
+import factory from './Fac 1.png';
+import chairman from './chairman.png';
+import group1 from './Group 26.png';
+import group2 from './Group 26 (1).png';
+export { logo, logo_1, bg_texture, property1, usersIcon, factory, chairman, group1, group2 };

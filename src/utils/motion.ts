@@ -17,3 +17,6 @@ export const fadeIn = (delay = 0, duration = 0.5) => ({
   transition: { duration, delay, ease: 'easeInOut' },
 });
 
+export const btnAnimationOnHover = () => ({
+  whileHover: { scale: 1.1 },
+});
