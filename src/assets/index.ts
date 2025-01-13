@@ -7,4 +7,5 @@ import factory from './Fac 1.png';
 import chairman from './chairman.png';
 import group1 from './Group 26.png';
 import group2 from './Group 26 (1).png';
-export { logo, logo_1, bg_texture, property1, usersIcon, factory, chairman, group1, group2 };
+import qualityPolicy from './files/Quality-Policy.pdf';
+export { logo, logo_1, bg_texture, property1, usersIcon, factory, chairman, group1, group2 ,qualityPolicy };

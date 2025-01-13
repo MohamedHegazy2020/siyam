@@ -1,4 +1,4 @@
-import { chairman } from '../../../assets';
+import { chairman, qualityPolicy } from '../../../assets';
 import ImageContentSection from '../../blocks/ImageContentSction';
 import PrimaryBtn from '../../blocks/PrimaryBtn';
 
@@ -23,7 +23,9 @@ export default function AboutChairman() {
           would like to thank our customers, suppliers, employees and my family for their continious support to achieve
           this vision.
         </p>
-        <PrimaryBtn rounded>Quality Policy</PrimaryBtn>
+        <a href={qualityPolicy} target="_self" rel="noopener noreferrer" >
+          <PrimaryBtn rounded>Quality Policy</PrimaryBtn>
+        </a>
       </ImageContentSection>
     </>
   );
