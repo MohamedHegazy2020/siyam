@@ -1,5 +1,3 @@
-import { btnAnimationOnHover } from '../../../utils/motion';
-import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 
 interface PrimaryBtnProps {
@@ -10,12 +8,12 @@ interface PrimaryBtnProps {
 export default function PrimaryBtn({ children ,rounded }: PrimaryBtnProps) {
   return (
     <>
-      <motion.button
-        {...btnAnimationOnHover()}
+      <button
+     
         className={`btn text-white   bg-gradient-to-r from-[#0099F7] to-[#12F1E4] ${rounded && 'rounded-full '}`}
       >
         {children}
-      </motion.button>
+      </button>
     </>
   );
 }

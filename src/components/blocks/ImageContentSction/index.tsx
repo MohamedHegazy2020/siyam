@@ -1,7 +1,9 @@
-import { ReactNode } from 'react';
-import { fadeIn, slideIn } from '../../../utils/motion';
+import { ReactNode, useRef } from 'react';
 import styles from '../../../utils/styles';
-import { motion } from 'framer-motion';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger, TextPlugin } from 'gsap/all';
+
 
 export interface ImageContentSectionProps {
   image: string;
@@ -20,33 +22,91 @@ export default function ImageContentSection({
   backgroundClassName ,
   introduction,
 }: ImageContentSectionProps) {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(TextPlugin)
+  const container = useRef<HTMLDivElement>(null)
+  const imageEle = useRef<HTMLDivElement>(null)
+  const textEle = useRef<HTMLDivElement>(null)
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 80%',
+          end: 'bottom 80%',
+          scrub: true,
+        },
+      });
+
+      tl.fromTo(
+        imageEle.current,
+        {
+          opacity: 0,
+          x: imageLast ? -(window.innerWidth - 100) : window.innerWidth - 20,
+          skewX: 10,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          skewX: 0,
+          ease: 'power2.out',
+        }
+      ).fromTo(
+        textEle.current,
+        {
+          opacity: 0,
+          x: imageLast ? window.innerWidth - 20 : -(window.innerWidth - 100),
+          skewX: -10,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          skewX: 0,
+          stagger: {
+            amount: 0.5,
+            from: 'start',
+            grid: 'auto',
+            ease: 'power2.out',
+          },
+        },
+        '<'
+      );
+      return () => {
+        if (container.current) {
+          ScrollTrigger.killAll();  
+        }
+        }
+    },
+    []
+  );
   return (
-    <div
+    <div ref={container}
       className={
         styles.padding + '  max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10  ' + ( backgroundClassName )
       }
     >
-      <motion.div
-        {...fadeIn(1, 1.5)}
+      <div
+       ref={imageEle}
         className={`flex  items-center justify-center  order-last  ${imageLast ? 'md:order-last' : 'md:order-first'} `}
       >
         <img src={image} alt={title} />
-      </motion.div>
-      <div className="flex flex-col gap-4">
+      </div>
+      <div  ref={textEle} className="flex flex-col gap-4">
         {introduction && (
-          <motion.span
-            {...fadeIn(1, 1.5)}
+          <span
+           
             className="text-transparent bg-gradient-to-r  from-[0%] to-[25%] from-secondary  to-primary bg-clip-text font-bebas  font-bold"
           >
             {introduction}
-          </motion.span>
+          </span>
         )}
-        <motion.h2 className="font-bold text-2xl md:text-3xl font-bebas text-primary" {...slideIn('left', 1.25, 1.25)}>
+        <h2 className="font-bold text-2xl md:text-3xl font-bebas text-primary" >
           {title}
-        </motion.h2>
-        <motion.div {...fadeIn(1.5, 2)} className="font-normal  ">
+        </h2>
+        <div className="font-normal  ">
           {children}
-        </motion.div>
+        </div>
       </div>
     </div>
   );
