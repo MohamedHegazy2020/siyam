@@ -2,7 +2,7 @@ import { OrbitControls, Preload, useGLTF, useScroll } from '@react-three/drei';
 import CanvasLoader from './Loader';
 import { Canvas } from '@react-three/fiber';
 import { Suspense, useRef } from 'react';
-import { motion } from 'framer-motion';
+
 import { slideIn } from '../../utils/motion';
 import { isMobile } from 'react-device-detect';
 
@@ -103,7 +103,7 @@ function Model1({ isMobile = false }) {
 
 function Model1Canvas() {
   return (
-    <motion.div {...slideIn('up', 2, 2)} className="h-full ml-auto">
+    <div {...slideIn('up', 2, 2)} className="h-full ml-auto">
       <Canvas
         shadows
         frameloop="demand"
@@ -123,7 +123,7 @@ function Model1Canvas() {
         </Suspense>
         <Preload all />
       </Canvas>
-    </motion.div>
+    </div>
   );
 }
 
