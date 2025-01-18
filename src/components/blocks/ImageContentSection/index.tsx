@@ -72,7 +72,7 @@ export default function ImageContentSection({
         tl.fromTo(
           child,
           { opacity: 0, y: 20, x: direction === '<' ? -50 : 50 },
-          { opacity: 1, y: 0, x: 0, duration: 0.5, delay: index * 0.1 + grandchildDelay, ease: animation ,stagger: 0.3},
+          { opacity: 1, y: 0, x: 0, duration: 0.5, delay: index * 0.1 + grandchildDelay, ease: animation ,stagger: 0.1},
           `<${index * 0.2}`
         );
 
@@ -111,9 +111,9 @@ export default function ImageContentSection({
     >
       <div
         ref={imageEle}
-        className={`flex  items-center justify-center  order-last  ${imageLast ? 'md:order-last' : 'md:order-first'} `}
+        className={`flex items-center   order-last  ${imageLast ? 'md:order-last' : 'md:order-first'} `}
       >
-        <img src={image} alt={title} />
+        <img className='w-full' src={image} alt={title} />
       </div>
       <div ref={textEle} className="flex flex-col gap-4">
         {introduction && (

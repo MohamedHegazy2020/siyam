@@ -52,7 +52,7 @@ function Navbar() {
   };
 
   return (
-    <div className={"navbar bg-base-100 "+styles.paddingX}>
+    <div className={'navbar bg-base-100 ' + styles.paddingX}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -69,28 +69,43 @@ function Navbar() {
           <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
             {tabs.map((tab) => (
               <li key={tab.path}>
-                <Link to={tab.path} className={activeTab === tab.path ? 'active' : ''} onClick={() => handleTabClick(tab.path)}>
+                <Link
+                  to={tab.path}
+                  className={activeTab === tab.path ? 'active' : ''}
+                  onClick={() => handleTabClick(tab.path)}
+                >
                   {tab.name}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
-        <Link to="/" className=" text-xl"><img  className='w-full' src={logo} alt="logo" /></Link>
+        <Link to="/" className=" text-xl">
+          <img className="w-full" src={logo} alt="logo" />
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           {tabs.map((tab) => (
             <li key={tab.path}>
-              <Link to={tab.path} className={activeTab === tab.path ? 'active' : ''} onClick={() => handleTabClick(tab.path)}>
+              <Link
+                to={tab.path}
+                className={activeTab === tab.path ? 'active' : ''}
+                onClick={() => handleTabClick(tab.path)}
+              >
                 {tab.name}
               </Link>
             </li>
           ))}
         </ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end flex gap-2">
+        <Link to="/" className="">
+          <Icon icon="material-symbols:search-rounded" width="24" height="24" />
+        </Link>
+        <Link to="/" className="">
+          <Icon icon="solar:cart-line-duotone" width="24" height="24" />
+        </Link>
       </div>
     </div>
   );
