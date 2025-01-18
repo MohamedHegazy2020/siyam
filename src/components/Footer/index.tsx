@@ -36,7 +36,7 @@ export default function Footer() {
             y: -50,
           },
           {
-            
+
             opacity: 1,
             y: 0,
             duration: 0.9,
@@ -58,7 +58,7 @@ export default function Footer() {
       ref={footerRef}
       className={
         styles.padding +
-        ' bg-accent bg-footer-texture   footer md:grid-cols-5  font-montserrat text-base-100  font-normal p-10'
+        ' bg-accent font-light bg-footer-texture   footer md:grid-cols-5  font-montserrat text-base-100   p-10'
       }
     >
       <aside className="md:col-span-2 px-5">
@@ -90,7 +90,7 @@ export default function Footer() {
 
         <p>Join our newsletter to stay up to date with the latest news and updates.</p>
         <div className="form-control w-full max-w-xs  ">
-          <label className="label text-secondary ">Email</label>
+          <label className="label text-secondary font-bold font-bebas ">Email</label>
           <input
             type="text"
             placeholder="Enter your email"

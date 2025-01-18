@@ -9,7 +9,7 @@ export default function AboutBusiness() {
         image={factory}
         title="Siyam Industrial Group"
         introduction="About Our Business"
-        backgroundClassName="bg-factory"
+        backgroundClassName="bg-section-100"
       >
         <p>
           is specialized in developing and manufacturing OE, customized, and aftermarket, core and complete cooling

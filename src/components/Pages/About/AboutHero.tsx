@@ -17,25 +17,25 @@ export default function AboutHero() {
       opacity: 0,
       duration: 1.2,
       scale: 0.8,
-      ease: 'power2.out',
+      ease: 'bounce',
     });
     gsap.from(heroText.current, {
       delay: 0.6,
-      duration: 1.2,
+      duration: 2,
       text: 'Syam Industrial Group',
-      ease: 'power2.out',
+      ease: 'bounce',
     });
     gsap.from(heroSubText.current, {
-      delay: 1.6,
-      duration: 1.2,
-      text: 'vjefvefjjfnbjrgbngjbnrtgjbnrgjbnr',
-      ease: 'power2.out',
+      delay: 0.5,
+      duration: 3,
+      text: 'This is the new text',
+      ease: 'bounce',
     });
     gsap.from(heroGredientText.current, {
       delay: 1.2,
-      duration: 1.2,
-      text: 'vjefvefjjfnbjrgbngjbnrtgjbnrgjbnr',
-      ease: 'power2.out',
+      duration: 2,
+      text: 'This is the new text',
+      ease: 'bounce',
     });
   }, []);
   return (
