@@ -43,7 +43,12 @@ export default function Footer() {
           }
         );
       });
+    
+    
+   
+    
     },
+    
     [footerRef]
   );
 

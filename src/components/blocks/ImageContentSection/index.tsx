@@ -33,9 +33,11 @@ export default function ImageContentSection({
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
-        start: 'top 80%',
-        end: 'bottom 90%',
+        start: 'top 90%',
+        end: 'bottom 0%',
         scrub: true,
+        
+       
         toggleActions: 'restart pause reset',
       },
       defaults: {
@@ -44,11 +46,10 @@ export default function ImageContentSection({
     });
 
     if (container.current) {
-      const animation = gsap.utils.random(['back', 'bounce', 'elastic', 'power2', 'power3', 'power4', 'slow', 'fast']);
       tl.fromTo(
         container.current,
-        { opacity: 0, y: 50, rotation: gsap.utils.random([-10, 0, 10]) },
-        { opacity: 1, y: 0, rotation: 0, duration: 0.8, ease: animation }
+        { opacity: 0, y: -50, rotation: 0 },
+        { opacity: 1, y: 0, rotation: 0, duration: 1.2, ease: 'power2.out' ,stagger: 0.1}
       );
     }
 
@@ -56,42 +57,23 @@ export default function ImageContentSection({
       const childrenArray = Array.from(textEle.current.children);
 
       childrenArray.forEach((child, index) => {
-        const animation = gsap.utils.random([
-          'back',
-          'bounce',
-          'elastic',
-          'power2',
-          'power3',
-          'power4',
-          'slow',
-          'fast',
-        ]);
-        const direction = gsap.utils.random(['<', '>']);
+        const direction = index % 2 === 0 ? '<' : '>';
         const grandchildChildrenArray = Array.from(child.children);
         const grandchildDelay = grandchildChildrenArray.length > 0 ? 0.1 : 0;
+
         tl.fromTo(
           child,
           { opacity: 0, y: 20, x: direction === '<' ? -50 : 50 },
-          { opacity: 1, y: 0, x: 0, duration: 0.5, delay: index * 0.1 + grandchildDelay, ease: animation ,stagger: 0.1},
+          { opacity: 1, y: 0, x: 0, duration: 1.5, delay: index * 0.2 + grandchildDelay, ease: 'power1.out', stagger: 0.2 },
           `<${index * 0.2}`
         );
 
         grandchildChildrenArray.forEach((grandchild, grandIndex) => {
-          const animation = gsap.utils.random([
-            'back',
-            'bounce',
-            'elastic',
-            'power2',
-            'power3',
-            'power4',
-            'slow',
-            'fast',
-          ]);
           const grandchildDelay = grandIndex * 0.05;
           tl.fromTo(
             grandchild,
             { opacity: 0, y: 10, x: direction === '<' ? -50 : 50 },
-            { opacity: 1, y: 0, x: 0, duration: 0.3, delay: grandchildDelay, ease: animation },
+            { opacity: 1, y: 0, x: 0, duration: 0.8, delay: grandchildDelay, ease: 'power3.out' },
             `<${grandchildDelay}`
           );
         });
@@ -111,7 +93,7 @@ export default function ImageContentSection({
     >
       <div
         ref={imageEle}
-        className={`flex items-center   order-last  ${imageLast ? 'md:order-last' : 'md:order-first'} `}
+        className={`flex items-center    order-last  ${imageLast ? 'md:order-last' : 'md:order-first'} `}
       >
         <img className='w-full' src={image} alt={title} />
       </div>
@@ -122,7 +104,7 @@ export default function ImageContentSection({
           </span>
         )}
         <h2 className={titleClassName + ' font-bold text-2xl md:text-3xl font-bebas text-primary'}>{title}</h2>
-        <div className="font-normal  ">{children}</div>
+        <div className="font-light  ">{children}</div>
       </div>
     </div>
   );

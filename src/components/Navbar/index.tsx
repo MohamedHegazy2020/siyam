@@ -52,7 +52,7 @@ function Navbar() {
   };
 
   return (
-    <div className={'navbar bg-base-100 ' + styles.paddingX}>
+    <div className={'navbar bg-transparent  ' + styles.paddingX}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -85,7 +85,7 @@ function Navbar() {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal bg-transparent px-1">
           {tabs.map((tab) => (
             <li key={tab.path}>
               <Link
