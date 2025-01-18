@@ -1,11 +1,16 @@
 import { factory } from '../../../assets';
 
-import ImageContentSection from '../../blocks/ImageContentSction';
+import ImageContentSection from '../../blocks/ImageContentSection';
 export default function AboutBusiness() {
   return (
     //
     <>
-      <ImageContentSection image={factory} title="Siyam Industrial Group" introduction="About Our Business" backgroundClassName='bg-factory'>
+      <ImageContentSection
+        image={factory}
+        title="Siyam Industrial Group"
+        introduction="About Our Business"
+        backgroundClassName="bg-factory"
+      >
         <p>
           is specialized in developing and manufacturing OE, customized, and aftermarket, core and complete cooling
           products, radiators, charge air coolers, condensers, and cooling modules for all types of applications. For

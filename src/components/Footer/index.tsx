@@ -3,10 +3,53 @@ import { logo_1 } from '../../assets';
 import styles from '../../utils/styles';
 import { Link } from 'react-router-dom';
 import { tabs } from '../Navbar/tabs';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { useRef } from 'react';
 
 export default function Footer() {
+  const footerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const footerChildren = footerRef.current?.children;
+      if (!footerChildren) return;
+
+      const footerChildrenArray = Array.from(footerChildren);
+      footerChildrenArray.forEach((child) => {
+        const childChildren = child.children;
+        const childChildrenArray = Array.from(childChildren);
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: footerRef.current,
+            start: 'top 90%',
+            end: 'bottom 10%',
+            toggleActions: 'restart pause reset',
+          },
+        });
+
+        tl.fromTo(
+          childChildrenArray,
+          {
+            opacity: 0,
+            y: -50,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            stagger: 0.4,
+          }
+        );
+      });
+    },
+    [footerRef]
+  );
+
   return (
     <footer
+      ref={footerRef}
       className={
         styles.padding +
         ' bg-accent bg-footer-texture   footer md:grid-cols-5  font-montserrat text-base-100  font-normal p-10'
@@ -67,3 +110,4 @@ export default function Footer() {
     </footer>
   );
 }
+

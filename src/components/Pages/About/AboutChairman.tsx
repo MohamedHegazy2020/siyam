@@ -1,5 +1,5 @@
 import { chairman, qualityPolicy } from '../../../assets';
-import ImageContentSection from '../../blocks/ImageContentSction';
+import ImageContentSection from '../../blocks/ImageContentSection';
 import PrimaryBtn from '../../blocks/PrimaryBtn';
 
 export default function AboutChairman() {
@@ -9,7 +9,6 @@ export default function AboutChairman() {
         title="Ibrahim Siyam, Chairman"
         introduction="A Word From Our Chairman"
         image={chairman}
-        
         imageLast
       >
         <p className="mb-4">
