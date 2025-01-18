@@ -18,8 +18,8 @@ export default {
         'gradient-linear-100': 'linear-gradient(to right, #005594, #00B2FF)',
         'footer-texture': "url('/src/assets/background-texture.png')",
         'property-1': "url('/src/assets/property-1.png')",
-        'section-100': "url('src/assets/1 (2) 1.png')",
-        'section-200':"url('src/assets/Back (1) 1.png')",
+        'section-100': "url('/src/assets/bg-section-100.png')",
+        'section-200':"url('/src/assets/bg-section-200.png')",
       },
       fontFamily: {
         bebas: ['Bebas', 'cursive'],
