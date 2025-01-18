@@ -34,7 +34,7 @@ export default function ImageContentSection({
       scrollTrigger: {
         trigger: container.current,
         start: 'top 90%',
-        end: 'bottom 0%',
+        end: 'bottom 50%',
         scrub: true,
         
        

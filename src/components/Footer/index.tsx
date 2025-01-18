@@ -36,6 +36,7 @@ export default function Footer() {
             y: -50,
           },
           {
+            
             opacity: 1,
             y: 0,
             duration: 0.9,
