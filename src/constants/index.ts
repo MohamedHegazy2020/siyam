@@ -1,4 +1,4 @@
-import property1 from '../assets/images/property-1.png';
+import property1 from '../assets/images/property1.png';
 import property2 from '../assets/images/Property1=Variant2.png';
 import property3 from '../assets/images/Property1=Variant3.png';
 import ibrahimSyam from '../assets/images/IbrahimSiyam.png';
@@ -6,10 +6,10 @@ import AbeerSyam from '../assets/images/AbeerSiyam.png';
 import usersIcon from '../assets/images/users_icon.png';
 import logo from '../assets/images/logo.png';
 import logoFull from '../assets/images/logo-full.png';
-import factory1 from '../assets/images/factory-1.png';
+import factory1 from '../assets/images/factory1.png';
 import chairman from '../assets/images/chairman.png';
-import group1 from '../assets/images/group-1.png';
-import group2 from '../assets/images/group-2.png';
+import group1 from '../assets/images/Group1.png';
+import group2 from '../assets/images/Group2.png';
 import qualityPolicy from '../assets/files/Quality-Policy.pdf';
 
 export {
