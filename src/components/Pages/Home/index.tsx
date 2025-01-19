@@ -1,12 +1,12 @@
 import Hero from './Hero';
+import ProductRange from './ProductRange';
 
 export default function Home() {
   return (
     <>
       
-      <section className="bg-gradient-radial">
-        <Hero />
-      </section>
+      <Hero />
+      <ProductRange/>
     </>
   );
 }

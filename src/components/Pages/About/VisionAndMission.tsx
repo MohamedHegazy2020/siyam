@@ -1,4 +1,5 @@
-import { group1, group2 } from '../../../assets';
+
+import { group1 , group2 } from '../../../constants';
 import ImageContentSection from '../../blocks/ImageContentSection';
 export default function VisionAndMission() {
   return (

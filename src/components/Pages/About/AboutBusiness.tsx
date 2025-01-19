@@ -1,12 +1,11 @@
-import { factory } from '../../../assets';
+import { factory1 } from '../../../constants'; 
 
 import ImageContentSection from '../../blocks/ImageContentSection';
 export default function AboutBusiness() {
   return (
-    //
     <>
       <ImageContentSection
-        image={factory}
+        image={factory1}
         title="Siyam Industrial Group"
         introduction="About Our Business"
         backgroundClassName="bg-section-100"

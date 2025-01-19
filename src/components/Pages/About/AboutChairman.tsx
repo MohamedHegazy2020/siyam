@@ -1,4 +1,5 @@
-import { chairman, qualityPolicy } from '../../../assets';
+
+import { chairman, qualityPolicy } from '../../../constants';
 import ImageContentSection from '../../blocks/ImageContentSection';
 import PrimaryBtn from '../../blocks/PrimaryBtn';
 

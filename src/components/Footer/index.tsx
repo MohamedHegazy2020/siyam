@@ -1,11 +1,10 @@
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
-import { logo_1 } from '../../assets';
 import styles from '../../utils/styles';
 import { Link } from 'react-router-dom';
-import { tabs } from '../Navbar/tabs';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
+import { logoFull, tabs } from '../../constants';
 
 export default function Footer() {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -62,7 +61,7 @@ export default function Footer() {
       }
     >
       <aside className="md:col-span-2 px-5">
-        <img src={logo_1} alt="logo" />
+        <img src={logoFull} alt="logo" className='w-1/2' />
         <p>
           is specialized in developing and manufacturing OE, customized, and aftermarket, core and complete cooling
           products, radiators, charge air coolers, condensers, and cooling modules for all types of applications.

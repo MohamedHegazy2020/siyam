@@ -40,7 +40,7 @@ export default function ImageContentSection({
     gsap.from(container.current, {
       opacity: 0,
       duration: 1.2,
-      scale: 0.8,
+      y: 100,
       backfaceVisibility: 'hidden',
       backgroundPosition: '20% 20%',
      backgroundOpacity: 0,
@@ -57,7 +57,7 @@ export default function ImageContentSection({
       duration: 2,
       x: 100,
       delay: 0.5,
-      skewY: 10,
+     
       ease: 'power2.out',
       scrollTrigger: {
         ...scrollTriggerConfig,
@@ -69,8 +69,8 @@ export default function ImageContentSection({
       opacity: 0,
       duration: 2,
       delay: 0.5,
-      skewY: 10,
-      y: 200,
+      x: -100,
+      y: 100,
       stagger: 0.75,
       ease: 'power2.out',
       scrollTrigger: {
@@ -80,31 +80,33 @@ export default function ImageContentSection({
       },
     });
   });
+console.log(titleRef.current);
 
   return (
-    <div
-      ref={container}
-      className={styles.padding + '  max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10  ' + backgroundClassName}
-    >
-      <div
-        ref={imageEle}
-        className={`flex items-center    order-last  ${imageLast ? 'md:order-last' : 'md:order-first'} `}
-      >
-        <img className="w-full" src={image} alt={title} />
-      </div>
-      <div className="flex flex-col gap-4">
-        {introduction && (
-          <span
-            ref={introductionRef}
-            className="text-transparent bg-gradient-to-r  from-[0%] to-[25%] from-secondary  to-primary bg-clip-text font-bebas  font-bold"
-          >
-            {introduction}
-          </span>
-        )}
-        <h2 ref={titleRef} className={titleClassName + ' font-bold text-2xl md:text-3xl font-bebas text-primary'}>
-          {title}
-        </h2>
-        <div ref={childrenRef} className="font-light  ">{children}</div>
+    <div className={backgroundClassName + ' ' + styles.padding}>
+      <div ref={container} className={'  max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 bg-center '}>
+        <div
+          ref={imageEle}
+          className={`flex items-center max-w-md   order-last  ${imageLast ? 'md:order-last' : 'md:order-first'} `}
+        >
+          <img className="w-full" src={image} alt={title} />
+        </div>
+        <div className="flex flex-col justify-center gap-4">
+          {introduction && (
+            <span
+              ref={introductionRef}
+              className="text-transparent bg-gradient-to-r  from-[0%] to-[25%] from-secondary  to-primary bg-clip-text font-bebas  font-bold"
+            >
+              {introduction}
+            </span>
+          )}
+          <h2 ref={titleRef} className={titleClassName + ' font-bold text-2xl md:text-3xl font-bebas text-primary'}>
+            {title}
+          </h2>
+          <div ref={childrenRef} className="font-light  ">
+            {children}
+          </div>
+        </div>
       </div>
     </div>
   );

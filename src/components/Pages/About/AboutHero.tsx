@@ -1,9 +1,10 @@
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
-import { usersIcon } from '../../../assets';
+import { usersIcon } from '../../../constants';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
-import { ScrollTrigger, TextPlugin } from 'gsap/all';
+import {  ScrollTrigger, TextPlugin } from 'gsap/all';
+import PrimaryBtn from '../../blocks/PrimaryBtn';
 export default function AboutHero() {
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(TextPlugin);
@@ -11,31 +12,51 @@ export default function AboutHero() {
   const heroText = useRef<HTMLDivElement>(null);
   const heroSubText = useRef<HTMLDivElement>(null);
   const heroGredientText = useRef<HTMLDivElement>(null);
+  const userIconRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     gsap.from(container.current, {
       opacity: 0,
       duration: 1.2,
-      scale: 0.8,
-      ease: 'bounce',
+      y: 100,
+      ease: 'power2.inOut',
     });
     gsap.from(heroText.current, {
       delay: 0.6,
       duration: 2,
       text: 'Syam Industrial Group',
-      ease: 'bounce',
+      ease: 'power2.inOut',
     });
     gsap.from(heroSubText.current, {
       delay: 0.5,
       duration: 3,
       text: 'This is the new text',
-      ease: 'bounce',
+      ease: 'power2.inOut',
     });
-    gsap.from(heroGredientText.current, {
-      delay: 1.2,
-      duration: 2,
-      text: 'This is the new text',
-      ease: 'bounce',
+    const words = ['Developing Career Experts', 'Talent customized Experts', 'Talent Career aftermarket'];
+    let counter = 0;
+    gsap.to(heroGredientText.current, {
+      delay: 2,
+      duration: 3,
+      repeat: -1,
+      text: words[counter % words.length],
+      ease: 'power2.inOut',
+
+      onComplete: () => {
+        counter++;
+        gsap.to(heroGredientText.current, {
+          text: words[counter % words.length],
+          overwrite: true,
+        });
+      },
+    });
+
+    gsap.from(userIconRef.current, {
+      opacity: 0,
+      delay: 2.5,
+      y: 100,
+      duration: 1.5,
+      ease: 'power2.inOut',
     });
   }, []);
   return (
@@ -57,11 +78,11 @@ export default function AboutHero() {
             types of applications. For over 30 years, we have distinguished ourselves by providing high quality
             products, with superior services, delivered on-time and at a competitive price.
           </p>
-          <button className="btn text-white    bg-gradient-to-r from-[#0099F7] to-[#12F1E4] ">
+          <PrimaryBtn rounded>
             <Icon icon="lets-icons:video-fill" width="24" height="24" />
             Get Started
-          </button>
-          <div className="flex items-center justify-center mt-5">
+          </PrimaryBtn>
+          <div ref={userIconRef} className="flex items-center justify-center mt-5">
             <img src={usersIcon} alt="user icons" className="" />
             <p className="text-white ml-2 text-2xl font-bold">+100k Users</p>
           </div>

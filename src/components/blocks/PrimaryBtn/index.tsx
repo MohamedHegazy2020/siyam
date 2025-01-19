@@ -5,9 +5,10 @@ import { ReactNode, useRef } from 'react';
 interface PrimaryBtnProps {
   children: ReactNode;
   rounded?: boolean;
+  outlined?: boolean;
 }
 
-export default function PrimaryBtn({ children, rounded }: PrimaryBtnProps) {
+export default function PrimaryBtn({ children, rounded ,outlined }: PrimaryBtnProps) {
   const btnRef = useRef<HTMLButtonElement>(null);
   useGSAP(() => {
     if (!btnRef.current) return;
@@ -38,7 +39,9 @@ export default function PrimaryBtn({ children, rounded }: PrimaryBtnProps) {
     <>
       <button
         ref={btnRef}
-        className={`btn text-white   bg-gradient-to-r from-[#0099F7] to-[#12F1E4] ${rounded && 'rounded-full '}`}
+        className={`btn text-white ${outlined ? 'btn-outline btn-primary' : 'bg-gradient-to-r from-[#0099F7] to-[#12F1E4]'}   ${
+          rounded ? 'rounded-full ':'rounded-none'
+        }`}
       >
         {children}
       </button>
