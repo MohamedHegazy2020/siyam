@@ -5,29 +5,10 @@ import styles from '../../../utils/styles';
 import { AbeerSyam, ibrahimSyam, walidSiyam, yazanSiyam } from '../../../constants';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import styled from '@emotion/styled';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
 
-const Stat = styled.div`
-  & span {
-    font-size: 5rem;
-  }
-`;
-
-const Blurb = styled.div`
-  & p {
-    text-align: center;
-    opacity: 0.8;
-  }
-`;
 
 interface CounterProps {
   maxNumber: number; // Maximum number to count to
