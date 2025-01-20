@@ -6,7 +6,6 @@ import { AbeerSyam, ibrahimSyam, walidSiyam, yazanSiyam } from '../../../constan
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from '@emotion/styled';
-import { max } from 'three/tsl';
 
 gsap.registerPlugin(ScrollTrigger);
 
