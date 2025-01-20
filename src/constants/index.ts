@@ -11,7 +11,13 @@ import chairman from '../assets/images/chairman.png';
 import group1 from '../assets/images/Group1.png';
 import group2 from '../assets/images/Group2.png';
 import qualityPolicy from '../assets/files/Quality-Policy.pdf';
-
+import Radiator1 from '../assets/images/Radiators/1.png';
+import Radiator2 from '../assets/images/Radiators/2.png';
+import Radiator3 from '../assets/images/Radiators/3.png';
+import Radiator4 from '../assets/images/Radiators/4.png';
+import Radiator5 from '../assets/images/Radiators/5.png';
+import yazanSiyam from '../assets/images/YazanSiyam.png';
+import walidSiyam from '../assets/images/WalidSiyam.png';
 export {
   property1,
   property2,
@@ -26,8 +32,20 @@ export {
   qualityPolicy,
   group1,
   group2,
+  yazanSiyam,
+  walidSiyam
 };
 
+  export const Radiators = [
+    Radiator1,
+    Radiator2,
+    Radiator3,
+    Radiator4,
+    Radiator5
+  ]
+  
+  
+  
 export const tabs = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },

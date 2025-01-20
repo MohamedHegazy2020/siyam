@@ -43,7 +43,6 @@ export default function ImageContentSection({
       y: 100,
       backfaceVisibility: 'hidden',
       backgroundPosition: '20% 20%',
-     backgroundOpacity: 0,
       ease: 'power2.out',
       scrollTrigger: {
         ...scrollTriggerConfig,

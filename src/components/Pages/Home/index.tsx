@@ -1,3 +1,5 @@
+import AboutBusiness from '../About/AboutBusiness';
+import GenerationsMembers from './GenerationsMembers';
 import Hero from './Hero';
 import ProductRange from './ProductRange';
 
@@ -6,7 +8,9 @@ export default function Home() {
     <>
       
       <Hero />
-      <ProductRange/>
+      <ProductRange />
+      <AboutBusiness />
+      <GenerationsMembers/>
     </>
   );
 }
