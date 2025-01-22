@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+    'node_modules/daisyui/dist/**/*.js',
+    'node_modules/react-daisyui/dist/**/*.js',
+  ],
   theme: {
     extend: {
       screens: {
@@ -21,7 +26,7 @@ export default {
         'section-100': "url('/src/assets/images/bg-section-100.png')",
         'section-200': "url('/src/assets/images/bg-section-200.png')",
         'section-300': "url('/src/assets/images/bg-section-300.png')",
-        "bg-home-hero": "url('/src/assets/images/bg-home-hero.png')",
+        'bg-home-hero': "url('/src/assets/images/bg-home-hero.png')",
       },
       fontFamily: {
         bebas: ['Bebas', 'cursive'],

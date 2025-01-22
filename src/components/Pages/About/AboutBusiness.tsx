@@ -10,7 +10,7 @@ export default function AboutBusiness() {
         introduction="About Our Business"
         backgroundClassName="bg-section-100"
       >
-        <p>
+        <p className='text-sm md:text-base'>
           is specialized in developing and manufacturing OE, customized, and aftermarket, core and complete cooling
           products, radiators, charge air coolers, condensers, and cooling modules for all types of applications. For
           over 30 years, we have distinguished ourselves by providing high quality products, with superior services,

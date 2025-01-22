@@ -2,8 +2,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Pages/Home';
 import About from './components/Pages/About';
+import gsap from 'gsap';
+import {  ScrollTrigger } from 'gsap/all';
+import { useGSAP } from '@gsap/react';
 
 const App = () => {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+  
+
+  
   return (
     <>
       <BrowserRouter>

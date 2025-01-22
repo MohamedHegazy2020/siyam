@@ -1,93 +1,61 @@
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
 import { logo, tabs } from '../../constants';
 import { Link } from 'react-router-dom';
-import { useEffect, useState, useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
+
 
 const Navbar = () => {
-  const [active, setActive] = useState('/');
-  const [scrolling, setScrolling] = useState(false);
-  const navRef = useRef<HTMLElement>(null);
-  gsap.registerPlugin(ScrollTrigger);
+ 
+  
 
-  useEffect(() => {
-    setActive(window.location.pathname);
-  }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolling(window.scrollY > 0);
-    };
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  useGSAP(() => {
-    const nav = navRef.current;
-    if (!nav) return;
-
-    gsap.to(nav, {
-      y: 0,
-      autoAlpha: 1,
-      ease: 'power2.inOut',
-      paused: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: nav,
-      start: 'top top',
-      end: '+=100vh',
-      onToggle: (self) => {
-        if (self.isActive) {
-          gsap.to(nav, { y: 0, autoAlpha: 1, backgroundColor: 'white' });
-        } else {
-          gsap.to(nav, { y: -100, autoAlpha: 0, backgroundColor: 'transparent' });
-        }
-      },
-      onUpdate: (self) => {
-        if (self.direction === -1 && !scrolling) {
-          gsap.to(nav, { y: -100, autoAlpha: 0, backgroundColor: 'transparent' });
-        } else if (self.direction === 1 && !scrolling) {
-          gsap.to(nav, { y: 0, autoAlpha: 1, backgroundColor: 'white' });
-        }
-      },
-    });
-  }, [scrolling]);
 
   return (
-    <header
-      ref={navRef}
-      className="fixed w-full py-5 sm:px-10 px-5 flex items-center justify-between z-20"
-    >
-      <nav className="flex items-center w-full screen-max-width">
-        <img src={logo} alt="logo" className="w-[60px] md:w-[80px]" />
-        <div className="flex flex-1 justify-center gap-4 max-sm:hidden">
-          {tabs.map((nav, i) => (
-            <Link
-              to={nav.path}
-              key={i}
-              className={`font-montserrat font-medium text-[16px] leading-[22px] text-black hover:text-primary ${
-                active === nav.path && 'text-primary'
-              }`}
+    <nav className="fixed w-full z-[100]">
+      <div className="navbar bg-base-100 ">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+              <Icon icon="line-md:menu" width="24" height="24" />
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
-              {nav.name}
-            </Link>
-          ))}
+              {tabs.map((tab, index) => (
+                <li key={index}>
+                  <Link to={tab.path}>{tab.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <Link to="/" className="navbar-brand lg:w-24 w-20 hover:scale-105 transition-transform duration-300">
+            <img src={logo} alt="logo" className="w-full" />
+          </Link>
         </div>
-        <div className="flex items-baseline gap-7 max-sm:justify-end max-sm:flex-1">
-          <Icon icon="material-symbols:search-rounded" width={24} height={24} />
-          <Icon icon="solar:cart-line-duotone" width="24" height="24" />
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">
+            {tabs.map((tab, index) => (
+              <li key={index}>
+                <Link to={tab.path}>{tab.name}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
-      </nav>
-    </header>
+        <div className="navbar-end">
+          <Link to="/login" className="btn btn-ghost">
+            <Icon icon="line-md:search" width="24" height="24" />
+          </Link>
+          <Link to="/login" className="btn btn-ghost">
+            <Icon icon="solar:cart-linear" width="24" height="24" />
+          </Link>
+        </div>
+      </div>
+      <div className="h-2 w-full bg-neutral justify-center flex">
+        <span  className='bg-primary w-2 '></span>
+      </div>
+    </nav>
   );
 };
 
 export default Navbar;
-
