@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from '../../../utils/styles';
 import { Card } from 'react-daisyui';
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
@@ -60,7 +59,7 @@ const WorkingWithUs = () => {
               <h3 className="text-center text-sm md:text-lg font-bebas">On Time Delivery</h3>
               <p className="text-center text-sm md:text-base font-light">
                 Our advanced testing laboratory ensures product quality through rigorous testing, meeting industry
-                standards and exceeding customer expectations.
+                standards and exceeding customer expectations.
               </p>
             </Card>
           </div>

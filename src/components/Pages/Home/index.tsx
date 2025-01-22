@@ -1,4 +1,5 @@
 import AboutBusiness from '../About/AboutBusiness';
+import ClientsFeedBacks from './ClientsFeedBacks';
 import GenerationsMembers from './GenerationsMembers';
 import Hero from './Hero';
 import ProductRange from './ProductRange';
@@ -12,7 +13,8 @@ export default function Home() {
       <ProductRange />
       <AboutBusiness />
       <GenerationsMembers />
-      <WorkingWithUs/>
+      <WorkingWithUs />
+      <ClientsFeedBacks />
     </>
   );
 }
