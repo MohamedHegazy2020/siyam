@@ -5,16 +5,16 @@ const useScrollProgress = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY
-      const scrollHeight = document.documentElement.scrollHeight
-      const clientHeight = document.documentElement.clientHeight
-      const scrollPercent = (scrollY / (scrollHeight - clientHeight)) * 100
-      setCompletion(scrollPercent)
-    }
+      const scrollY = window.scrollY;
+      const scrollHeight = document.documentElement.scrollHeight;
+      const clientHeight = document.documentElement.clientHeight;
+      const scrollPercent = (scrollY / (scrollHeight - clientHeight)) * 100;
+      setCompletion(scrollPercent);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return completion
 }

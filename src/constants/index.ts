@@ -18,7 +18,14 @@ import Radiator4 from '../assets/images/Radiators/4.png';
 import Radiator5 from '../assets/images/Radiators/5.png';
 import yazanSiyam from '../assets/images/YazanSiyam.png';
 import walidSiyam from '../assets/images/WalidSiyam.png';
+
+import factory100 from '../assets/images/factory100.png';
+import factory200 from '../assets/images/factory200.png';
+import factory300 from '../assets/images/factory300.png';
 export {
+  factory100,
+  factory200,
+  factory300,
   property1,
   property2,
   property3,

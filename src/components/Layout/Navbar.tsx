@@ -2,16 +2,24 @@ import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
 import { logo, tabs } from '../../constants';
 import { Link } from 'react-router-dom';
 import useScrollProgress from '../../hooks/useScrollProgress';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 
 const Navbar = () => {
- 
-  
   const complition = useScrollProgress()
-  console.log(complition);
-  
+  const scrollIndicatorRef = useRef(null)
+  const tl = useRef(null)
 
-
+  useGSAP(() => {
+    tl.current = gsap.timeline()
+      .to(scrollIndicatorRef.current, {
+        x: () => (100 - complition) + '%',
+        duration: 0.5,
+        ease: 'power1.inOut',
+      })
+  }, [complition])
 
   return (
     <nav className="sticky top-0 w-full z-[100]">
@@ -54,9 +62,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <span
-        style={{ transform: `translateX(${100 - complition}%)` }}
-        className="bg-primary absolute h-1 w-full bottom-0 transition-transform duration-300 ease-in-out" />
+      <span ref={scrollIndicatorRef} className="bg-primary absolute h-1 w-full bottom-0" />
     </nav>
   );
 };

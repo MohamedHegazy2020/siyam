@@ -1,11 +1,10 @@
-import styles from '../../../utils/styles';
 import { Card } from 'react-daisyui';
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
 
 const WorkingWithUs = () => {
   return (
     <>
-      <section className={'bg-section-200 pt-20 ' + styles.padding}>
+      <section className={'bg-section-200 pt-20 md:px-40 px-10 '}>
         <h2 className="font-bebas text-2xl text-center text-white ">working with us Means</h2>
 
         <div className=" flex flex-col gap-4  md:mt-10 mt-6 items-center justify-center">

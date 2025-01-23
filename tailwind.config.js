@@ -28,8 +28,8 @@ export default {
 
         'section-300': "url('/src/assets/images/bg-section-300.png')",
         'section-400': "url('/src/assets/images/bg-section-400.png')",
-        'vector-5': "url('/src/assets/images/Vector 5.png')",
-        'vector-6': "url('/src/assets/images/Vector 6.png')",
+        'vector-100': "url('/src/assets/images/vector-100.png')",
+        'vector-200': "url('/src/assets/images/vector-200.png')",
         'bg-home-hero': "url('/src/assets/images/bg-home-hero.png')",
       },
       fontFamily: {
