@@ -1,7 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import styles from '../../../utils/styles';
 import { AbeerSyam, ibrahimSyam, walidSiyam, yazanSiyam } from '../../../constants';
+import { Countdown } from 'react-daisyui';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 interface CounterProps {
   maxNumber: number; // Maximum number to count to
@@ -9,32 +12,39 @@ interface CounterProps {
 }
 
 export const Counter: React.FC<CounterProps> = ({ maxNumber, label }) => {
-  const [value, setValue] = useState(0);
+  const numberRef = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setValue((prevValue) => prevValue + 1);
-    }, 1 / maxNumber);
-
-    if (value === maxNumber) {
-      clearInterval(interval);
-    }
-    return () => clearInterval(interval);
-  }, [maxNumber, value]);
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    tl.fromTo(
+      numberRef.current,
+      { innerText: 0 },
+      {
+        innerText: maxNumber,
+        duration: 4,
+        ease: 'power1.inOut',
+        snap: { innerText: 1 },
+        
+        onUpdate: () => {
+          if (numberRef.current) {
+            numberRef.current.innerText = `+${Math.ceil(parseFloat(numberRef.current.innerText))}`;
+          }
+        },
+      }
+    );
+  }, [maxNumber]);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-2">
-      <span className="text-white text-base md:text-4xl">+{value}</span> {/* Display the value */}
-      <span className="text-white text-sm md:text-base">{label}</span> {/* Display the label */}
+    <div className="flex flex-col items-center justify-center gap-2 text-white">
+      <span ref={numberRef} className="text-white text-base md:text-4xl" />
+      <span className="text-white text-sm md:text-base">{label}</span>
     </div>
   );
 };
 
 const MemberCard = ({ image, title, description }: { image: string; title: string; description: string }) => {
- 
-
   return (
-    <div  className="card   ">
+    <div className="card   ">
       <figure>
         <img src={image} alt={title} />
       </figure>
@@ -46,11 +56,9 @@ const MemberCard = ({ image, title, description }: { image: string; title: strin
   );
 };
 const GenerationsMembers = () => {
- 
-
   return (
     <>
-      <div  className={'bg-section-300 ' + styles.padding}>
+      <div className={'bg-section-300 ' + styles.padding}>
         <div className="flex flex-col items-center justify-center py-14 gap-4">
           <p className="text-center text-sm text-white font-light">Generations Members</p>
           <h2 className="text-center text-2xl font-semibold text-white">Meet our professional</h2>
