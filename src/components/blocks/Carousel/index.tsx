@@ -38,12 +38,13 @@ function Carousel({ children } : {children: React.ReactNode}) {
   const [, setActiveSlide2] = useState(0);
 
   const settings: Settings = {
-    dots: true,
+      dots: true,
+    dotsClass: 'slick-dots slick-thumb',
     infinite: true,
     speed: 1000,
-    slidesToShow: 3,
+    slidesToShow: 1,
       slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     nextArrow: <NextArrow/>,
     prevArrow:<PrevArrow/> ,
     beforeChange: (current, next) => {
@@ -53,9 +54,9 @@ function Carousel({ children } : {children: React.ReactNode}) {
     afterChange: (current) => setActiveSlide2(current),
   };
   return (
-    <div className="slider-container relative px-20 ">
+    
       <Slider {...settings}>{children}</Slider>
-    </div>
+   
   );
 }
 

@@ -25,11 +25,12 @@ export default {
         'property-1': "url('/src/assets/images/property1.png')",
         'section-100': "url('/src/assets/images/bg-section-100.png')",
         'section-200': "url('/src/assets/images/bg-section-200.png')",
-        
+
         'section-300': "url('/src/assets/images/bg-section-300.png')",
         'section-400': "url('/src/assets/images/bg-section-400.png')",
+        'vector-5': "url('/src/assets/images/Vector 5.png')",
+        'vector-6': "url('/src/assets/images/Vector 6.png')",
         'bg-home-hero': "url('/src/assets/images/bg-home-hero.png')",
-
       },
       fontFamily: {
         bebas: ['Bebas', 'cursive'],

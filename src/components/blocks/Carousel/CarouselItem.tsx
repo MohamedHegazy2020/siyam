@@ -1,8 +1,5 @@
+const CarouselItem = ({ children }: { children: React.ReactNode }) => {
+  return <div>{children}</div>;
+};
 
-const CarouselItem = ({children}: {children: React.ReactNode}) => {
-  return (
-    <div>{children}</div>
-  )
-}
-
-export default CarouselItem
+export default CarouselItem;

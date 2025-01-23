@@ -1,17 +1,20 @@
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
 import { logo, tabs } from '../../constants';
 import { Link } from 'react-router-dom';
+import useScrollProgress from '../../hooks/useScrollProgress';
 
 
 const Navbar = () => {
  
   
-
+  const complition = useScrollProgress()
+  console.log(complition);
+  
 
 
 
   return (
-    <nav className="fixed w-full z-[100]">
+    <nav className="sticky top-0 w-full z-[100]">
       <div className="navbar bg-base-100 ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -51,9 +54,9 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <div className="h-2 w-full bg-neutral justify-center flex">
-        <span  className='bg-primary w-2 '></span>
-      </div>
+      <span
+        style={{ transform: `translateX(${100 - complition}%)` }}
+        className="bg-primary absolute h-1 w-full bottom-0 transition-transform duration-300 ease-in-out" />
     </nav>
   );
 };
