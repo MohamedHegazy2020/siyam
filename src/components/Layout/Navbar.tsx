@@ -2,7 +2,7 @@ import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
 import { logo, tabs } from '../../constants';
 import { Link } from 'react-router-dom';
 import useScrollProgress from '../../hooks/useScrollProgress';
-import { useEffect, useRef } from 'react';
+import {  useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -16,13 +16,13 @@ const Navbar = () => {
     tl.current = gsap.timeline()
       .to(scrollIndicatorRef.current, {
         x: () => (100 - complition) + '%',
-        duration: 0.5,
-        ease: 'power1.inOut',
+        duration: 1,
+        ease: 'power2.inOut',
       })
   }, [complition])
 
   return (
-    <nav className="sticky top-0 w-full z-[100]">
+    <nav className="sticky top-0 w-full z-[100] overflow-hidden">
       <div className="navbar bg-base-100 ">
         <div className="navbar-start">
           <div className="dropdown">

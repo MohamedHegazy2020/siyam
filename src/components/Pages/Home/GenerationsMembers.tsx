@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import styles from '../../../utils/styles';
 import { AbeerSyam, ibrahimSyam, walidSiyam, yazanSiyam } from '../../../constants';
-import { Countdown } from 'react-daisyui';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 

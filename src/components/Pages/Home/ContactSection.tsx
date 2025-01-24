@@ -57,21 +57,21 @@ const ContactSection = () => {
 
           {/* Images on the right */}
 
-          <div className="  pt-6 max-w-xs  md:col-span-2 flex items-end ">
+          <div className="  pt-6 min-h-full max-w-full  md:col-span-2 flex items-end ">
             <img
               src={factory100} // Replace with your image URL
               alt="Example 1"
               className="w-full md:w-3/4 object-cover"
             />
           </div>
-          <div className=" md:pb-4 md:col-span-3 flex justify-end md:w-full  ">
+          <div className=" md:pb-4 md:col-span-3 flex justify-end min-h-full max-w-full   ">
             <img
               src={factory200} // Replace with your image URL
               alt="Example 2"
               className="w-full  object-cover"
             />
           </div>
-          <div className=" max-w-xs md:col-span-2 ">
+          <div className=" min-h-full max-w-full md:col-span-2 ">
             <img
               src={factory300} // Replace with your image URL
               alt="Example 3"
