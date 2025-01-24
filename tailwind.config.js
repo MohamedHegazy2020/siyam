@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        'accent-900': '#010625',
+      },
       screens: {
         xs: '480px',
         sm: '640px',

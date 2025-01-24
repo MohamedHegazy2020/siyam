@@ -22,10 +22,22 @@ import walidSiyam from '../assets/images/WalidSiyam.png';
 import factory100 from '../assets/images/factory100.png';
 import factory200 from '../assets/images/factory200.png';
 import factory300 from '../assets/images/factory300.png';
+import factroy400 from '../assets/images/factory400.png';
+import factroy500 from '../assets/images/factory500.png';
+import factroy600 from '../assets/images/factory600.png';
+import factroy700 from '../assets/images/factory700.png';
+import fan1 from '../assets/images/fan-1.png';
+import fan2 from '../assets/images/fan-2.png';
 export {
+  factroy400,
+  fan1,
+  fan2,
   factory100,
   factory200,
   factory300,
+  factroy500,
+  factroy600,
+  factroy700,
   property1,
   property2,
   property3,

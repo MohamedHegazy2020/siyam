@@ -1,6 +1,7 @@
 import AboutBusiness from '../About/AboutBusiness';
 import ClientsFeedBacks from './ClientsFeedBacks';
 import ContactSection from './ContactSection';
+import CounterSection from './CounterSection';
 import GenerationsMembers from './GenerationsMembers';
 import Hero from './Hero';
 import ProductRange from './ProductRange';
@@ -14,6 +15,7 @@ export default function Home() {
       <ProductRange />
       <AboutBusiness />
       <GenerationsMembers />
+      <CounterSection />
       <WorkingWithUs />
       <ClientsFeedBacks />
       <ContactSection/>

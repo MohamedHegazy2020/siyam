@@ -3,6 +3,8 @@ import AboutBusiness from './AboutBusiness';
 import AboutHero from './AboutHero';
 import AboutChairman from './AboutChairman';
 import VisionAndMission from './VisionAndMission';
+import TechincalCollebration from './TechincalCollebration';
+import GenerationsMembers from '../Home/GenerationsMembers';
 export default function About() {
   return (
     <>
@@ -11,7 +13,9 @@ export default function About() {
         <AboutHero />
         <AboutBusiness />
         <AboutChairman />
-        <VisionAndMission/>
+        <VisionAndMission />
+        <TechincalCollebration />
+        <GenerationsMembers />
       </section>
     </>
   );

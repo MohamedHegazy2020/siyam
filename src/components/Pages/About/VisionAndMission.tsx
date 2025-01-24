@@ -33,7 +33,7 @@ export default function VisionAndMission() {
             </p>
           </div>
         </div>
-        <div className="flex justify-center items-start md:col-span-2">
+        <div className="flex justify-center items-start md:col-span-2"> 
           <div className="w-96 bg-no-repeat bg-vector-star bg-contain bg-center flex items-center justify-center">
             <Icon icon="stash:people-group" className="text-white" width="36" height="36" />
           </div>
