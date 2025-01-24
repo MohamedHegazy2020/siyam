@@ -1,4 +1,4 @@
-import { factory1, factroy400, factroy500, factroy600, factroy700, fan1, fan2 } from '../../../constants';
+import {  factroy400, factroy500, factroy600, factroy700, fan1, fan2 } from '../../../constants';
 import styles from '../../../utils/styles';
 
 const TechincalCollebration = () => {

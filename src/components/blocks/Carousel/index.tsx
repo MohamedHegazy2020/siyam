@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
 
 
-const NextArrow = ({onClick}: {onClick: () => void}) => {
+const NextArrow = ({onClick}: {onClick?: () => void}) => {
     return (
         <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 z-20">
             <button className="btn rounded-full btn-ghost" onClick={onClick} >
@@ -17,7 +17,7 @@ const NextArrow = ({onClick}: {onClick: () => void}) => {
 }
 
 
-const PrevArrow = ({onClick}: {onClick: () => void}) => {
+const PrevArrow = ({onClick}: {onClick?: () => void}) => {
     return (
       <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 -translate-x-1/2">
         <button className="btn rounded-full btn-ghost" onClick={onClick}  >

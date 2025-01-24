@@ -10,15 +10,17 @@ import { useGSAP } from '@gsap/react';
 const Navbar = () => {
   const complition = useScrollProgress()
   const scrollIndicatorRef = useRef(null)
-  const tl = useRef(null)
+  const tl = useRef<gsap.core.Timeline | null>(null)
 
   useGSAP(() => {
-    tl.current = gsap.timeline()
-      .to(scrollIndicatorRef.current, {
-        x: () => (100 - complition) + '%',
-        duration: 1,
-        ease: 'power2.inOut',
-      })
+   
+      tl.current = gsap.timeline()
+        .to(scrollIndicatorRef.current, {
+          x: () => (100 - complition) + '%',
+          duration: 1,
+          ease: 'power2.inOut',
+        })
+    
   }, [complition])
 
   return (
