@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function Hero() {
   return (
     <>
-      <div className="flex bg-cover bg-center min-h-screen items-end bg-bg-home-hero">
+      <div className="flex bg-cover bg-center min-h-screen items-end bg-home-hero">
         <div
           className={
             'w-full rounded-t-lg bg-gradient-to-b from-[#000000] to-[#00000000] flex md:flex-row flex-col items-center justify-around ' +

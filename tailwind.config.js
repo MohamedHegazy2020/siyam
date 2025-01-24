@@ -23,7 +23,7 @@ export default {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(#00B2FF , white )',
         'gradient-linear': 'linear-gradient(to right, #005594, #D9212C)',
-        'gradient-linear-100': 'linear-gradient(to right, #005594, #00B2FF)',
+        'gradient-linear-100': 'linear-gradient(to right, #0099F7, #12F1E4)',
         'footer-texture': "url('/src/assets/images/background-texture.png')",
         'property-1': "url('/src/assets/images/property1.png')",
         'section-100': "url('/src/assets/images/bg-section-100.png')",
@@ -34,7 +34,8 @@ export default {
         'vector-100': "url('/src/assets/images/vector-100.png')",
         'vector-200': "url('/src/assets/images/vector-200.png')",
         'vector-star': "url('/src/assets/images/vector-star.png')",
-        'bg-home-hero': "url('/src/assets/images/bg-home-hero.png')",
+        'home-hero': "url('/src/assets/images/bg-home-hero.png')",
+        'products-hero': "url('/src/assets/images/bg-products-hero.png')",
       },
       fontFamily: {
         bebas: ['Bebas', 'cursive'],

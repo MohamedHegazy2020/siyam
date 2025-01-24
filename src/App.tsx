@@ -5,6 +5,7 @@ import About from './components/Pages/About';
 import gsap from 'gsap';
 import {  ScrollTrigger } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
+import Products from './components/Pages/products';
 
 const App = () => {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -18,7 +19,7 @@ const App = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About/>} />
-            <Route path="products" element={<div>Products</div>} />
+            <Route path="products" element={<Products/>} />
             <Route path="capabilities" element={<div>Capabilities</div>} />
             <Route path="contact" element={<div>Contact</div>} />
           </Route>

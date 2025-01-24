@@ -28,8 +28,16 @@ import factroy600 from '../assets/images/factory600.png';
 import factroy700 from '../assets/images/factory700.png';
 import fan1 from '../assets/images/fan-1.png';
 import fan2 from '../assets/images/fan-2.png';
+import hunger from'../assets/images/vectors/hunger.png';
+import million from'../assets/images/vectors/1Million.png';
+import people from'../assets/images/vectors/people.png';
+import risingArrorw from '../assets/images/vectors/risingArrorw.png';
 export {
   factroy400,
+  hunger,
+  million,
+  people,
+  risingArrorw,
   fan1,
   fan2,
   factory100,
