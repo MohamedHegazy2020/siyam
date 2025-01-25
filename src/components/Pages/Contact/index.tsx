@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import GoogleMapReact from 'google-map-react';
 import styles from '../../../utils/styles';
 

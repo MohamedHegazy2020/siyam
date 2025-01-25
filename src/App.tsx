@@ -9,7 +9,6 @@ import Products from './components/Pages/products';
 import Contact from './components/Pages/Contact';
 import { useEffect } from 'react';
 import $ from 'jquery';
-import { log } from 'three/tsl';
 
 const App = () => {
   useEffect(() => {
