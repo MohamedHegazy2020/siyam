@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from '../../../utils/styles';
 import { dermatomeIcon, developmentIcon, documentIcon, medicalReportIcon, shippingIcon, wernchIcon } from '../../../constants';
 

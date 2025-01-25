@@ -2,14 +2,16 @@ import React, { useRef } from 'react'
 import styles from '../../../utils/styles';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import StarsCanvas from '../../canvas/Stars';
 
 const CounterSection = () => {
   return (
     <div
       className={
-        'bg-footer-texture grid grid-cols-2 md:grid-cols-4 gap-4 bg-cover bg-center bg-[#000000e0] ' + styles.padding
+        ' grid grid-cols-2 md:grid-cols-4 gap-4 bg-cover relative bg-center bg-[#000000e0] ' + styles.padding
       }
     >
+      <StarsCanvas/>
       <Counter maxNumber={1500} label={'Products'} />
       <Counter label={'experiance'} maxNumber={15} />
       <Counter label={'cliens'} maxNumber={1200} />

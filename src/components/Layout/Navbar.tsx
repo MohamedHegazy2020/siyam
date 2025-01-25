@@ -16,7 +16,8 @@ const Navbar = () => {
    
       tl.current = gsap.timeline()
         .to(scrollIndicatorRef.current, {
-          x: () => (100 - complition) + '%',
+          // x: () => (100 - complition) + '%',
+          width: () => (complition) + '%',
           duration: 1,
           ease: 'power2.inOut',
         })
@@ -24,7 +25,7 @@ const Navbar = () => {
   }, [complition])
 
   return (
-    <nav className="sticky top-0 w-full z-[100] overflow-hidden">
+    <nav className="sticky top-0 w-full z-[100] ">
       <div className="navbar bg-base-100 ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -33,7 +34,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content top-0 left-0 transition translate-x-1/2 bg-base-100 z-[200] rounded-box  mt-3 w-52 p-2 shadow"
             >
               {tabs.map((tab, index) => (
                 <li key={index}>

@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import { logoFull, tabs } from '../../constants';
+import StarsCanvas from '../canvas/Stars';
 
 export default function Footer() {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -56,12 +57,11 @@ export default function Footer() {
     <footer
       ref={footerRef}
       className={
-        styles.padding +
-        ' bg-accent font-light bg-footer-texture   footer md:grid-cols-5  font-montserrat text-base-100   p-10'
+        styles.padding + ' bg-accent font-light bg-opacity-90   footer md:grid-cols-5  font-montserrat text-base-100 relative  p-10'
       }
     >
       <aside className="md:col-span-2 px-5">
-        <img src={logoFull} alt="logo" className='w-1/2' />
+        <img src={logoFull} alt="logo" className="w-1/2" />
         <p>
           is specialized in developing and manufacturing OE, customized, and aftermarket, core and complete cooling
           products, radiators, charge air coolers, condensers, and cooling modules for all types of applications.
@@ -112,6 +112,8 @@ export default function Footer() {
           ))}
         </ul>
       </nav>
+
+      <StarsCanvas />
     </footer>
   );
 }

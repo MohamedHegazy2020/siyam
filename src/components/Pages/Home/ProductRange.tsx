@@ -1,6 +1,9 @@
 import { Radiators } from '../../../constants';
 import styles from '../../../utils/styles';
 import CardTilt from '../../blocks/CardTilt';
+import Model1Canvas from '../../canvas/Model1';
+import Model2Canvas from '../../canvas/Model2';
+import Model3Canvas from '../../canvas/Model3';
 
 const ProductRange = () => {
   const carouselItems = [
@@ -41,7 +44,7 @@ const ProductRange = () => {
                   alt={item.title}
                   className="w-full drop-shadow transition-shadow shadow-blue-800"
                 />
-                <div className='w-full flex flex-col items-center justify-center self-end'>
+                <div className="w-full flex flex-col items-center justify-center self-end">
                   <div className="w-full self-end h-5 flex justify-center items-center bg-gradient-radial-100 rounded-[50%] backdrop-blur-4xl" />
                   <h4 className="w-full self-end text-center font-bebas text-sm lg:text-lg ">{item.title}</h4>
                 </div>
@@ -50,6 +53,19 @@ const ProductRange = () => {
             </CardTilt>
           </div>
         ))}
+      </div>
+
+      <div className="w-full h-auto grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
+        <div className=" h-full py-2">
+          <Model1Canvas />
+        </div>
+
+        <div className=" h-full py-2">
+          <Model2Canvas />
+        </div>
+        <div className=" h-full py-2">
+          <Model3Canvas />
+        </div>
       </div>
     </section>
   );

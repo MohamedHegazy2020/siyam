@@ -56,6 +56,7 @@ const Contact = () => {
               defaultCenter={defaultProps.center}
               defaultZoom={defaultProps.zoom}
             >
+              {/* @ts-ignore */}
               <div lat={59.955413} lng={30.337844}/>
             </GoogleMapReact>
           </div>

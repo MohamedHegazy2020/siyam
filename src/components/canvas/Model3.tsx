@@ -1,16 +1,17 @@
-import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
+import { OrbitControls, Preload, useGLTF, useScroll } from '@react-three/drei';
 import CanvasLoader from './Loader';
 import { Canvas } from '@react-three/fiber';
-import { Suspense,  } from 'react';
+import { Suspense } from 'react';
+
+
+// Configuration for lights and model positions
 
 
 
-
-
-
-function Model1() {
-  const model1 = useGLTF('./GLB/PT-011/PT-011.glb'); // Ensure the path is correct
-
+function Model3() {
+  const model3 = useGLTF('./GLB/12364/12364.glb'); // Ensure the path is correct
+  const scroll = useScroll();
+  console.log(scroll);
 
   // Reference to the model
 
@@ -35,14 +36,14 @@ function Model1() {
     <>
       <ambientLight intensity={5} />
       <ambientLight intensity={2} />
-      <primitive object={model1.scene} scale={3} position-y={-2} rotation-y={0} />
+      <primitive object={model3.scene} scale={2} position-y={-1} rotation-y={0} />
     </>
   );
 }
 
-function Model1Canvas() {
+function Model3Canvas() {
   return (
-    <div className='w-full h-[500px] '>
+    <div className="w-full h-[500px] ">
       <Canvas
         shadows
         frameloop="demand"
@@ -52,12 +53,12 @@ function Model1Canvas() {
           fov: 45,
           near: 0.1,
           far: 200,
-          position: [-4, 3, 6],
+          position: [-4, 3, 5],
         }}
       >
         <Suspense fallback={<CanvasLoader />}>
           <OrbitControls autoRotate enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
-          <Model1 />
+          <Model3 />
         </Suspense>
         <Preload all />
       </Canvas>
@@ -65,4 +66,4 @@ function Model1Canvas() {
   );
 }
 
-export default Model1Canvas;
+export default Model3Canvas;

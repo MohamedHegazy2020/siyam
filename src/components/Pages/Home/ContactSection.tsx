@@ -38,7 +38,7 @@ const ContactSection = () => {
         </form>
       </div>
       <div className=" bg-vector-200 bg-no-repeat bg-center bg-contain md:p-6  ">
-        <div className="grid grid-cols-1 md:grid-cols-5 md:gap-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-5 md:gap-4 gap-2 ">
           {/* Main card on the left */}
           <div className="max-w-xs md:col-span-2">
             <div className="flex flex-col justify-between  p-4 border border-blue-400 rounded-lg bg-white shadow-md gap-3  ">

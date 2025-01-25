@@ -7,8 +7,17 @@ import {  ScrollTrigger } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
 import Products from './components/Pages/products';
 import Contact from './components/Pages/Contact';
+import { useEffect } from 'react';
+import $ from 'jquery';
+import { log } from 'three/tsl';
 
 const App = () => {
+  useEffect(() => {
+    $('canvas').on('webglcontextlost', (e) => {
+      console.log('WebGL Context Lost'); 
+      e.preventDefault();
+    });
+  });
   gsap.registerPlugin(ScrollTrigger, useGSAP);
   useGSAP(() => {
     gsap.from('img', {
@@ -19,10 +28,10 @@ const App = () => {
         end: 'bottom center',
         scrub: 1,
         toggleActions: 'play pause reset',
-        onEnter: () => gsap.to('img', { skew: 10 }),
-        onLeave: () => gsap.to('img', { skew: 0 }),
-        onEnterBack: () => gsap.to('img', { skew: 10 }),
-        onLeaveBack: () => gsap.to('img', { skew: 0 }),
+        onEnter: () => gsap.to('img', { skewY: 10 }),
+        onLeave: () => gsap.to('img', { skewY: 0 }),
+        onEnterBack: () => gsap.to('img', { skewY: 10 }),
+        onLeaveBack: () => gsap.to('img', { skewY: 0 }),
       },
     });
   })
