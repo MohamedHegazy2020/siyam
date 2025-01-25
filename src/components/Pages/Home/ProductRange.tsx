@@ -41,7 +41,10 @@ const ProductRange = () => {
                   alt={item.title}
                   className="w-full drop-shadow transition-shadow shadow-blue-800"
                 />
-                <h4 className="w-full self-end text-center font-bebas text-sm lg:text-lg ">{item.title}</h4>
+                <div className='w-full flex flex-col items-center justify-center self-end'>
+                  <div className="w-full self-end h-5 flex justify-center items-center bg-gradient-radial-100 rounded-[50%] backdrop-blur-4xl" />
+                  <h4 className="w-full self-end text-center font-bebas text-sm lg:text-lg ">{item.title}</h4>
+                </div>
                 {/* <p className='w-full self-end text-center text-xs' >High intensity</p> */}
               </div>
             </CardTilt>

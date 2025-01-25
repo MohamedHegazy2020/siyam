@@ -32,7 +32,19 @@ import hunger from'../assets/images/vectors/hunger.png';
 import million from'../assets/images/vectors/1Million.png';
 import people from'../assets/images/vectors/people.png';
 import risingArrorw from '../assets/images/vectors/risingArrorw.png';
+import developmentIcon from '../assets/images/vectors/development.png';
+import documentIcon from '../assets/images/vectors/document-file.png';
+import medicalReportIcon from '../assets/images/vectors/medical-report.png';
+import wernchIcon from '../assets/images/vectors/Wrench.png';
+import shippingIcon from '../assets/images/vectors/Shipping.png';
+import dermatomeIcon from '../assets/images/vectors/dermatome.png';
 export {
+  developmentIcon,
+  documentIcon,
+  medicalReportIcon,
+  wernchIcon,
+  shippingIcon,
+  dermatomeIcon,
   factroy400,
   hunger,
   million,

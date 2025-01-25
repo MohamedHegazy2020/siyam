@@ -22,6 +22,7 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(#00B2FF , white )',
+        'gradient-radial-100': 'radial-gradient(#212121 , transparent )',
         'gradient-linear': 'linear-gradient(to right, #005594, #D9212C)',
         'gradient-linear-100': 'linear-gradient(to right, #0099F7, #12F1E4)',
         'footer-texture': "url('/src/assets/images/background-texture.png')",
