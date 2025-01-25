@@ -1,6 +1,6 @@
 import GoogleMapReact from 'google-map-react';
+import styles from '../../../utils/styles';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const Contact = () => {
   const defaultProps = {
@@ -13,7 +13,7 @@ const Contact = () => {
 
   return (
     <>
-      <section className=" bg-[#CFDBE4] font-light">
+      <section className={styles.padding + " bg-[#CFDBE4] font-light min-h-screen"}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
           <div>
             <div>
@@ -56,7 +56,7 @@ const Contact = () => {
               defaultCenter={defaultProps.center}
               defaultZoom={defaultProps.zoom}
             >
-              <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />
+              <div lat={59.955413} lng={30.337844}/>
             </GoogleMapReact>
           </div>
         </div>
