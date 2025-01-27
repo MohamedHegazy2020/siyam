@@ -1,41 +1,12 @@
 import { factory100, factory200, factory300 } from '../../../constants';
 import styles from '../../../utils/styles';
+import ContactForm from '../../blocks/ContactForm';
 
 const ContactSection = () => {
   return (
     <section className={'bg-gradient-radial grid grid-cols-1 md:grid-cols-2 md:gap-10 gap-5 ' + styles.padding}>
       <div>
-        <form className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
-          <div className="flex flex-col px-2  ">
-            <label className="label font-semibold" htmlFor="name">
-              Name
-            </label>
-            <input type="text" name="name" id="name" className="input bg-primary input-bordered w-full " />
-          </div>
-          <div className="flex flex-col px-2 ">
-            <label className="label font-semibold" htmlFor="email">
-              Email
-            </label>
-            <input type="email" name="email" id="email" className="input bg-primary input-bordered w-full " />
-          </div>
-
-          <div className="flex flex-col md:col-span-2 px-2">
-            <label className="label font-semibold" htmlFor="phone">
-              Phone Number
-            </label>
-            <input type="tel" name="phone" id="phone" className="input bg-primary input-bordered w-full " />
-          </div>
-
-          <div className="flex flex-col md:col-span-2 px-2">
-            <label className="label font-semibold" htmlFor="message">
-              Message
-            </label>
-            <textarea rows={4} name="message" id="message" className="textarea bg-primary input-bordered w-full " />
-          </div>
-          <div className="flex justify-center  px-2 mt-4">
-            <button className="btn bg-gradient-to-r from-primary to-info w-full ">Send</button>
-          </div>
-        </form>
+       <ContactForm/>
       </div>
       <div className=" bg-vector-200 bg-no-repeat bg-center bg-contain md:p-6  ">
         <div className="grid grid-cols-1 md:grid-cols-5 md:gap-4 gap-2 ">

@@ -74,7 +74,7 @@ function Carousel({ children } : {children: React.ReactNode}) {
   
   return (
     
-      <Slider {...settings}>{children}</Slider>
+      <Slider  {...settings}>{children}</Slider>
    
   );
 }

@@ -5,6 +5,10 @@ import gsap from 'gsap';
 import StarsCanvas from '../../canvas/Stars';
 
 const CounterSection = () => {
+
+
+
+
   return (
     <div
       className={
@@ -30,13 +34,24 @@ export const Counter: React.FC<CounterProps> = ({ maxNumber, label }) => {
   const numberRef = useRef<HTMLSpanElement>(null);
 
   useGSAP(() => {
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        // markers: true,
+        trigger: numberRef.current,
+        start: 'top 90%',
+        end: 'bottom 10%',
+        toggleActions: 'restart pause restart pause',
+      },
+    });
+
+
+
     tl.fromTo(
       numberRef.current,
       { innerText: 0 },
       {
         innerText: maxNumber,
-        duration: 4,
+        duration: 1.25,
         ease: 'power1.inOut',
         snap: { innerText: 1 },
 
@@ -51,7 +66,7 @@ export const Counter: React.FC<CounterProps> = ({ maxNumber, label }) => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-2 text-white">
-      <span ref={numberRef} className="text-white text-base md:text-4xl" />
+      <span ref={numberRef} className="text-white font-bold text-2xl  md:text-4xl" />
       <span className="text-white text-sm md:text-base">{label}</span>
     </div>
   );

@@ -22,6 +22,7 @@ export default function Footer() {
 
         const tl = gsap.timeline({
           scrollTrigger: {
+            // markers: true,
             trigger: footerRef.current,
             start: 'top 90%',
             end: 'bottom 10%',
@@ -39,7 +40,7 @@ export default function Footer() {
 
             opacity: 1,
             y: 0,
-            duration: 0.9,
+            duration: 1,
             stagger: 0.4,
           }
         );

@@ -1,14 +1,79 @@
 import { Card } from 'react-daisyui';
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
 import styles from '../../../utils/styles';
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const WorkingWithUs = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const cardContainerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 90%',
+        end: 'bottom 10%',
+        toggleActions: 'restart pause restart pause',
+      },
+    });
+    tl.fromTo(
+      titleRef.current,
+      {
+        opacity: 0,
+        y: -50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+      }
+    );
+
+    const cards = Array.from(cardContainerRef.current?.children || []);
+    tl.fromTo(
+      cardContainerRef.current,
+      {
+        opacity: 0,
+        y: -50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+      },"<0.5"
+    );
+cards.forEach((card, index) => {
+  tl.fromTo(
+    card,
+    {
+      opacity: 0,
+      y: -50,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      delay: index * 0.2,
+    }
+  );
+});
+
+  });
+
   return (
     <>
-      <section className={'bg-section-200   ' + styles.padding}>
-        <h2 className="font-bebas text-2xl text-center text-white ">working with us Means</h2>
+      <section ref={containerRef} className={'bg-section-200   ' + styles.padding}>
+        <h2 ref={titleRef} className="font-bebas text-2xl text-center text-white ">
+          working with us Means
+        </h2>
 
-        <div className=" grid grid-cols-1 place-content-center md:grid-cols-6 justify-center items-center mt-8 gap-4">
+        <div
+          ref={cardContainerRef}
+          className=" grid grid-cols-1 place-content-center md:grid-cols-6 justify-center items-center mt-8 gap-4"
+        >
           <Card className="bg-white min-h-full max-w-full md:col-span-2 flex flex-col  items-center justify-around gap-5  p-5 md:p-10">
             <div className="flex justify-center items-center rounded-full bg-primary w-16 h-16">
               <Icon icon="material-symbols:manage-history" className="text-white" width="36" height="36" />

@@ -1,8 +1,55 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import GoogleMapReact from 'google-map-react';
 import styles from '../../../utils/styles';
+import ContactForm from '../../blocks/ContactForm';
+import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
+import { Link } from 'react-router-dom';
+import { useGSAP } from '@gsap/react';
+import { useRef } from 'react';
+import gsap from 'gsap';
 
+const ContactCards = () => {
+  return (
+    <>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+        <div className="flex gap-4 items-center">
+          <div>
+            <Icon icon="line-md:phone-call-loop" width="32" height="32" />
+          </div>
+          <div className="flex flex-col">
+            <h6 className="font-bold uppercase">Phone</h6>
+            <Link className="text-red-400" to="tel:+03 5432 1234">
+              03 5432 1234
+            </Link>
+          </div>
+        </div>
+        <div className="flex gap-4 items-center">
+          <div>
+            <Icon icon="la:fax" width="32" height="32" />
+          </div>
+          <div className="flex flex-col">
+            <h6 className="font-bold uppercase">Phone</h6>
+            <Link className="text-red-400" to="tel:+03 5432 1234">
+              03 5432 1234
+            </Link>
+          </div>
+        </div>
 
+        <div className="flex gap-4 items-center">
+          <div>
+            <Icon icon="line-md:email-opened-twotone" width="32" height="32" />
+          </div>
+          <div className="flex flex-col">
+            <h6 className="font-bold uppercase">email</h6>
+            <Link className="text-red-400" to="mailto:info@marcc.com.au">
+              info@marcc.com.au
+            </Link>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 const Contact = () => {
   const defaultProps = {
     center: {
@@ -12,53 +59,114 @@ const Contact = () => {
     zoom: 11,
   };
 
+  const containerRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
+  const contactCardsRef = useRef<HTMLDivElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const mapRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      ease: 'back.out(1.7)',
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 90%',
+        end: 'bottom 10%',
+
+        toggleActions: 'restart pause restart pause',
+      },
+    });
+    tl.fromTo(
+      titleRef.current,
+      {
+        opacity: 0,
+        x: -50,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+      }
+    );
+
+    tl.fromTo(
+      subtitleRef.current,
+      {
+        opacity: 0,
+        x: -50,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+      }
+    );
+    tl.fromTo(
+      formRef.current,
+      {
+        opacity: 0,
+        x: -50,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+      }
+    );
+    tl.fromTo(
+      contactCardsRef.current,
+      {
+        opacity: 0,
+        x: -50,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+      }
+    );
+
+    tl.fromTo(
+      mapRef.current,
+      {
+        opacity: 0,
+        x: -50,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+      }
+    );
+  });
+
   return (
     <>
-      <section className={styles.padding + " bg-[#CFDBE4] font-light min-h-screen"}>
+      <section ref={containerRef} className={styles.padding + ' bg-[#CFDBE4] font-light min-h-screen'}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
-          <div>
-            <div>
-              <form className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
-                <div className="flex flex-col px-2  ">
-                  <label className="label " htmlFor="name">
-                    Name
-                  </label>
-                  <input type="text" name="name" id="name" className="input  input-bordered w-full " />
-                </div>
-                <div className="flex flex-col px-2 ">
-                  <label className="label " htmlFor="email">
-                    Email
-                  </label>
-                  <input type="email" name="email" id="email" className="input  input-bordered w-full " />
-                </div>
-
-                <div className="flex flex-col md:col-span-2 px-2">
-                  <label className="label " htmlFor="phone">
-                    Phone Number
-                  </label>
-                  <input type="tel" name="phone" id="phone" className="input  input-bordered w-full " />
-                </div>
-
-                <div className="flex flex-col md:col-span-2 px-2">
-                  <label className="label " htmlFor="message">
-                    Message
-                  </label>
-                  <textarea rows={4} name="message" id="message" className="textarea  input-bordered w-full " />
-                </div>
-                <div className="flex justify-center  px-2 mt-4">
-                  <button className="btn bg-gradient-to-r from-primary to-info w-full ">Send</button>
-                </div>
-              </form>
+          <div className="flex flex-col justify-center">
+            <h1 ref={titleRef} className="font-bebas text-4xl md:text-6xl">
+              Get in <span className="text-red-700">Touch</span>
+            </h1>
+            <p ref={subtitleRef} className="my-8 font-bold">
+              Have questions or need assistance? Reach out to us—we’re here to help!
+            </p>
+            <div ref={formRef}>
+              <ContactForm inputsTransParent />
+            </div>
+            <div ref={contactCardsRef} className="p-5 mt-10">
+              <ContactCards />
             </div>
           </div>
-          <div className=" w-full h-full p-6">
+          <div ref={mapRef} className=" w-full h-full p-6">
             <GoogleMapReact
               bootstrapURLKeys={{ key: '' }}
               defaultCenter={defaultProps.center}
               defaultZoom={defaultProps.zoom}
             >
               {/* @ts-ignore */}
-              <div lat={59.955413} lng={30.337844}/>
+              <div lat={59.955413} lng={30.337844} />
             </GoogleMapReact>
           </div>
         </div>
