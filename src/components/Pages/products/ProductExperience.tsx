@@ -1,4 +1,4 @@
-import ImageContentSection from '../../blocks/ImageContentSection';
+import ImageContentSection from '../../blocks/ImageContentSection/ImageContentSection';
 import { factroy700 } from '../../../constants';
 
 const ProductExperience = () => {
@@ -10,6 +10,6 @@ const ProductExperience = () => {
       or exceed OEM standards
     </ImageContentSection>
   );
-}
+};
 
-export default ProductExperience
+export default ProductExperience;

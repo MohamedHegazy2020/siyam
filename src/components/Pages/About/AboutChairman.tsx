@@ -1,6 +1,5 @@
-
 import { chairman, qualityPolicy } from '../../../constants';
-import ImageContentSection from '../../blocks/ImageContentSection';
+import ImageContentSection from '../../blocks/ImageContentSection/ImageContentSection';
 import PrimaryBtn from '../../blocks/PrimaryBtn';
 
 export default function AboutChairman() {

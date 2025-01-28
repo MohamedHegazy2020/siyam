@@ -1,6 +1,6 @@
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
 import { group1, group2 } from '../../../constants';
-import ImageContentSection from '../../blocks/ImageContentSection';
+import ImageContentSection from '../../blocks/ImageContentSection/ImageContentSection';
 export default function VisionAndMission() {
   return (
     <section>
@@ -25,7 +25,7 @@ export default function VisionAndMission() {
             <Icon icon="solar:hand-stars-linear" className="text-white" width="36" height="36" />
           </div>
           <div className="px-4 flex flex-col gap-4">
-            <h5 className='font-bold'>Customer Satisfaction</h5>
+            <h5 className="font-bold">Customer Satisfaction</h5>
             <p>
               We believe that the improvement in the industry starts with developing the skills of the employees.
               Therefore, along developing products and technology, we continuously invest in developing the skills of
@@ -33,12 +33,12 @@ export default function VisionAndMission() {
             </p>
           </div>
         </div>
-        <div className="flex justify-center items-start md:col-span-2"> 
+        <div className="flex justify-center items-start md:col-span-2">
           <div className="w-96 bg-no-repeat bg-vector-star bg-contain bg-center flex items-center justify-center">
             <Icon icon="stash:people-group" className="text-white" width="36" height="36" />
           </div>
           <div className="px-4 flex flex-col gap-4">
-            <h5 className='font-bold'>Developing People</h5>
+            <h5 className="font-bold">Developing People</h5>
             <p>
               We believe that the improvement in the industry starts with developing the skills of the employees.
               Therefore, along developing products and technology, we continuously invest in developing the skills of
@@ -51,7 +51,7 @@ export default function VisionAndMission() {
             <Icon icon="lets-icons:lamp-light" className="text-white" width="36" height="36" />
           </div>
           <div className="px-4 flex flex-col gap-4">
-            <h5 className='font-bold'>Continous Improvement</h5>
+            <h5 className="font-bold">Continous Improvement</h5>
             <p>
               We believe that the improvement in the industry starts with developing the skills of the employees.
               Therefore, along developing products and technology, we continuously invest in developing the skills of
