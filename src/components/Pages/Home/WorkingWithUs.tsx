@@ -16,7 +16,8 @@ const WorkingWithUs = () => {
         trigger: containerRef.current,
         start: 'top 90%',
         end: 'bottom 10%',
-        toggleActions: 'restart pause restart pause',
+        toggleActions: 'restart pause restart reverse',
+        
       },
     });
     tl.fromTo(
@@ -56,7 +57,7 @@ cards.forEach((card, index) => {
       opacity: 1,
       y: 0,
       duration: 0.5,
-      delay: index * 0.2,
+      delay: index * 0.1,
     }
   );
 });
@@ -65,7 +66,7 @@ cards.forEach((card, index) => {
 
   return (
     <>
-      <section ref={containerRef} className={'bg-section-200   ' + styles.padding}>
+      <section ref={containerRef} className={'bg-section-200 bg-cover  ' + styles.padding}>
         <h2 ref={titleRef} className="font-bebas text-2xl text-center text-white ">
           working with us Means
         </h2>

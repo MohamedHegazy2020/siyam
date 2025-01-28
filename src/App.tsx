@@ -18,7 +18,8 @@ const App = () => {
     });
   });
   gsap.registerPlugin(ScrollTrigger, useGSAP);
- 
+
+  
 
   return (
     <>

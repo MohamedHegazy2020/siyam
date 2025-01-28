@@ -135,7 +135,7 @@ const GenerationsMembers = () => {
 
   return (
     <>
-      <div ref={containerRef} className={'bg-section-300 bg-center bg-cover bg-no-repeat' + styles.padding}>
+      <div ref={containerRef} className={'bg-section-300  bg-cover bg-no-repeat' + styles.padding}>
         <div className="flex flex-col items-center justify-center py-4 gap-4">
           <p ref={subTitleRef} className="text-center text-sm text-white font-light">
             Generations Members

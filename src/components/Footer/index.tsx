@@ -10,55 +10,47 @@ import StarsCanvas from '../canvas/Stars';
 export default function Footer() {
   const footerRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      const footerChildren = footerRef.current?.children;
-      if (!footerChildren) return;
+  useGSAP(() => {
+    const footerChildren = footerRef.current?.children;
+    if (!footerChildren) return;
 
-      const footerChildrenArray = Array.from(footerChildren);
-      footerChildrenArray.forEach((child) => {
-        const childChildren = child.children;
-        const childChildrenArray = Array.from(childChildren);
+    const footerChildrenArray = Array.from(footerChildren);
+    footerChildrenArray.forEach((child) => {
+      const childChildren = child.children;
+      const childChildrenArray = Array.from(childChildren);
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            // markers: true,
-            trigger: footerRef.current,
-            start: 'top 90%',
-            end: 'bottom 10%',
-            toggleActions: 'restart pause reset',
-          },
-        });
-
-        tl.fromTo(
-          childChildrenArray,
-          {
-            opacity: 0,
-            y: -50,
-          },
-          {
-
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            stagger: 0.4,
-          }
-        );
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          // markers: true,
+          trigger: footerRef.current,
+          start: 'top 90%',
+          end: 'bottom 10%',
+          toggleActions: 'restart pause reset',
+        },
       });
-    
-    
-   
-    
-    },
-    
-    [footerRef]
-  );
+
+      tl.fromTo(
+        childChildrenArray,
+        {
+          opacity: 0,
+          y: -50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.4,
+        }
+      );
+    });
+  }, [footerRef]);
 
   return (
     <footer
       ref={footerRef}
       className={
-        styles.padding + ' bg-accent font-light bg-opacity-90   footer md:grid-cols-5  font-montserrat text-base-100 relative  p-10'
+        styles.padding +
+        ' bg-accent font-light bg-opacity-90 grid-flow-row  footer md:grid-cols-5 grid-cols-1  font-montserrat text-base-100 relative grid-rows-auto p-10'
       }
     >
       <aside className="md:col-span-2 px-5">
@@ -113,9 +105,13 @@ export default function Footer() {
           ))}
         </ul>
       </nav>
-
+      <div className="border-t font-bold pt-4 mt-4 w-full md:col-span-5 flex justify-between">
+        <p>
+          Copyright &copy; <span className="text-secondary">2024</span>
+        </p>
+        <p>Siyam Industrial Group. All rights reserved.</p>
+      </div>
       <StarsCanvas />
     </footer>
   );
 }
-

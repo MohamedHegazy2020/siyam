@@ -1,12 +1,47 @@
 import styles from '../../../utils/styles';
 import { dermatomeIcon, developmentIcon, documentIcon, medicalReportIcon, shippingIcon, wernchIcon } from '../../../constants';
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const ProductionSets = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const setsContainerRef = useRef<HTMLDivElement>(null); 
+
+useGSAP(() => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: containerRef.current,
+      start: 'top 90%',
+      end: 'bottom 10%',
+      toggleActions: 'restart pause restart pause',
+    }
+  })
+  const sets = Array.from(setsContainerRef.current?.children || []);
+  sets.forEach((set) => {
+    tl.fromTo(
+      set,
+      {
+        opacity: 0,
+        y: -50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.75,
+        stagger: 0.25
+      }
+      
+  )
+  })
+
+})
+
   return (
-    <section className={'bg-section-200 ' + styles.padding}>
-      <div className="grid grid-cols-1 gap-x-4 md:grid-cols-2 lg:grid-cols-3">
-        <div className="text-white border-l-2 relative border-dashed px-6">
-          <div className="flex justify-center items-center h-8 w-8 bg-white rounded-full border border-secondary border-dashed absolute left-0 transform -translate-x-1/2">
+    <section ref={containerRef} className={'bg-section-200 ' + styles.padding}>
+      <div ref={setsContainerRef} className="grid grid-cols-1 gap-x-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="text-white border-l-2 relative py-2 border-dashed px-6">
+          <div className="flex justify-center items-center h-8 w-8 bg-white rounded-full border border-secondary border-dashed absolute  left-0 top-0 transform -translate-x-1/2">
             <img src={developmentIcon} alt="ico" />
           </div>
           <h4 className="font-bebas text-2xl pb-3  ">Siyam Development</h4>
@@ -16,8 +51,8 @@ const ProductionSets = () => {
             facilities, ensure our customers obtain the optimum solution at all times.
           </p>
         </div>
-        <div className="text-white border-l-2 relative border-dashed px-6">  
-          <div className="flex justify-center items-center h-8 w-8 bg-white rounded-full border border-secondary border-dashed absolute left-0 transform -translate-x-1/2">
+        <div className="text-white border-l-2 relative py-2 border-dashed px-6">  
+          <div className="flex justify-center items-center h-8 w-8 bg-white rounded-full border border-secondary border-dashed absolute left-0 top-0 transform -translate-x-1/2">
             <img src={shippingIcon} alt="ico" />
           </div>
           <h4 className="font-bebas text-2xl pb-3  ">Siyam Material</h4>
@@ -27,8 +62,8 @@ const ProductionSets = () => {
             Original Equipment Manufacturer's specifications.
           </p>
         </div>
-        <div className="text-white border-l-2 relative border-dashed px-6">
-          <div className="flex justify-center items-center h-8 w-8 bg-white rounded-full border border-secondary border-dashed absolute left-0 transform -translate-x-1/2">
+        <div className="text-white border-l-2 relative py-2 border-dashed px-6">
+          <div className="flex justify-center items-center h-8 w-8 bg-white rounded-full border border-secondary border-dashed absolute left-0 top-0 transform -translate-x-1/2">
             <img src={dermatomeIcon} alt="ico" />
           </div>
           <h4 className="font-bebas text-2xl pb-3  ">Siyam Dedication</h4>
@@ -38,8 +73,8 @@ const ProductionSets = () => {
             producing cooling products.
           </p>
         </div>
-        <div className="text-white border-l-2 relative border-dashed px-6">
-          <div className="flex justify-center items-center h-8 w-8 bg-white rounded-full border border-secondary border-dashed absolute left-0 transform -translate-x-1/2">
+        <div className="text-white border-l-2 relative py-2 border-dashed px-6">
+          <div className="flex justify-center items-center h-8 w-8 bg-white rounded-full border border-secondary border-dashed absolute left-0 top-0 transform -translate-x-1/2">
             <img src={medicalReportIcon} alt="ico" />
           </div>
           <h4 className="font-bebas text-2xl pb-3  ">Siyam Differentiation</h4>
@@ -49,8 +84,8 @@ const ProductionSets = () => {
           </p>
         </div>
 
-        <div className="text-white border-l-2 relative border-dashed px-6">
-          <div className="flex justify-center items-center h-8 w-8 bg-white rounded-full border border-secondary border-dashed absolute left-0 transform -translate-x-1/2">
+        <div className="text-white border-l-2 relative py-2 border-dashed px-6">
+          <div className="flex justify-center items-center h-8 w-8 bg-white rounded-full border border-secondary border-dashed absolute left-0 top-0 transform -translate-x-1/2">
             <img src={wernchIcon} alt="ico" />
           </div>
           <h4 className="font-bebas text-2xl pb-3  ">Siyam Tooling</h4>
@@ -60,8 +95,8 @@ const ProductionSets = () => {
           </p>
         </div>
 
-        <div className="text-white border-l-2 relative border-dashed px-6">
-          <div className="flex justify-center items-center h-8 w-8 bg-white rounded-full border border-secondary border-dashed absolute left-0 transform -translate-x-1/2">
+        <div className="text-white border-l-2 relative py-2 border-dashed px-6">
+          <div className="flex justify-center items-center h-8 w-8 bg-white rounded-full border border-secondary border-dashed absolute left-0 top-0 transform -translate-x-1/2">
             <img src={documentIcon } alt="ico" />
           </div>
           <h4 className="font-bebas text-2xl pb-3  ">Siyam Presence</h4>

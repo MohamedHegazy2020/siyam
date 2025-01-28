@@ -90,22 +90,22 @@ export default function ImageContentSection({
       },
       '-=0.5'
     );
-    tl.fromTo(
-      childrenRef.current,
-      {
-        opacity: 0,
-        x: 50,
-      },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        stagger: {
-          each: 0.2,
+    const childs = Array.from(childrenRef.current?.children || []);
+    childs.forEach((child, index) => {
+      tl.fromTo(
+        child,
+        {
+          opacity: 0,
+          y: 50,
         },
-      },
-      '-=0.5'
-    );
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+        },
+        `+=${index * 0.2}`
+      );
+    });
   });
 
   return (

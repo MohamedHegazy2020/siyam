@@ -9,7 +9,6 @@ const Stars = () => {
   const ref = useRef<Points>(null);
 
   const [sphere] = useState(() => random.inSphere(new Float32Array(6000), { radius: 1.2 }));
-  console.log(sphere);
   // @ts-ignore
   useFrame((state, delta) => {
     // @ts-ignore
@@ -31,7 +30,7 @@ const Stars = () => {
 const StarsCanvas = () => {
   return (
     <div className="w-full h-auto absolute inset-0 z-[-1]">
-      <Canvas camera={{ position: [0, 0, 1] }}>
+      <Canvas camera={{ position: [0, 0,0] }}>
         <Suspense fallback={null}>
           <Stars />
         </Suspense>

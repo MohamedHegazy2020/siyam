@@ -1,4 +1,4 @@
-import { OrbitControls, Preload, useGLTF, useScroll } from '@react-three/drei';
+import { OrbitControls, Preload, useGLTF, } from '@react-three/drei';
 import CanvasLoader from './Loader';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
@@ -10,8 +10,6 @@ import { Suspense } from 'react';
 
 function Model3() {
   const model3 = useGLTF('./GLB/12364/12364.glb'); // Ensure the path is correct
-  const scroll = useScroll();
-  console.log(scroll);
 
   // Reference to the model
 
