@@ -120,4 +120,5 @@ export const tabs = [
   { name: 'Contact', path: '/contact' },
   { name: 'Products', path: '/products' },
   { name: 'Capabilities', path: '/capabilities' },
+  { name: 'Blogs', path: '/blogs' },
 ];

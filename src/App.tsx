@@ -10,6 +10,7 @@ import Contact from './components/Pages/Contact';
 import { useEffect } from 'react';
 import $ from 'jquery';
 import Capabilities from './components/Pages/Capabilities';
+import Blogs from './components/Pages/blogs';
 
 const App = () => {
   useEffect(() => {
@@ -30,8 +31,9 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="products" element={<Products />} />
-            <Route path="capabilities" element={<Capabilities/>} />
+            <Route path="capabilities" element={<Capabilities />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="blogs" element={<Blogs />} />
           </Route>
         </Routes>
       </BrowserRouter>

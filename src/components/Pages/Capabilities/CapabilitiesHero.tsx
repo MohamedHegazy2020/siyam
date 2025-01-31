@@ -1,4 +1,4 @@
-import  { useRef } from 'react';
+import { useRef } from 'react';
 import PrimaryGradientBtn from '../../blocks/Buttons/PrimaryGradientBtn';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -8,6 +8,7 @@ const CapabilitiesHero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const subTitleRef = useRef<HTMLParagraphElement>(null);
+  const HeroBtn = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     gsap.registerPlugin(TextPlugin);
@@ -31,13 +32,13 @@ const CapabilitiesHero = () => {
           newClass: 'bg-gradient-linear bg-clip-text text-transparent',
           delimiter: '',
         },
-        duration: 3,
+        duration: 2,
         ease: 'linear',
         repeat: -1,
         repeatDelay: 1,
         yoyo: true,
       },
-      '+=0.2'
+      '-=0.75'
     );
 
     tl.fromTo(
@@ -52,6 +53,21 @@ const CapabilitiesHero = () => {
       },
       '+=0.75'
     );
+
+    tl.fromTo(
+      HeroBtn.current,
+      {
+        y: -50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+      },
+      '+=0.75'
+    );
+      
+      
   });
 
   return (
@@ -65,7 +81,9 @@ const CapabilitiesHero = () => {
           <p ref={subTitleRef} className="mb-5 text-white">
             All custom engineered heat transfer products are designed and manufactured in Toronto by Sutton Stromart
           </p>
-          <PrimaryGradientBtn  rounded="rounded">Expolre</PrimaryGradientBtn>
+          <div ref={HeroBtn}>
+            <PrimaryGradientBtn rounded="rounded">Expolre</PrimaryGradientBtn>
+          </div>
         </div>
       </div>
     </div>

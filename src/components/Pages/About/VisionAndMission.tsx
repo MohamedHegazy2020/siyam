@@ -31,7 +31,7 @@ export default function VisionAndMission() {
       }
     );
     const childs = Array.from(tailingDivRef.current?.children || []);
-    childs.forEach((child, index) => {
+    childs.forEach((child) => {
       tl.from(child, {
         opacity: 0,
         y: 50,
