@@ -38,7 +38,7 @@ const ImagesRowSection = ({
     });
   });
   return (
-    <div ref={imagesRef} className={`grid grid-cols-2 max-w-7xl mx-auto md:grid-cols-${images.length} gap-4`}>
+    <div ref={imagesRef} className={`grid grid-cols-2 max-w-7xl mx-auto md:grid-cols-${images.length>=4?4:images.length} gap-4`}>
       {images.map((image, index) => (
         <div key={index}>
           <img src={image} alt="image" className="w-full max-w-xl " />

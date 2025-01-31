@@ -29,7 +29,6 @@ export default {
         'property-1': "url('/src/assets/images/property1.png')",
         'section-100': "url('/src/assets/images/bg-section-100.png')",
         'section-200': "url('/src/assets/images/bg-section-200.png')",
-
         'section-300': "url('/src/assets/images/bg-section-300.png')",
         'section-400': "url('/src/assets/images/bg-section-400.png')",
         'vector-100': "url('/src/assets/images/vector-100.png')",
@@ -37,6 +36,7 @@ export default {
         'vector-star': "url('/src/assets/images/vector-star.png')",
         'home-hero': "url('/src/assets/images/bg-home-hero.png')",
         'products-hero': "url('/src/assets/images/bg-products-hero.png')",
+        'capabilities-hero': "url('/src/assets/images/bg-capabilities-hero.png')",
       },
       fontFamily: {
         bebas: ['Bebas', 'cursive'],

@@ -1,7 +1,7 @@
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
-import PrimaryBtn from '../../blocks/PrimaryBtn';
 import styles from '../../../utils/styles';
 import { Link } from 'react-router-dom';
+import PrimaryGradientBtn from '../../blocks/Buttons/PrimaryGradientBtn';
 
 export default function Hero() {
   return (
@@ -17,8 +17,8 @@ export default function Hero() {
             Leaders In Manufacturing Engine Cooling Products
           </p>
           <div className="flex md:flex-row flex-col  gap-4 ">
-            <PrimaryBtn>Explore</PrimaryBtn>
-            <PrimaryBtn outlined>More Info</PrimaryBtn>
+            <PrimaryGradientBtn >Explore</PrimaryGradientBtn>
+            <button className="btn btn-outline text-white" >More Info</button>
           </div>
           <div className="grid grid-flow-col gap-4 mt-6">
             <Link className="link link-hover text-white " to="#">

@@ -3,8 +3,8 @@ import { usersIcon } from '../../../constants';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
-import {  ScrollTrigger, TextPlugin } from 'gsap/all';
-import PrimaryBtn from '../../blocks/PrimaryBtn';
+import { ScrollTrigger, TextPlugin } from 'gsap/all';
+import PrimaryGradientBtn from '../../blocks/Buttons/PrimaryGradientBtn';
 export default function AboutHero() {
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(TextPlugin);
@@ -78,10 +78,12 @@ export default function AboutHero() {
             types of applications. For over 30 years, we have distinguished ourselves by providing high quality
             products, with superior services, delivered on-time and at a competitive price.
           </p>
-          <PrimaryBtn rounded>
+          <PrimaryGradientBtn rounded='rounded-full'>
             <Icon icon="lets-icons:video-fill" width="24" height="24" />
             Get Started
-          </PrimaryBtn>
+          </PrimaryGradientBtn> 
+          
+         
           <div ref={userIconRef} className="flex items-center justify-center mt-5">
             <img src={usersIcon} alt="user icons" className="" />
             <p className="text-white ml-2 text-2xl font-bold">+100k Users</p>

@@ -38,7 +38,19 @@ import medicalReportIcon from '../assets/images/vectors/medical-report.png';
 import wernchIcon from '../assets/images/vectors/Wrench.png';
 import shippingIcon from '../assets/images/vectors/shipping.png';
 import dermatomeIcon from '../assets/images/vectors/dermatome.png';
+import quality1 from '../assets/images/quality-1.png';
+import quality2 from '../assets/images/quality-2.png';
+import quality3 from '../assets/images/quality-3.png';
+import quality4 from '../assets/images/quality-4.png';
 export {
+
+quality1,
+quality2, 
+quality3,
+quality4,
+
+
+
   developmentIcon,
   documentIcon,
   medicalReportIcon,
