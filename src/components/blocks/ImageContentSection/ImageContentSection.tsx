@@ -111,7 +111,7 @@ export default function ImageContentSection({
   });
 
   return (
-    <div ref={containerRef} className={backgroundClassName + ` ${styles.paddingY} ${padding ? styles.paddingX : ''}`}>
+    <div ref={containerRef} className={backgroundClassName + ` bg-cover ${styles.paddingY} ${padding ? styles.paddingX : ''}`}>
       <div className={'  max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 bg-center '}>
         <div className={`flex items-center w-full   order-last  ${imageLast ? 'md:order-last' : 'md:order-first'} `}>
           <img className="w-full max-w-xl" ref={imageRef} src={image} alt={title} />

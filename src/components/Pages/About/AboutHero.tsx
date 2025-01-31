@@ -13,51 +13,105 @@ export default function AboutHero() {
   const heroSubText = useRef<HTMLDivElement>(null);
   const heroGredientText = useRef<HTMLDivElement>(null);
   const userIconRef = useRef<HTMLDivElement>(null);
+  const heroBtn = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    gsap.from(container.current, {
-      opacity: 0,
-      duration: 1.2,
-      y: 100,
-      ease: 'power2.inOut',
-    });
-    gsap.from(heroText.current, {
-      delay: 0.6,
-      duration: 2,
-      text: 'Syam Industrial Group',
-      ease: 'power2.inOut',
-    });
-    gsap.from(heroSubText.current, {
-      delay: 0.5,
-      duration: 3,
-      text: 'This is the new text',
-      ease: 'power2.inOut',
-    });
     const words = ['Developing Career Experts', 'Talent customized Experts', 'Talent Career aftermarket'];
-    let counter = 0;
-    gsap.to(heroGredientText.current, {
-      delay: 2,
-      duration: 3,
-      repeat: -1,
-      text: words[counter % words.length],
-      ease: 'power2.inOut',
-
-      onComplete: () => {
-        counter++;
-        gsap.to(heroGredientText.current, {
-          text: words[counter % words.length],
-          overwrite: true,
-        });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: 'top 90%',
+        end: 'bottom 10%',
+        toggleActions: 'restart pause restart pause',
       },
     });
 
-    gsap.from(userIconRef.current, {
-      opacity: 0,
-      delay: 2.5,
-      y: 100,
-      duration: 1.5,
-      ease: 'power2.inOut',
+    tl.fromTo(
+      heroText.current,
+      {
+        opacity: 0,
+        y: -50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+      }
+    );
+
+    tl.fromTo(
+      heroSubText.current,
+      {
+        opacity: 0,
+        y: -50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+      }
+    );
+
+    tl.fromTo(
+      heroBtn.current,
+      {
+        opacity: 0,
+        y: -50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+      }
+    );
+
+ tl.fromTo(
+      userIconRef.current,
+      {
+        opacity: 0,
+        y: -50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+      }
+    );
+
+
+
+
+
+
+    words.forEach((word, index) => {
+      tl.fromTo(
+        heroGredientText.current,
+        {
+          text: {
+            value: '',
+            newClass: 'bg-gradient-linear bg-clip-text text-transparent',
+          },
+        },
+        {
+          text: {
+            value: word,
+            newClass: 'bg-gradient-linear bg-clip-text text-transparent',
+          },
+          duration: 3,
+          ease: 'linear',
+          repeat: -1,
+          repeatDelay: 1,
+         
+        },
+        index * 3 // Delay each word by 3 seconds
+      );
     });
+
+
+
+
+
+
   }, []);
   return (
     <div ref={container} className="hero min-h-screen bg-property-1">
@@ -68,7 +122,7 @@ export default function AboutHero() {
             Siyam Industrial Group is specialized in{' '}
             <span
               ref={heroGredientText}
-              className="text-transparent bg-gradient-to-r from-secondary to-primary bg-clip-text"
+              className="text-transparent block bg-gradient-to-r my-2 from-secondary to-primary bg-clip-text"
             >
               Developing Career Experts
             </span>
@@ -78,12 +132,12 @@ export default function AboutHero() {
             types of applications. For over 30 years, we have distinguished ourselves by providing high quality
             products, with superior services, delivered on-time and at a competitive price.
           </p>
-          <PrimaryGradientBtn rounded='rounded-full'>
-            <Icon icon="lets-icons:video-fill" width="24" height="24" />
-            Get Started
-          </PrimaryGradientBtn> 
-          
-         
+          <div ref={heroBtn}>
+            <PrimaryGradientBtn rounded="rounded-full">
+              <Icon icon="lets-icons:video-fill" width="24" height="24" />
+              Get Started
+            </PrimaryGradientBtn>
+          </div>
           <div ref={userIconRef} className="flex items-center justify-center mt-5">
             <img src={usersIcon} alt="user icons" className="" />
             <p className="text-white ml-2 text-2xl font-bold">+100k Users</p>

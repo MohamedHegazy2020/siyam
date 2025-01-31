@@ -1,5 +1,5 @@
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
-import { logo, tabs } from '../../constants';
+import {  logoFull, tabs } from '../../constants';
 import { Link } from 'react-router-dom';
 import useScrollProgress from '../../hooks/useScrollProgress';
 import {  useRef } from 'react';
@@ -43,8 +43,8 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-          <Link to="/" className="navbar-brand lg:w-24 w-20 hover:scale-105 transition-transform duration-300">
-            <img src={logo} alt="logo" className="w-full" />
+          <Link to="/" className="navbar-brand lg:w-36 w-20 hover:scale-105 transition-transform duration-300">
+            <img src={logoFull} alt="logo" className="w-full" />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

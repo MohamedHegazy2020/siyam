@@ -22,6 +22,9 @@ import prodDev1 from '../assets/images/prodDev1.png';
 import prodDev2 from '../assets/images/prodDev2.png';
 import prodDev3 from '../assets/images/prodDev3.png';
 import prodDev4 from '../assets/images/prodDev4.png';
+import testVal2 from '../assets/images/testVal2.png';
+import testVal3 from '../assets/images/testVal3.png';
+
 import factory100 from '../assets/images/factory100.png';
 import factory200 from '../assets/images/factory200.png';
 import factory300 from '../assets/images/factory300.png';
@@ -49,11 +52,20 @@ import assemblyLine from '../assets/images/vectors/assemblyLine.png';
 import manufacturing from '../assets/images/vectors/manufacturing.png';
 import heavyMachinery from '../assets/images/vectors/heavyMachinery.png';
 import smartHouse from '../assets/images/vectors/smartHouse.png';
+import qc1 from '../assets/images/Qc1.png';
+import qc2 from '../assets/images/Qc2.png';
+import qc3 from '../assets/images/Qc3.png';
+import rawMaterial1 from '../assets/images/rawMaterial.png';
+import rawMaterial2 from '../assets/images/rawMaterial2.png';
 export {
   quality1,
   quality2,
   quality3,
   quality4,
+  rawMaterial1,rawMaterial2,
+  qc1,
+  qc2,
+  qc3,
   assemblyLine,
   manufacturing,
   heavyMachinery,
@@ -62,6 +74,8 @@ export {
   prodDev2,
   prodDev3,
   prodDev4,
+  testVal2,
+  testVal3,
   developmentIcon,
   documentIcon,
   medicalReportIcon,

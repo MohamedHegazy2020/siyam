@@ -3,6 +3,9 @@ import CapabilitiesHero from './CapabilitiesHero'
 import QualityAndTestingSection from './QualityAndTestingSection'
 import CapabilitiesCategories from './CapabilitiesCategories';
 import ProductDevelopment from './ProductDevelopment';
+import TestingAndValidaitingSection from './TestingAndValidaitingSection';
+import OurQualityControl from './OurQualityControl';
+import RawMaterialSection from './RawMaterialSection';
 
 const Capabilities = () => {
   return (
@@ -10,7 +13,10 @@ const Capabilities = () => {
       <CapabilitiesHero />
       <QualityAndTestingSection />
       <CapabilitiesCategories />
-      <ProductDevelopment/>
+      <ProductDevelopment />
+      <TestingAndValidaitingSection />
+      <OurQualityControl />
+      <RawMaterialSection/>
     </>
   );
 }
