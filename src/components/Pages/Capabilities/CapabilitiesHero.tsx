@@ -37,7 +37,7 @@ const CapabilitiesHero = () => {
         repeatDelay: 1,
         yoyo: true,
       },
-      '+=0.5'
+      '+=0.2'
     );
 
     tl.fromTo(

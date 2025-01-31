@@ -34,6 +34,7 @@ export default {
         'vector-100': "url('/src/assets/images/vector-100.png')",
         'vector-200': "url('/src/assets/images/vector-200.png')",
         'vector-star': "url('/src/assets/images/vector-star.png')",
+        'vector-star-sharp': "url('/src/assets/images/vector-star-sharp.png')",
         'home-hero': "url('/src/assets/images/bg-home-hero.png')",
         'products-hero': "url('/src/assets/images/bg-products-hero.png')",
         'capabilities-hero': "url('/src/assets/images/bg-capabilities-hero.png')",

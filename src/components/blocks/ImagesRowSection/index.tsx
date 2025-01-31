@@ -17,7 +17,8 @@ const ImagesRowSection = ({
         end: 'bottom 10%',
         toggleActions: 'restart pause restart pause',
         },
-        ease: 'power2.inOut',
+      ease: 'power2.inOut',
+        delay: 1
     });
 
     const imgs = Array.from(imagesRef.current?.children || []);

@@ -105,7 +105,7 @@ export default function ImageContentSection({
           y: 0,
           duration: 1,
         },
-        `+=${index * 0.2}`
+        `<${index * 0.2}`
       );
     });
   });

@@ -18,7 +18,10 @@ import Radiator4 from '../assets/images/Radiators/4.png';
 import Radiator5 from '../assets/images/Radiators/5.png';
 import yazanSiyam from '../assets/images/YazanSiyam.png';
 import walidSiyam from '../assets/images/WalidSiyam.png';
-
+import prodDev1 from '../assets/images/prodDev1.png';
+import prodDev2 from '../assets/images/prodDev2.png';
+import prodDev3 from '../assets/images/prodDev3.png';
+import prodDev4 from '../assets/images/prodDev4.png';
 import factory100 from '../assets/images/factory100.png';
 import factory200 from '../assets/images/factory200.png';
 import factory300 from '../assets/images/factory300.png';
@@ -28,9 +31,9 @@ import factroy600 from '../assets/images/factory600.png';
 import factroy700 from '../assets/images/factory700.png';
 import fan1 from '../assets/images/fan-1.png';
 import fan2 from '../assets/images/fan-2.png';
-import hunger from'../assets/images/vectors/hunger.png';
-import million from'../assets/images/vectors/1Million.png';
-import people from'../assets/images/vectors/people.png';
+import hunger from '../assets/images/vectors/hunger.png';
+import million from '../assets/images/vectors/1Million.png';
+import people from '../assets/images/vectors/people.png';
 import risingArrorw from '../assets/images/vectors/risingArrorw.png';
 import developmentIcon from '../assets/images/vectors/development.png';
 import documentIcon from '../assets/images/vectors/document-file.png';
@@ -42,15 +45,23 @@ import quality1 from '../assets/images/quality-1.png';
 import quality2 from '../assets/images/quality-2.png';
 import quality3 from '../assets/images/quality-3.png';
 import quality4 from '../assets/images/quality-4.png';
+import assemblyLine from '../assets/images/vectors/assemblyLine.png';
+import manufacturing from '../assets/images/vectors/manufacturing.png';
+import heavyMachinery from '../assets/images/vectors/heavyMachinery.png';
+import smartHouse from '../assets/images/vectors/smartHouse.png';
 export {
-
-quality1,
-quality2, 
-quality3,
-quality4,
-
-
-
+  quality1,
+  quality2,
+  quality3,
+  quality4,
+  assemblyLine,
+  manufacturing,
+  heavyMachinery,
+  smartHouse,
+  prodDev1,
+  prodDev2,
+  prodDev3,
+  prodDev4,
   developmentIcon,
   documentIcon,
   medicalReportIcon,
@@ -84,19 +95,11 @@ quality4,
   group1,
   group2,
   yazanSiyam,
-  walidSiyam
+  walidSiyam,
 };
 
-  export const Radiators = [
-    Radiator1,
-    Radiator2,
-    Radiator3,
-    Radiator4,
-    Radiator5
-  ]
-  
-  
-  
+export const Radiators = [Radiator1, Radiator2, Radiator3, Radiator4, Radiator5];
+
 export const tabs = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
