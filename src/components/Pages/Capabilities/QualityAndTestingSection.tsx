@@ -1,4 +1,3 @@
-import React from 'react'
 import ImageContentSection from '../../blocks/ImageContentSection/ImageContentSection'
 import { quality1, quality2, quality3, quality4 } from '../../../constants';
 import styles from '../../../utils/styles';
