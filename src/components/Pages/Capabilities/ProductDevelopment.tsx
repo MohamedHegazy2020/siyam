@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from '../../../utils/styles';
 import ImageContentSection from '../../blocks/ImageContentSection/ImageContentSection';
 import { prodDev1, prodDev2, prodDev3, prodDev4 } from '../../../constants';

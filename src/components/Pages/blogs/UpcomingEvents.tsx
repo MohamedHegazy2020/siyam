@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const UpcomingEvents = () => {
@@ -8,13 +7,13 @@ const UpcomingEvents = () => {
         <div></div>
         <div>
           <div role="tablist" className="tabs tabs-boxed">
-            <Link role="tab" className="tab">
+            <Link role="tab" to="#" className="tab">
               Tab 1
             </Link>
-            <Link role="tab" className="tab tab-active">
+            <Link role="tab" to="#" className="tab tab-active">
               Tab 2
             </Link>
-            <Link role="tab" className="tab">
+            <Link role="tab" to="#" className="tab">
               Tab 3
             </Link>
           </div>
