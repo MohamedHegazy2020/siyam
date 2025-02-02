@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "title": "AutomechanikaDubai 2024 | Siyam Radiators",
+    "description": "It was an amazing experience at Automechanika Dubai!\nWe were thrilled to showcase our innovative products and engage with industry professionals.\nThank you to everyone who visited our booth...",
+    "date": "26-07-2023",
+    "location": "Jordan",
+    "image": "./src/assets/images/blog-1.png"
+  },
+  {
+    "id": 2,
+    "title": "AutomechanikaDubai 2024 | Siyam Radiators",
+    "description": "It was an amazing experience at Automechanika Dubai!\nWe were thrilled to showcase our innovative products and engage with industry professionals.\nThank you to everyone who visited our booth...",
+    "date": "26-07-2023",
+    "location": "Jaddah     ",
+    "image": "./src/assets/images/blog-1.png"
+  },
+  {
+    "id": 3,
+    "title": "AutomechanikaDubai 2024 | Siyam Radiators",
+    "description": "It was an amazing experience at Automechanika Dubai!\nWe were thrilled to showcase our innovative products and engage with industry professionals.\nThank you to everyone who visited our booth...",
+    "date": "26-07-2023",
+    "location": "Riyadh",
+    "image": "./src/assets/images/blog-1.png"
+  },
+  {
+    "id": 4,
+    "title": "aapexshow 2024 | Siyam Radiators",
+    "description": "What an amazing event! We had a fantastic time showcasing our innovative products and connecting with passionate professionals from the automotive industry. Thank you to everyone who visited our booth and contributed to the success of the event. We look forward to seeing you again next year!",
+    "date": "26-12-2024",
+    "location": "Jordan",
+    "image": "./src/assets/images/blog-2.png"
+  },
+  {
+    "id": 5,
+    "title": "aapexshow 2024 | Siyam Radiators",
+    "description": "What an amazing event! We had a fantastic time showcasing our innovative products and connecting with passionate professionals from the automotive industry. Thank you to everyone who visited our booth and contributed to the success of the event. We look forward to seeing you again next year!",
+    "date": "26-12-2024",
+    "location": "Jordan",
+    "image": "./src/assets/images/blog-2.png"
+  },
+  {
+    "id": 6,
+    "title": "aapexshow 2024 | Siyam Radiators",
+    "description": "What an amazing event! We had a fantastic time showcasing our innovative products and connecting with passionate professionals from the automotive industry. Thank you to everyone who visited our booth and contributed to the success of the event. We look forward to seeing you again next year!",
+    "date": "26-12-2024",
+    "location": "Jordan",
+    "image": "./src/assets/images/blog-2.png"
+  },
+  {
+    "id": 7,
+    "title": "Frankfurt, Germany",
+    "description": "It was an amazing experience at Automechanika Dubai!\nWe were thrilled to showcase our innovative products and engage with industry professionals.\nThank you to everyone who visited our booth...",
+    "date": "08-01-2024",
+    "location": "Jordan",
+    "image": "./src/assets/images/blog-3.png"
+  },
+
+  {
+    "id": 8,
+    "title": "Frankfurt, Germany",
+    "description": "It was an amazing experience at Automechanika Dubai!\nWe were thrilled to showcase our innovative products and engage with industry professionals.\nThank you to everyone who visited our booth...",
+    "date": "08-01-2024",
+    "location": "Jordan",
+    "image": "./src/assets/images/blog-3.png"
+  },
+
+  {
+    "id": 9,
+    "title": "Frankfurt, Germany",
+    "description": "It was an amazing experience at Automechanika Dubai!\nWe were thrilled to showcase our innovative products and engage with industry professionals.\nThank you to everyone who visited our booth...",
+    "date": "08-01-2024",
+    "location": "Jordan",
+    "image": "./src/assets/images/blog-3.png"
+  }
+]

@@ -56,9 +56,18 @@ import qc1 from '../assets/images/Qc1.png';
 import qc2 from '../assets/images/Qc2.png';
 import qc3 from '../assets/images/Qc3.png';
 import rawMaterial1 from '../assets/images/rawMaterial.png';
+import blog1 from'../assets/images/blog-1.png';
+import blog2 from'../assets/images/blog-2.png';
+import blog3 from '../assets/images/blog-3.png';
+
+
+
 import rawMaterial2 from '../assets/images/rawMaterial2.png';
 export {
   quality1,
+  blog1,
+  blog2,
+  blog3,
   quality2,
   quality3,
   quality4,
