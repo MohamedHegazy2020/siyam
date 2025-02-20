@@ -34,7 +34,7 @@ export default function Hero() {
               <Icon icon="mingcute:tiktok-fill" width="24" height="24" />
             </Link>
             <Link className="link link-hover text-white " to="#">
-              <Icon icon="prime:twitter" width="24" height="24" />
+              <Icon  icon="prime:twitter" width="24" height="24" />
             </Link>
           </div>
         </div>

@@ -64,7 +64,7 @@ const MemberCard = ({ image, title, description }: { image: string; title: strin
   return (
     <div ref={containerRef} className="card   ">
       <figure>
-        <img ref={imageRef} src={image} alt={title} />
+        <img loading='lazy' ref={imageRef} src={image} alt={title} />
       </figure>
       <div className="card-body pt-4 bg-transparent">
         <h2 ref={titleRrf} className="text-2xl  text-center w-full font-bebas text-primary">

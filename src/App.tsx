@@ -1,30 +1,39 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
-import Home from './components/Pages/Home';
-import About from './components/Pages/About';
 import gsap from 'gsap';
 import { ScrollTrigger, TextPlugin } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
-import Products from './components/Pages/products';
-import Contact from './components/Pages/Contact';
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect, useCallback } from 'react';
 import $ from 'jquery';
-import Capabilities from './components/Pages/Capabilities';
-import Blogs from './components/Pages/blogs';
+
+const Home = lazy(() => import('./components/Pages/Home'));
+const About = lazy(() => import('./components/Pages/About'));
+const Products = lazy(() => import('./components/Pages/products'));
+const Contact = lazy(() => import('./components/Pages/Contact'));
+const Capabilities = lazy(() => import('./components/Pages/Capabilities'));
+const Blogs = lazy(() => import('./components/Pages/blogs'));
 
 const App = () => {
-  useEffect(() => {
-    $('canvas').on('webglcontextlost', (e) => {
-      console.log('WebGL Context Lost');
-      e.preventDefault();
-    });
-  });
-  gsap.registerPlugin(ScrollTrigger, TextPlugin,useGSAP);
+  const handleWebGLContextLost = useCallback((e: JQuery.Event) => {
+    console.log('WebGL Context Lost');
+    e.preventDefault();
+  }, []);
 
-  
+  useEffect(() => {
+    const canvas = $('canvas');
+    canvas.on('webglcontextlost', handleWebGLContextLost);
+
+    return () => {
+      canvas.off('webglcontextlost', handleWebGLContextLost);
+    };
+  }, [handleWebGLContextLost]);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger, TextPlugin, useGSAP);
+  }, []);
 
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -37,8 +46,9 @@ const App = () => {
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </Suspense>
   );
 };
 
 export default App;
+

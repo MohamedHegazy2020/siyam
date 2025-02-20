@@ -2,13 +2,10 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useRef } from 'react';
 
-const ContactForm = ({ inputsTransParent }: { inputsTransParent?: boolean }) => {
+const ContactForm = ({ inputsTransParent = false }: { inputsTransParent?: boolean }) => {
   const formRef = useRef<HTMLFormElement>(null);
-  const nameRef = useRef<HTMLInputElement>(null);
-  const emailRef = useRef<HTMLInputElement>(null);
-  const phoneRef = useRef<HTMLInputElement>(null);
-  const messageRef = useRef<HTMLTextAreaElement>(null);
-  const btnRef = useRef<HTMLButtonElement>(null);
+  const inputRefs = useRef<(HTMLInputElement | HTMLTextAreaElement)[]>([]);
+
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -31,133 +28,68 @@ const ContactForm = ({ inputsTransParent }: { inputsTransParent?: boolean }) => 
         duration: 1,
       }
     );
-    tl.fromTo(
-      nameRef.current,
-      {
-        opacity: 0,
-        y: -50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-      },
-      '<0.5'
-    );
 
-    tl.fromTo(
-      emailRef.current,
-      {
-        opacity: 0,
-        y: -50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-      },
-      '<0.5'
-    );
-    tl.fromTo(
-      phoneRef.current,
-      {
-        opacity: 0,
-        y: -50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-      },
-      '<0.5'
-    );
-    tl.fromTo(
-      messageRef.current,
-      {
-        opacity: 0,
-        y: -50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-      },
-      '<0.5'
-    );
-    tl.fromTo(
-      btnRef.current,
-      {
-        opacity: 0,
-        y: -50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-      },
-      '<0.5'
-    );
-  });
+    inputRefs.current.forEach((input, index) => {
+      tl.fromTo(
+        input,
+        {
+          opacity: 0,
+          y: -50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+        },
+        `<${index * 0.4}`
+      );
+    });
+  }, [inputsTransParent]);
 
   return (
-    <form ref={formRef} className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
-      <div className="flex flex-col px-2  ">
-        <label className="label font-semibold" htmlFor="name">
-          Name
-        </label>
-        <input
-          ref={nameRef}
-          type="text"
-          name="name"
-          id="name"
-          className={`input bg-primary  input-bordered w-full ${inputsTransParent && 'bg-transparent'} `}
-        />
-      </div>
-      <div className="flex flex-col px-2 ">
-        <label className="label font-semibold" htmlFor="email">
-          Email
-        </label>
-        <input
-          ref={emailRef}
-          type="email"
-          name="email"
-          id="email"
-          className={`input bg-primary  input-bordered w-full ${inputsTransParent && 'bg-transparent'}`}
-        />
-      </div>
+    <form ref={formRef} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {[
+        { label: 'Name', type: 'text', name: 'name' },
+        { label: 'Email', type: 'email', name: 'email' },
+        { label: 'Phone Number', type: 'tel', name: 'phone' },
+        { label: 'Message', type: 'textarea', name: 'message' },
+      ].map((input, index) => (
+        <div key={index} className="flex flex-col">
+          <label className="label font-semibold" htmlFor={input.name}>
+            {input.label}
+          </label>
+          {input.type === 'textarea' ? (
+            <textarea
+              ref={(el) => {
+                if (el) inputRefs.current[index] = el;
+              }}
+              rows={4}
+              name={input.name}
+              id={input.name}
+              className={`textarea bg-primary input-bordered w-full ${inputsTransParent ? 'bg-transparent' : ''}`}
+              placeholder={input.label}
+            />
+          ) : (
+            <input
+              ref={(el) => {
+                if (el) inputRefs.current[index] = el;
+              }}
+              type={input.type}
+              name={input.name}
+              id={input.name}
+              className={`input bg-primary input-bordered w-full ${inputsTransParent ? 'bg-transparent' : ''}`}
+              placeholder={input.label}
+            />
+          )}
+        </div>
+      ))}
 
-      <div className="flex flex-col md:col-span-2 px-2">
-        <label className="label font-semibold" htmlFor="phone">
-          Phone Number
-        </label>
-        <input
-          ref={phoneRef}
-          type="tel"
-          name="phone"
-          id="phone"
-          className={`input bg-primary input-bordered w-full ${inputsTransParent && 'bg-transparent'}`}
-        />
-      </div>
-
-      <div className="flex flex-col md:col-span-2 px-2">
-        <label className="label font-semibold" htmlFor="message">
-          Message
-        </label>
-        <textarea
-          ref={messageRef}
-          rows={4}
-          name="message"
-          id="message"
-          className={`textarea bg-primary input-bordered w-full ${inputsTransParent && 'bg-transparent'}`}
-        />
-      </div>
-      <div className="  mt-4">
-        <button ref={btnRef} className="btn bg-gradient-linear-100 text-white border-2 w-full ">
-          Send
-        </button>
+      <div className="mt-4">
+        <button className="btn bg-gradient-linear-100 text-white border-2 w-full">Send</button>
       </div>
     </form>
   );
 };
 
 export default ContactForm;
+

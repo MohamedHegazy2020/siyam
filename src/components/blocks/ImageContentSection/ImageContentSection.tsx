@@ -2,7 +2,7 @@ import { ReactNode, useRef } from 'react';
 import styles from '../../../utils/styles';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-
+ 
 export interface ImageContentSectionProps {
   image: string;
   imageLast?: boolean;
@@ -24,11 +24,8 @@ export default function ImageContentSection({
   introduction,
   padding,
 }: ImageContentSectionProps) {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
-  const introRef = useRef<HTMLParagraphElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const childrenRef = useRef<HTMLDivElement>(null);
+  const elements = useRef<Array<HTMLElement | HTMLImageElement>>([]);
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -53,49 +50,10 @@ export default function ImageContentSection({
       }
     );
 
-    tl.fromTo(
-      imageRef.current,
-      {
-        opacity: 0,
-        y: -50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-      },
-      '-=0.5'
-    );
-    tl.fromTo(
-      titleRef.current,
-      {
-        opacity: 0,
-        x: 50,
-      },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-      },
-      '-=0.5'
-    );
+    elements.current.forEach((element, index) => {
 
-    tl.fromTo(
-      introRef.current,
-      {
-        opacity: 0,
-        x: -50,
-      },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-      },
-      '-=0.5'
-    );
-    const childs = Array.from(childrenRef.current?.children || []);
-    childs.forEach((child, index) => {
       tl.fromTo(
-        child,
+        element,
         {
           opacity: 0,
           y: 50,
@@ -108,27 +66,26 @@ export default function ImageContentSection({
         `<${index * 0.2}`
       );
     });
-  });
-
+  }, [children]);
   return (
     <div ref={containerRef} className={backgroundClassName + ` bg-cover ${styles.paddingY} ${padding ? styles.paddingX : ''}`}>
       <div className={'  max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 bg-center '}>
         <div className={`flex items-center w-full   order-last  ${imageLast ? 'md:order-last' : 'md:order-first'} `}>
-          <img className="w-full max-w-xl" ref={imageRef} src={image} alt={title} />
+          <img className="w-full max-w-xl" ref={(el) => elements.current.push(el as HTMLImageElement)} src={image} alt={title} />
         </div>
         <div className="flex flex-col justify-center gap-4">
           {introduction && (
             <span
-              ref={introRef}
+              ref={(el) => elements.current.push(el as HTMLParagraphElement)}
               className="text-transparent bg-gradient-to-r  from-[0%] to-[25%] from-secondary  to-primary bg-clip-text font-bebas  font-bold"
             >
               {introduction}
             </span>
           )}
-          <h2 ref={titleRef} className={titleClassName + ' font-bold text-2xl md:text-3xl font-bebas text-primary'}>
+          <h2 ref={(el) => elements.current.push(el as HTMLHeadingElement)} className={titleClassName + ' font-bold text-2xl md:text-3xl font-bebas text-primary'}>
             {title}
           </h2>
-          <div ref={childrenRef} className="font-light  ">
+          <div ref={(el) => elements.current.push(el as HTMLDivElement)} className="font-light  ">
             {children}
           </div>
         </div>
@@ -136,3 +93,4 @@ export default function ImageContentSection({
     </div>
   );
 }
+

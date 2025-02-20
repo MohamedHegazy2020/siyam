@@ -1,4 +1,11 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 @font-face {
   font-family: 'Bebas';
   src: url('./assets/fonts/Bebas-Regular.ttf') format('truetype');
@@ -86,6 +93,3 @@
 
 
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

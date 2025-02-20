@@ -92,7 +92,7 @@ const filteredBlogs = blogs.reduce<Record<string, typeof blogs>>((acc, blog) => 
         trigger: tabContainerRef.current,
         start: 'top 90%',
         end: 'bottom 10%',
-        toggleActions: 'restart pause restart pause',
+        toggleActions: 'restart pause  pause',
       },
     });
 

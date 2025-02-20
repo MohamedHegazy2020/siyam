@@ -4,6 +4,7 @@ import CardTilt from '../../blocks/CardTilt';
 import Model1Canvas from '../../canvas/Model1';
 import Model2Canvas from '../../canvas/Model2';
 import Model3Canvas from '../../canvas/Model3';
+import { Model3D, Model3DCanvas } from '../../canvas/Model3D';
 
 const ProductRange = () => {
   const carouselItems = [
@@ -38,17 +39,15 @@ const ProductRange = () => {
         {carouselItems.map((item, index) => (
           <div className=" " key={index}>
             <CardTilt key={index}>
-              <div className="w-full h-full flex flex-wrap justify-center  border  rounded-lg p-5">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full drop-shadow transition-shadow shadow-blue-800"
-                />
-                <div className="w-full flex flex-col items-center justify-center self-end">
-                  <div className="w-full self-end h-5 flex justify-center items-center bg-gradient-radial-100 rounded-[50%] backdrop-blur-4xl" />
-                  <h4 className="w-full self-end text-center font-bebas text-sm lg:text-lg ">{item.title}</h4>
-                </div>
-                {/* <p className='w-full self-end text-center text-xs' >High intensity</p> */}
+              <img
+                loading="lazy"
+                src={item.image}
+                alt={item.title}
+                className="w-full transition-shadow shadow-blue-800"
+              />
+              <div className="w-full flex flex-col items-center justify-center self-end">
+                <div className="w-full self-end h-5 flex justify-center items-center bg-gradient-radial-100 rounded-[50%] backdrop-blur-4xl" />
+                <h4 className="w-full self-end text-center font-bebas text-sm lg:text-lg ">{item.title}</h4>
               </div>
             </CardTilt>
           </div>
@@ -57,14 +56,14 @@ const ProductRange = () => {
 
       <div className="w-full h-auto grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
         <div className=" h-full py-2">
-          <Model1Canvas />
+          <Model3DCanvas path="./GLB/PT-011/PT-011.glb" />
         </div>
 
         <div className=" h-full py-2">
-          <Model2Canvas />
+          <Model3DCanvas path='./GLB/IC-052/IC-052.glb' />
         </div>
         <div className=" h-full py-2">
-          <Model3Canvas />
+          <Model3DCanvas path='./GLB/12364/12364.glb' />
         </div>
       </div>
     </section>
@@ -72,3 +71,4 @@ const ProductRange = () => {
 };
 
 export default ProductRange;
+
