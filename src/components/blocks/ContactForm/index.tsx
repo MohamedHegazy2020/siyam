@@ -1,10 +1,18 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { useRef } from 'react';
+import { useRef, useMemo } from 'react';
 
 const ContactForm = ({ inputsTransParent = false }: { inputsTransParent?: boolean }) => {
   const formRef = useRef<HTMLFormElement>(null);
   const inputRefs = useRef<(HTMLInputElement | HTMLTextAreaElement)[]>([]);
+  const labelRefs = useRef<(HTMLLabelElement)[]>([]);
+
+  const inputFields = useMemo(() => [
+    { label: 'Name', type: 'text', name: 'name' },
+    { label: 'Email', type: 'email', name: 'email' },
+    { label: 'Phone Number', type: 'tel', name: 'phone' },
+    { label: 'Message', type: 'textarea', name: 'message' },
+  ], []);
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -15,7 +23,7 @@ const ContactForm = ({ inputsTransParent = false }: { inputsTransParent?: boolea
         toggleActions: 'restart pause restart pause',
       },
     });
-
+ 
     tl.fromTo(
       formRef.current,
       {
@@ -41,21 +49,39 @@ const ContactForm = ({ inputsTransParent = false }: { inputsTransParent?: boolea
           y: 0,
           duration: 1,
         },
-        `<${index * 0.4}`
+        `<${index * 0.2}`
       );
+
+      const label = labelRefs.current[index];
+      if (label) {
+        tl.fromTo(
+          label,
+          {
+            opacity: 0,
+            y: -50,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+          },
+          `<${index * 0.2}`
+        );
+      }
     });
   }, [inputsTransParent]);
 
   return (
-    <form ref={formRef} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      {[
-        { label: 'Name', type: 'text', name: 'name' },
-        { label: 'Email', type: 'email', name: 'email' },
-        { label: 'Phone Number', type: 'tel', name: 'phone' },
-        { label: 'Message', type: 'textarea', name: 'message' },
-      ].map((input, index) => (
-        <div key={index} className="flex flex-col">
-          <label className="label font-semibold" htmlFor={input.name}>
+    <form ref={formRef} className="grid grid-cols-1 gap-4">
+      {inputFields.map((input, index) => (
+        <div key={input.name} className="flex flex-col">
+          <label
+            ref={(el) => {
+              if (el) labelRefs.current[index] = el;
+            }}
+            className="label font-semibold"
+            htmlFor={input.name}
+          >
             {input.label}
           </label>
           {input.type === 'textarea' ? (
