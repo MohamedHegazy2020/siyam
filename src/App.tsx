@@ -34,34 +34,33 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 3000); // 2 seconds delay
+    }, 4000); // Delay for 4 seconds
 
     return () => clearTimeout(timer); // Clean up timeout on unmount
-  }, []);  
+  }, []);
 
   return (
-   <>
-   
-   {showContent ?  <Suspense fallback={<Loading/>} >
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="products" element={<Products />} />
-            <Route path="capabilities" element={<Capabilities />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="blogs" element={<Blogs />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </Suspense> : <Loading/>}
-   
-   
-   
+    <>
+      {showContent ? (
+        <Suspense fallback={<Loading />}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="about" element={<About />} />
+                <Route path="products" element={<Products />} />
+                <Route path="capabilities" element={<Capabilities />} />
+                <Route path="contact" element={<Contact />} />
+                <Route path="blogs" element={<Blogs />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </Suspense>
+      ) : (
+        <Loading />
+      )}
     </>
   );
 };
 
 export default App;
-
