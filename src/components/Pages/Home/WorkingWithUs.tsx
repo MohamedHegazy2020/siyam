@@ -79,7 +79,7 @@ const WorkingWithUs = () => {
           y: 0,
           duration: 0.5,
         },
-        `-=${1 - index * 0.1}`
+        `<=${0.5 - index * 0.1}`
       );
     });
   });
