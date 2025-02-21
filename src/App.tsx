@@ -3,8 +3,9 @@ import Layout from './components/Layout';
 import gsap from 'gsap';
 import { ScrollTrigger, TextPlugin } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
-import { lazy, Suspense, useEffect, useCallback } from 'react';
+import { lazy, Suspense, useEffect, useCallback, useState } from 'react';
 import $ from 'jquery';
+import Loading from './components/Layout/Loading';
 
 const Home = lazy(() => import('./components/Pages/Home'));
 const About = lazy(() => import('./components/Pages/About'));
@@ -14,6 +15,8 @@ const Capabilities = lazy(() => import('./components/Pages/Capabilities'));
 const Blogs = lazy(() => import('./components/Pages/blogs'));
 
 const App = () => {
+  gsap.registerPlugin(ScrollTrigger, TextPlugin, useGSAP);
+  const [showContent, setShowContent] = useState(false);
   const handleWebGLContextLost = useCallback((e: JQuery.Event) => {
     console.log('WebGL Context Lost');
     e.preventDefault();
@@ -29,11 +32,17 @@ const App = () => {
   }, [handleWebGLContextLost]);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger, TextPlugin, useGSAP);
-  }, []);
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 3000); // 2 seconds delay
+
+    return () => clearTimeout(timer); // Clean up timeout on unmount
+  }, []);  
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+   <>
+   
+   {showContent ?  <Suspense fallback={<Loading/>} >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -46,7 +55,11 @@ const App = () => {
           </Route>
         </Routes>
       </BrowserRouter>
-    </Suspense>
+    </Suspense> : <Loading/>}
+   
+   
+   
+    </>
   );
 };
 

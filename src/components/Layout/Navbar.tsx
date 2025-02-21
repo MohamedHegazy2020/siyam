@@ -25,7 +25,7 @@ const Navbar = () => {
   }, [complition])
 
   return (
-    <nav className="sticky top-0 w-full z-[100]  ">
+    <div className="sticky top-0 w-full z-[100]  ">
       <div className="navbar bg-base-100 backdrop-blur-md bg-opacity-30">
         <div className="navbar-start">
           <div className="dropdown">
@@ -66,7 +66,7 @@ const Navbar = () => {
         </div>
       </div>
       <span ref={scrollIndicatorRef} className="bg-primary absolute h-1 w-full bottom-0" />
-    </nav>
+    </div>
   );
 };
 

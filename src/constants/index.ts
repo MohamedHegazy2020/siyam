@@ -24,7 +24,7 @@ import prodDev3 from '../assets/images/prodDev3.png';
 import prodDev4 from '../assets/images/prodDev4.png';
 import testVal2 from '../assets/images/testVal2.png';
 import testVal3 from '../assets/images/testVal3.png';
-
+import logoSvg from '../assets/images/Logo.svg';
 import factory100 from '../assets/images/factory100.png';
 import factory200 from '../assets/images/factory200.png';
 import factory300 from '../assets/images/factory300.png';
@@ -64,6 +64,7 @@ import blog3 from '../assets/images/blog-3.png';
 
 import rawMaterial2 from '../assets/images/rawMaterial2.png';
 export {
+  logoSvg,
   quality1,
   blog1,
   blog2,
