@@ -6,7 +6,6 @@ import { useGSAP } from '@gsap/react';
 import { lazy, Suspense, useEffect, useCallback, useState } from 'react';
 import $ from 'jquery';
 import Loading from './components/Layout/Loading';
-
 const Home = lazy(() => import('./components/Pages/Home'));
 const About = lazy(() => import('./components/Pages/About'));
 const Products = lazy(() => import('./components/Pages/products'));
@@ -18,7 +17,6 @@ const App = () => {
   gsap.registerPlugin(ScrollTrigger, TextPlugin, useGSAP);
   const [showContent, setShowContent] = useState(false);
   const handleWebGLContextLost = useCallback((e: JQuery.Event) => {
-    console.log('WebGL Context Lost');
     e.preventDefault();
   }, []);
 
@@ -62,5 +60,4 @@ const App = () => {
     </>
   );
 };
-
 export default App;
