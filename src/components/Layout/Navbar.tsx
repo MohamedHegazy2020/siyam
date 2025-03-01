@@ -10,6 +10,7 @@ import { useGSAP } from '@gsap/react';
 const Navbar = () => {
   const complition = useScrollProgress()
   const scrollIndicatorRef = useRef(null)
+
   const tl = useRef<gsap.core.Timeline | null>(null)
 
   useGSAP(() => {
@@ -21,11 +22,12 @@ const Navbar = () => {
           duration: 1,
           ease: 'power2.inOut',
         })
+  
     
   }, [complition])
 
   return (
-    <div className="sticky top-0 w-full z-[100]  ">
+    <div className="fixed top-0 w-full z-[100]  ">
       <div className="navbar bg-base-100 backdrop-blur-md bg-opacity-30">
         <div className="navbar-start">
           <div className="dropdown">

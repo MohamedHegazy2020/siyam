@@ -1,9 +1,8 @@
-import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 const Loading = () => {
-    const ref = useRef<SVGSVGElement | null>(null);
+
 
     useGSAP(() => {
 
@@ -22,7 +21,7 @@ const Loading = () => {
       <div className=" min-h-screen flex justify-center items-center">
         <svg
           className='max-w-md w-full '
-          ref={ref}
+          
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           xmlnsXlink="http://www.w3.org/1999/xlink"
