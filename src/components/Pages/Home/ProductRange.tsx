@@ -1,10 +1,8 @@
 import { Radiators } from '../../../constants';
 import styles from '../../../utils/styles';
 import CardTilt from '../../blocks/CardTilt';
-import Model1Canvas from '../../canvas/Model1';
-import Model2Canvas from '../../canvas/Model2';
-import Model3Canvas from '../../canvas/Model3';
-import { Model3D, Model3DCanvas } from '../../canvas/Model3D';
+
+import {  Model3DCanvas } from '../../canvas/Model3D';
 
 const ProductRange = () => {
   const carouselItems = [
