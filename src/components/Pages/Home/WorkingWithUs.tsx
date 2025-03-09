@@ -51,7 +51,7 @@ const WorkingWithUs = () => {
         trigger: containerRef.current,
         start: 'top 90%',
         end: 'bottom 10%',
-        toggleActions: 'restart pause restart reverse',
+        toggleActions: 'play none none none',
       },
     });
     tl.fromTo(

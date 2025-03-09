@@ -1,6 +1,6 @@
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
 import {  logoFull, tabs } from '../../constants';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import useScrollProgress from '../../hooks/useScrollProgress';
 import {  useRef } from 'react';
 import gsap from 'gsap';
@@ -10,9 +10,10 @@ import { useGSAP } from '@gsap/react';
 const Navbar = () => {
   const complition = useScrollProgress()
   const scrollIndicatorRef = useRef(null)
-
+  const location = useLocation();
   const tl = useRef<gsap.core.Timeline | null>(null)
-
+  console.log(location.pathname)
+  
   useGSAP(() => {
    
       tl.current = gsap.timeline()
@@ -27,7 +28,7 @@ const Navbar = () => {
   }, [complition])
 
   return (
-    <div className="fixed top-0 w-full z-[100]  ">
+    <div className={`${location.pathname === "/contact" || location.pathname === "/products"?"sticky":'fixed'} top-0 w-full z-[100]  `}>
       <div className="navbar bg-base-100 backdrop-blur-md bg-opacity-30">
         <div className="navbar-start">
           <div className="dropdown">

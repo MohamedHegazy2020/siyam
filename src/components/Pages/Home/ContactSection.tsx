@@ -17,7 +17,7 @@ useGSAP(
         trigger: containerRef.current,
         start: 'top 90%',
         end: 'bottom 10%',
-        toggleActions: 'restart pause restart pause',
+        toggleActions: 'play none none none',
       },
     });
 const cards = Array.from(cardsRef.current?.children || []);

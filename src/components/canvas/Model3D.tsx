@@ -50,6 +50,7 @@ export function Model3DCanvas({ path,  scale }: Model3DProps) {
         <OrbitControls autoRotate enableZoom={false} maxPolarAngle={Math.PI } minPolarAngle={Math.PI / 5} />
         <Suspense fallback={<CanvasLoader />}>{memoizedModel3D}</Suspense>
         <Preload all />
+        
       </Canvas>
     </div>
   );

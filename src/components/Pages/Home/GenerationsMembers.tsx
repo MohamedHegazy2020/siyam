@@ -17,7 +17,7 @@ const MemberCard = ({ image, title, description }: { image: string; title: strin
         trigger: containerRef.current,
         start: 'top 90%',
         end: 'bottom 10%',
-        toggleActions: 'restart pause restart pause',
+        toggleActions: 'play none none none',
       },
     });
     tl.fromTo(
