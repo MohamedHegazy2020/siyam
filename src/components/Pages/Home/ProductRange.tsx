@@ -1,6 +1,5 @@
 import { Radiators } from '../../../constants';
 import styles from '../../../utils/styles';
-import { Model3DCanvas } from '../../canvas/Model3D';
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -47,6 +46,7 @@ const ProductRange = () => {
             className=" product-item w-full h-full card shadow-2xl flex flex-col items-center justify-between p-4"
           >
             <LazyLoadImage
+              loading='lazy'
               src={item.image}
               alt={item.title}
               effect="blur"
@@ -60,17 +60,7 @@ const ProductRange = () => {
         ))}
       </div>
 
-      <div className="w-full h-auto grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
-        <div className="h-full product-item py-2">
-          <Model3DCanvas path="./GLB/PT-011/PT-011.glb" />
-        </div>
-        <div className="h-full product-item py-2">
-          <Model3DCanvas path="./GLB/IC-052/IC-052.glb" />
-        </div>
-        <div className="h-full product-item py-2">
-          <Model3DCanvas path="./GLB/12364/12364.glb" />
-        </div>
-      </div>
+     
     </section>
   );
 };
