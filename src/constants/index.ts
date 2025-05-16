@@ -126,7 +126,7 @@ export const Radiators = [Radiator1, Radiator2, Radiator3, Radiator4, Radiator5]
 export const tabs = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Contact', path: '/contact' }, 
   { name: 'Products', path: '/products' },
   { name: 'Capabilities', path: '/capabilities' },
   { name: 'Blogs', path: '/blogs' },

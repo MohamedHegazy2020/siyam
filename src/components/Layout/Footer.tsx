@@ -25,7 +25,7 @@ export default function Footer() {
         scale: 0.95,
       },
       {
-        opacity: 1,
+        opacity: 1, 
         y: 0,
         scale: 1,
         duration: 0.5,
@@ -131,7 +131,9 @@ export default function Footer() {
         <h6 className="footer-title font-bebas text-secondary capitalize  ">Explore</h6>
         <ul className="grid  grid-cols-1  gap-4">
           {tabs.map((tab, index) => (
-            <li key={index}>
+            <li key={index} className='flex items-center gap-2'>
+              <Icon icon="material-symbols:arrow-right" className="" />
+              
               <Link to={tab.path} className="link link-hover capitalize">
                 {tab.name}
               </Link>
