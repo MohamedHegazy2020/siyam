@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import { ScrollTrigger, TextPlugin } from 'gsap/all';
-import PrimaryGradientBtn from '../../blocks/Buttons/PrimaryGradientBtn';
+import PrimaryGradientBtn from '../../blocks/Buttons';
 export default function AboutHero() {
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(TextPlugin);
@@ -65,7 +65,7 @@ export default function AboutHero() {
       }
     );
 
- tl.fromTo(
+    tl.fromTo(
       userIconRef.current,
       {
         opacity: 0,
@@ -77,11 +77,6 @@ export default function AboutHero() {
         duration: 1,
       }
     );
-
-
-
-
-
 
     words.forEach((word, index) => {
       tl.fromTo(
@@ -101,17 +96,10 @@ export default function AboutHero() {
           ease: 'linear',
           repeat: -1,
           repeatDelay: 1,
-         
         },
         index * 3 // Delay each word by 3 seconds
       );
     });
-
-
-
-
-
-
   }, []);
   return (
     <div ref={container} className="hero min-h-screen bg-property-1">

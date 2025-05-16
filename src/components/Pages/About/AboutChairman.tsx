@@ -1,6 +1,6 @@
 import { chairman, qualityPolicy } from '../../../constants';
 import ImageContentSection from '../../blocks/ImageContentSection/ImageContentSection';
-import PrimaryGradientBtn from '../../blocks/Buttons/PrimaryGradientBtn';
+import PrimaryGradientBtn from '../../blocks/Buttons';
 
 export default function AboutChairman() {
   return (
@@ -23,9 +23,7 @@ export default function AboutChairman() {
           this vision.
         </p>
         <a href={qualityPolicy} target="_self" rel="noopener noreferrer">
-           <PrimaryGradientBtn rounded='rounded-full'>Quality Policy</PrimaryGradientBtn>
-          
-         
+          <PrimaryGradientBtn rounded="rounded-full">Quality Policy</PrimaryGradientBtn>
         </a>
       </ImageContentSection>
     </div>

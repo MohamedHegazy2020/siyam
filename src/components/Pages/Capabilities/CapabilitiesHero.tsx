@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import PrimaryGradientBtn from '../../blocks/Buttons/PrimaryGradientBtn';
+import PrimaryGradientBtn from '../../blocks/Buttons';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { TextPlugin } from 'gsap/all';
@@ -66,8 +66,6 @@ const CapabilitiesHero = () => {
       },
       '+=0.75'
     );
-      
-      
   });
 
   return (
