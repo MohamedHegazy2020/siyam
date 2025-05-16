@@ -2,30 +2,38 @@ import { ReactNode, useRef } from 'react';
 import styles from '../../../utils/styles';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
- 
+import clsx from 'clsx';
+
 export interface ImageContentSectionProps {
   image: string;
+  imageAltText?: string;
+  imageClassName?: string;
   imageLast?: boolean;
   children: ReactNode;
-  title: string;
-  titleClassName?: string;
+  
+
   backgroundClassName?: string;
-  introduction?: string;
-  padding?:boolean
+ 
+  padding?: boolean;
+  animationDelay?: number;
 }
 
 export default function ImageContentSection({
   image,
+  imageAltText = 'Image',
+
   children,
-  title,
+
   imageLast,
   backgroundClassName,
-  titleClassName,
-  introduction,
+
   padding,
+  animationDelay = 0,
 }: ImageContentSectionProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const elements = useRef<Array<HTMLElement | HTMLImageElement>>([]);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const imageRef = useRef<HTMLImageElement | null>(null);
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const childrenRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -36,61 +44,36 @@ export default function ImageContentSection({
         end: 'bottom 10%',
         toggleActions: 'play none none none',
       },
+      delay: animationDelay,
     });
+
+    tl.fromTo(imageRef.current, { opacity: 0, y: 50, scale: 0.95 }, { opacity: 1, y: 0, scale: 1 });
+    tl.fromTo(titleRef.current, { opacity: 0, y: 50, scale: 0.95 }, { opacity: 1, y: 0, scale: 1 }, '-=0.5');
 
     tl.fromTo(
-      containerRef.current,
-      {
-        opacity: 0,
-        y: -50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-      }
+      childrenRef.current?.childNodes || [],
+      { opacity: 0, y: 50, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 1, stagger: 0.2 },
+      '-=0.5'
     );
+  }, [children, animationDelay]);
 
-    elements.current.forEach((element, index) => {
-
-      tl.fromTo(
-        element,
-        {
-          opacity: 0,
-          y: 50,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-        },
-        `<${index * 0.2}`
-      );
-    });
-  }, [children]);
   return (
-    <div ref={containerRef} className={backgroundClassName + ` bg-cover ${styles.paddingY} ${padding ? styles.paddingX : ''}`}>
+    <div
+      ref={containerRef}
+      className={clsx({
+        backgroundClassName: `${backgroundClassName} bg-cover bg-center`,
+        padding: padding ? styles.padding : '',
+      })}
+    >
       <div className={'  max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 bg-center '}>
         <div className={`flex items-center w-full   order-last  ${imageLast ? 'md:order-last' : 'md:order-first'} `}>
-          <img className="w-full max-w-xl" ref={(el) => elements.current.push(el as HTMLImageElement)} src={image} alt={title} />
+          <img ref={imageRef} className="w-full max-w-xl" src={image} alt={imageAltText} />
         </div>
-        <div className="flex flex-col justify-center gap-4">
-          {introduction && (
-            <span
-              ref={(el) => elements.current.push(el as HTMLParagraphElement)}
-              className="text-transparent bg-gradient-to-r  from-[0%] to-[25%] from-secondary  to-primary bg-clip-text font-bebas  font-bold"
-            >
-              {introduction}
-            </span>
-          )}
-          <h2 ref={(el) => elements.current.push(el as HTMLHeadingElement)} className={titleClassName + ' font-bold text-2xl md:text-3xl font-bebas text-primary'}>
-            {title}
-          </h2>
-          <div ref={(el) => elements.current.push(el as HTMLDivElement)} className="font-light  ">
-            {children}
-          </div>
+        <div ref={childrenRef} className="flex flex-col justify-center gap-4">
+          {children}
         </div>
       </div>
     </div>
   );
 }
-

@@ -1,6 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ButtonHTMLAttributes, useRef } from 'react';
+import clsx from 'clsx';
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   rounded?: 'rounded' | 'rounded-full' | 'none';
@@ -14,7 +15,7 @@ const Button = ({
   children,
   rounded = 'rounded',
   className = '',
-  variant = 'primary',
+
   outlined = false,
   ...props
 }: ButtonProps) => {
@@ -45,17 +46,16 @@ const Button = ({
   return (
     <button
       ref={btnRef}
-      className={`btn border-white text-white ${rounded} ${
-        outlined
-          ? `border-${variant} text-${variant} bg-transparent`
-          : variant === 'primary'
-          ? 'bg-primary'
-          : variant === 'secondary'
-          ? 'bg-secondary'
-          : 'bg-tertiary'
-      } ${className}`}
+      className={clsx(
+        'btn',
+        rounded,
+        {
+          'border-white text-white bg-transparent': outlined,
+        },
+        className
+      )}
       {...props}
-    >
+    > 
       {children}
     </button>
   );
@@ -64,4 +64,3 @@ const Button = ({
 Button.displayName = 'Button';
 
 export default Button;
-

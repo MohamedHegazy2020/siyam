@@ -3,9 +3,8 @@ import styles from '../../../utils/styles';
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import Tilt from 'react-parallax-tilt';
+import ImageContentSection from '../../blocks/ImageContentSection/ImageContentSection';
 
 const ProductRange = () => {
   const carouselItems = [
@@ -33,34 +32,17 @@ const ProductRange = () => {
 
   return (
     <section ref={sectionRef} className={'bg-gradient-radial ' + styles.padding}>
-      <h2 className="bg-gradient-linear mb-10 text-2xl font-bebas text-center font-bold text-transparent bg-clip-text">
-        product range
+      <h2 className="bg-gradient-linear mb-10 text-4xl font-bebas text-center font-bold text-transparent bg-clip-text">
+        our products
       </h2>
 
-      <div className="relative mt-5 grid grid-cols-2 md:grid-cols-5 gap-4 lg:px-20 mx-auto transition-all">
+      <div>
         {carouselItems.map((item, index) => (
-          <Tilt
-            key={index}
-            tiltReverse
-            scale={1.05}
-            className=" product-item w-full h-full card shadow-2xl flex flex-col items-center justify-between p-4"
-          >
-            <LazyLoadImage
-              loading='lazy'
-              src={item.image}
-              alt={item.title}
-              effect="blur"
-              className="w-full transition-shadow shadow-blue-800 flex-1 object-contain"
-            />
-            <div className="w-full flex flex-col items-center justify-center gap-2 self-end">
-              <div className="w-full self-end h-5 flex justify-center items-center bg-gradient-radial-100 rounded-[50%] backdrop-blur-4xl" />
-              <h4 className="w-full self-end text-center font-bebas text-sm lg:text-lg">{item.title}</h4>
-            </div>
-          </Tilt>
+          <ImageContentSection imageLast={index % 2 === 0} imageAltText={item.title} key={index} image={item.image}>
+            <h2 className="text-3xl font-bebas text-secondary">{item.title}</h2>
+          </ImageContentSection>
         ))}
       </div>
-
-     
     </section>
   );
 };
