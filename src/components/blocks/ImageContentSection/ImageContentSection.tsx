@@ -10,10 +10,9 @@ export interface ImageContentSectionProps {
   imageClassName?: string;
   imageLast?: boolean;
   children: ReactNode;
-  
 
   backgroundClassName?: string;
- 
+
   padding?: boolean;
   animationDelay?: number;
 }
@@ -66,8 +65,8 @@ export default function ImageContentSection({
         padding: padding ? styles.padding : '',
       })}
     >
-      <div className={'  max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 bg-center '}>
-        <div className={`flex items-center w-full   order-last  ${imageLast ? 'md:order-last' : 'md:order-first'} `}>
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className={clsx('flex items-center', imageLast ? 'md:order-last' : 'md:order-first')}>
           <img ref={imageRef} className="w-full max-w-xl" src={image} alt={imageAltText} />
         </div>
         <div ref={childrenRef} className="flex flex-col justify-center gap-4">
@@ -77,3 +76,4 @@ export default function ImageContentSection({
     </div>
   );
 }
+

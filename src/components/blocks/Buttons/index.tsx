@@ -1,22 +1,31 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { ButtonHTMLAttributes, useRef } from 'react';
 import clsx from 'clsx';
+import { useRef } from 'react';
 
-export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  rounded?: 'rounded' | 'rounded-full' | 'none';
+export type ButtonProps = React.ComponentPropsWithoutRef<'button'> & {
+  color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  outline?: boolean;
+  rounded?: 'full' | 'medium' | 'small' | 'none';
+  active?: boolean;
+  disabled?: boolean;
+  block?: boolean;
+  wide?: boolean;
   className?: string;
-  variant?: 'primary' | 'secondary' | 'tertiary';
-  outlined?: boolean;
-  children: React.ReactNode;
 };
 
 const Button = ({
   children,
-  rounded = 'rounded',
+  color = 'primary',
+  size = 'md',
+  outline = false,
+  rounded = 'medium',
+  active = false,
+  disabled = false,
+  block = false,
+  wide = false,
   className = '',
-
-  outlined = false,
   ...props
 }: ButtonProps) => {
   const btnRef = useRef<HTMLButtonElement | null>(null);
@@ -48,14 +57,21 @@ const Button = ({
       ref={btnRef}
       className={clsx(
         'btn',
-        rounded,
+
         {
-          'border-white text-white bg-transparent': outlined,
+          'btn-active': active,
+          'btn-disabled': disabled,
+          'btn-block': block,
+          'btn-wide': wide,
         },
+        rounded === 'full' ? 'rounded-full' : rounded === 'medium' ? 'rounded-md' : rounded === 'small' ? 'rounded-sm' : '',
+        color ? `btn-${color}` : '',
+        size ? `btn-${size}` : '',
+        outline ? 'btn-outline' : '',
         className
       )}
       {...props}
-    > 
+    >
       {children}
     </button>
   );
@@ -64,3 +80,4 @@ const Button = ({
 Button.displayName = 'Button';
 
 export default Button;
+
