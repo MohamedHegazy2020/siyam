@@ -56,11 +56,9 @@ import qc1 from '../assets/images/Qc1.png';
 import qc2 from '../assets/images/Qc2.png';
 import qc3 from '../assets/images/Qc3.png';
 import rawMaterial1 from '../assets/images/rawMaterial.png';
-import blog1 from'../assets/images/blog-1.png';
-import blog2 from'../assets/images/blog-2.png';
+import blog1 from '../assets/images/blog-1.png';
+import blog2 from '../assets/images/blog-2.png';
 import blog3 from '../assets/images/blog-3.png';
-
-
 
 import rawMaterial2 from '../assets/images/rawMaterial2.png';
 export {
@@ -72,7 +70,8 @@ export {
   quality2,
   quality3,
   quality4,
-  rawMaterial1,rawMaterial2,
+  rawMaterial1,
+  rawMaterial2,
   qc1,
   qc2,
   qc3,
@@ -131,4 +130,32 @@ export const tabs = [
   { name: 'Products', path: '/products' },
   { name: 'Capabilities', path: '/capabilities' },
   { name: 'Blogs', path: '/blogs' },
+];
+
+export const socialMediaIcons: { name: string; icon: string; link: string }[] = [
+  {
+    name: 'Facebook',
+    icon: 'mingcute:facebook-fill',
+    link: 'https://www.facebook.com/',
+  },
+  {
+    name: 'Twitter',
+    icon: 'akar-icons:twitter-fill',
+    link: 'https://twitter.com/',
+  },
+  {
+    name: 'Instagram',
+    icon: 'akar-icons:instagram-fill',
+    link: 'https://www.instagram.com/',
+  },
+  {
+    name: 'Linkedin',
+    icon: 'akar-icons:linkedin-fill',
+    link: 'https://www.linkedin.com/',
+  },
+  {
+    name: 'Youtube',
+    icon: 'akar-icons:youtube-fill',
+    link: 'https://www.youtube.com/',
+  },
 ];
