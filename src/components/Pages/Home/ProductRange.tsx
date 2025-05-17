@@ -64,7 +64,7 @@ const ProductRange = () => {
       </h2>
       <div>
         {carouselItems.map((item, index) => (
-          <ImageContentSection imageLast={index % 2 === 0} imageAltText={item.title} key={index} image={item.image}>
+          <ImageContentSection padding imageLast={index % 2 === 0} imageAltText={item.title} key={index} image={item.image}>
             <h2 className="text-3xl font-bebas text-secondary">{item.title}</h2>
             <p className="text-base font-semibold text-gray-700">{item.desc}</p>
             <Link to={item.url} className="flex justify-center w-fit">

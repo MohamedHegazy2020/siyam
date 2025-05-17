@@ -59,6 +59,10 @@ import rawMaterial1 from '../assets/images/rawMaterial.png';
 import blog1 from '../assets/images/blog-1.png';
 import blog2 from '../assets/images/blog-2.png';
 import blog3 from '../assets/images/blog-3.png';
+import bayanSaeed from '../assets/images/BayanSaeed.png';
+import karmelAbdelkhader from '../assets/images/KarmelAbdelkhader.png';
+import elyasSaeed from '../assets/images/ElyasSaeed.png';
+import karamAbdelKhader from '../assets/images/KaramAbdelkhader.png';
 
 import rawMaterial2 from '../assets/images/rawMaterial2.png';
 export {
@@ -157,5 +161,50 @@ export const socialMediaIcons: { name: string; icon: string; link: string }[] = 
     name: 'Youtube',
     icon: 'akar-icons:youtube-fill',
     link: 'https://www.youtube.com/',
+  },
+];
+
+export const genartionMembers = [
+  {
+    name: 'Ibrahim Syam',
+    image: ibrahimSyam,
+    desc: 'Founder',
+  },
+  {
+    name: 'Abeer Syam',
+    image: AbeerSyam,
+    desc: 'CEO',
+  },
+
+  {
+    name: 'Walid Syam',
+    image: walidSiyam,
+    desc: 'General Manager',
+  },
+
+  {
+    name: 'Yazan Syam',
+    image: yazanSiyam,
+    desc: 'North American Operations',
+  },
+  {
+    name: 'Bayan Saeed',
+    desc: 'Legal Affairs',
+    image: bayanSaeed,
+  },
+  {
+    name: 'Karmel Abdelkhader',
+    desc: 'Supply chain',
+    image: karmelAbdelkhader,
+  },
+  {
+    name: 'Elyas Saeed',
+    desc: 'Engineering and Quality',
+    image: elyasSaeed,
+  },
+  {
+    name: 'Karam Abdelkhader',
+    desc: 'Financial',
+    image: karamAbdelKhader,
   },
 ];

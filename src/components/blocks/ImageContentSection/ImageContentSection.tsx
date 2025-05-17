@@ -64,7 +64,7 @@ export default function ImageContentSection({
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className={clsx('flex items-center', imageLast ? 'md:order-last' : 'md:order-first')}>
-          <img ref={imageRef} className="w-full  " src={image} alt={imageAltText} />
+          <img ref={imageRef} className="w-full  " loading='lazy' src={image} alt={imageAltText} />
         </div>
         <div ref={childrenRef} className="flex flex-col justify-center gap-4">
           {children}
