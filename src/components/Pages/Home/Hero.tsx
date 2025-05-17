@@ -12,16 +12,12 @@ export default function Hero() {
   const paragraphRef = useRef<HTMLParagraphElement | null>(null);
   const buttonsRef = useRef<HTMLDivElement | null>(null);
 
-  useGSAP(() => { 
+  useGSAP(() => {
     const tl = gsap.timeline({
-      defaults: { duration: 0.5, ease: 'power2.out' }
+      defaults: { duration: 0.5, ease: 'power2.out' },
     });
 
-    tl.fromTo(
-      gradientDevRef.current,
-      { opacity: 0, y: 50, scale: 0.95 },
-      { opacity: 1, y: 0, scale: 1 }
-    );
+    tl.fromTo(gradientDevRef.current, { opacity: 0, y: 50, scale: 0.95 }, { opacity: 1, y: 0, scale: 1 });
 
     tl.fromTo(
       paragraphRef.current,
@@ -47,13 +43,7 @@ export default function Hero() {
 
   return (
     <div className="flex bg-cover bg-center min-h-screen items-end relative">
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
-        src={videoSrc}
-        muted
-        loop
-        autoPlay
-      />
+      <video className="absolute top-0 left-0 w-full h-full object-cover z-[-1]" src={videoSrc} muted loop autoPlay />
       <div
         ref={gradientDevRef}
         className={`w-full rounded-t-lg bg-gradient-to-b from-[#000000] to-[#00000000] flex md:flex-row flex-col items-center justify-around ${styles.paddingY}`}
@@ -62,8 +52,10 @@ export default function Hero() {
           Leaders In Manufacturing Engine Cooling Products
         </p>
         <div ref={buttonsRef} className="flex md:flex-row flex-col gap-4">
-          <Button className="btn bg-gradient-linear-100 text-white">Explore</Button>
-          <Button className="btn btn-outline text-white">More Info</Button>
+          <Button className=" bg-gradient-linear-100 text-white">Explore</Button>
+          <Button className="bg-transparent border border-white text-white" color="neutral" outline>
+            More Info
+          </Button>
         </div>
         <div className="grid grid-cols-5 gap-4 max-w-[400px]">
           {socialMediaIcons.map((icon, index) => (
@@ -82,4 +74,3 @@ export default function Hero() {
     </div>
   );
 }
-

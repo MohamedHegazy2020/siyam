@@ -70,12 +70,12 @@ const ProductRange = () => {
             <Link to={item.url} className="flex justify-center w-fit">
               <Button color="secondary" size="md" outline rounded="full" className="mt-4">
                 Explore
-              </Button>
+              </Button> 
             </Link>
           </ImageContentSection>
         ))}
       </div>
-    </section>
+    </section>  
   );
 };
 
