@@ -1,8 +1,8 @@
 import { useRef } from 'react';
-import PrimaryGradientBtn from '../../blocks/Buttons';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { TextPlugin } from 'gsap/all';
+import Button from '../../blocks/Buttons';
 
 const CapabilitiesHero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -80,7 +80,7 @@ const CapabilitiesHero = () => {
             All custom engineered heat transfer products are designed and manufactured in Toronto by Sutton Stromart
           </p>
           <div ref={HeroBtn}>
-            <PrimaryGradientBtn rounded="rounded">Expolre</PrimaryGradientBtn>
+            <Button className="btn btn-primary">Expolre</Button>
           </div>
         </div>
       </div>

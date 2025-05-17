@@ -56,11 +56,10 @@ const TechincalCollebration = () => {
           <img className="w-full" src={fan1} alt="fan" />
         </div>
       </div>
-      <ImageContentSection
-        title="Heavy Duty, Industrial Applications & Genets"
-        image={factroy400}
-        titleClassName="text-4xl font-bold text-white font-bebas md:text-7xl"
-      >
+      <ImageContentSection image={factroy400} padding >
+        <h2 className="text-4xl font-bold text-white font-bebas md:text-7xl">
+          Heavy Duty, Industrial Applications & Genets
+        </h2>
         <p className="text-white  md:text-2xl">
           All custom engineered heat transfer products are designed and manufactured in Toronto by Sutton Stromart
         </p>

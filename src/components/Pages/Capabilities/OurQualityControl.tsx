@@ -7,7 +7,8 @@ const OurQualityControl = () => {
   return (
     <>
       <section className={'bg-gradient-radial ' + styles.padding}>
-        <ImageContentSection image={quality1} title="our Quality control" titleClassName="text-black">
+        <ImageContentSection image={quality1} >
+          <h2 className="text-3xl   text-black">Our Quality Control</h2>
           <ul
             className="list-disc
             list-inside text-sm font-semibold"
