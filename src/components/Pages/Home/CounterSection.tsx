@@ -57,7 +57,7 @@ export const Counter: React.FC<CounterProps> = ({ maxNumber, label }) => {
 
         onUpdate: () => {
           if (numberRef.current) {
-            numberRef.current.innerText = `+${Math.ceil(parseFloat(numberRef.current.innerText))}`;
+            numberRef.current.innerText = `${Math.ceil(parseFloat(numberRef.current.innerText))} +`;
           }
         },
       }
@@ -65,9 +65,9 @@ export const Counter: React.FC<CounterProps> = ({ maxNumber, label }) => {
   }, [maxNumber]);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-2 text-white">
-      <span ref={numberRef} className="text-white font-bold text-2xl  md:text-4xl" />
-      <span className="text-white text-sm md:text-base">{label}</span>
+    <div className="flex flex-col items-center justify-center gap-6 text-white">
+      <span ref={numberRef} className="text-white font-bold text-4xl  lg:text-[81px]" />
+      <span className="text-white text-2xl lg:text-[28px] font-semibold">{label}</span>
     </div>
   );
 };

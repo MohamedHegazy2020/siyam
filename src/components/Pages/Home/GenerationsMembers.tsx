@@ -11,7 +11,7 @@ const MemberCard = ({ image, title, description }: { image: string; title: strin
         <img loading="lazy" src={image} alt={title} data-gsap="genration-image" />
       </figure>
       <div className="card-body pt-4 bg-transparent">
-        <h2 className="text-4xl  text-center w-full font-bebas text-primary" data-gsap="genration-title">
+        <h2 className="text-3xl font-light text-center w-full font-bebas text-primary" data-gsap="genration-title">
           {title}
         </h2>
         <p
@@ -125,10 +125,10 @@ const GenerationsMembers = () => {
     <>
       <div ref={containerRef} className={'bg-section-300  bg-cover bg-no-repeat' + styles.padding}>
         <div className="flex flex-col items-center justify-center py-4 gap-4">
-          <p ref={subTitleRef} className="text-center text-sm text-white font-light">
+          <p ref={subTitleRef} className="text-center text-xl text-white font-normal">
             Generations Members
           </p>
-          <h2 ref={titleRef} className="text-center text-2xl font-semibold text-white ">
+          <h2 ref={titleRef} className="text-center text-3xl font-semibold  text-white leading-tight">
             Meet our professional
           </h2>
         </div>
