@@ -1,7 +1,7 @@
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
 import styles from '../../../utils/styles';
-import videoSrc from '../../../assets/videos/28032023 Website 01 (1).mp4';
-import { socialMediaIcons } from '../../../constants';
+
+import { socialMediaIcons, video } from '../../../constants';
 import Button from '../../blocks/Buttons';
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
@@ -43,7 +43,7 @@ export default function Hero() {
 
   return (
     <div className="flex bg-cover bg-center min-h-screen items-end relative">
-      <video className="absolute top-0 left-0 w-full h-full object-cover z-[-1]" src={videoSrc} muted loop autoPlay />
+      <video className="absolute top-0 left-0 w-full h-full object-cover z-[-1]" src={video} muted loop autoPlay />
       <div
         ref={gradientDevRef}
         className={`w-full rounded-t-lg bg-gradient-to-b from-[#000000] to-[#00000000] flex md:flex-row flex-col items-center justify-around ${styles.paddingY}`}

@@ -63,9 +63,10 @@ import bayanSaeed from '../assets/images/BayanSaeed.png';
 import karmelAbdelkhader from '../assets/images/KarmelAbdelkhader.png';
 import elyasSaeed from '../assets/images/ElyasSaeed.png';
 import karamAbdelKhader from '../assets/images/KaramAbdelkhader.png';
-
+import video from '../assets/videos/28032023 Website 01 (1).mp4';
 import rawMaterial2 from '../assets/images/rawMaterial2.png';
 export {
+video,
   logoSvg,
   quality1,
   blog1,

@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import { lazy, Suspense, useEffect, useCallback, useState } from 'react';
 import $ from 'jquery';
 import Loading from './components/Layout/Loading';
+import Video from './components/Pages/Video';
 const Home = lazy(() => import('./components/Pages/Home'));
 const About = lazy(() => import('./components/Pages/About'));
 const Products = lazy(() => import('./components/Pages/products'));
@@ -50,6 +51,7 @@ const App = () => {
                 <Route path="capabilities" element={<Capabilities />} />
                 <Route path="contact" element={<Contact />} />
                 <Route path="blogs" element={<Blogs />} />
+                <Route path='video' element={<Video/>} />
               </Route>
             </Routes>
           </BrowserRouter>

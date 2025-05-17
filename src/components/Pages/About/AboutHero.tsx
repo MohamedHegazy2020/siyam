@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
 import Button from '../../blocks/Buttons';
+import { Link } from 'react-router-dom';
 
 export default function AboutHero() {
   gsap.registerPlugin(ScrollTrigger);
@@ -11,7 +12,7 @@ export default function AboutHero() {
   const heroText = useRef<HTMLHeadingElement | null>(null);
   const heroSubText = useRef<HTMLParagraphElement | null>(null);
   const userIconRef = useRef<HTMLDivElement | null>(null);
-  const heroBtn = useRef<HTMLDivElement | null>(null);
+  const heroBtn = useRef<HTMLAnchorElement | null>(null);
   const textContainerRef = useRef<HTMLDivElement | null>(null);
   const backgroundRef = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<HTMLDivElement | null>(null);
@@ -183,12 +184,12 @@ export default function AboutHero() {
             products, with superior services, delivered on time and at a competitive price.
           </p>
 
-          <div ref={heroBtn}>
+          <Link to='/video' ref={heroBtn}>
             <Button className="bg-gradient-linear-100 border-white  text-2xl px-8">
               <Icon icon="lets-icons:video-fill" width="24" height="24" />
               Start Now
             </Button>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
