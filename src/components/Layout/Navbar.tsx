@@ -12,7 +12,6 @@ const Navbar = () => {
   const scrollIndicatorRef = useRef(null)
   const location = useLocation();
   const tl = useRef<gsap.core.Timeline | null>(null)
-  console.log(location.pathname)
   
   useGSAP(() => {
    
