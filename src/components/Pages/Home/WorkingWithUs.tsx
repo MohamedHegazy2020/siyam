@@ -87,7 +87,7 @@ const WorkingWithUs = () => {
   return (
     <>
       <section ref={containerRef} className={'bg-section-200 bg-cover  ' + styles.padding}>
-        <h2 ref={titleRef} className="font-bebas text-2xl text-center text-white ">
+        <h2 ref={titleRef} className="font-bebas text-4xl text-center text-white ">
           working with us Means
         </h2>
 
