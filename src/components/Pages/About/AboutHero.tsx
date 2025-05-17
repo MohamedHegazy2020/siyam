@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
 import Button from '../../blocks/Buttons';
 import { Link } from 'react-router-dom';
+import { property1, property2, property3 } from '../../../constants';
 
 export default function AboutHero() {
   gsap.registerPlugin(ScrollTrigger);
@@ -21,15 +22,15 @@ export default function AboutHero() {
   // Define background images and messages
   const content = [
     {
-      image: '/src/assets/images/property1.png',
+      image: property1,
       text: 'Developing Career Experts',
     },
     {
-      image: '/src/assets/images/Property1=Variant2.png',
+      image: property2,
       text: 'Talent customized Experts',
     },
     {
-      image: '/src/assets/images/Property1=Variant3.png',
+      image: property3,
       text: 'Talent Career aftermarket',
     },
   ];
