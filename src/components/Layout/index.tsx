@@ -10,7 +10,7 @@ const Layout = () => {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen text-[#2a2a2a] font-montserrat font-normal text-[16px] md:text-[18px] ">
+      <main className="min-h-screen font-montserrat font-normal text-[16px] md:text-[18px] ">
         <Outlet />
       </main>
       <Footer />

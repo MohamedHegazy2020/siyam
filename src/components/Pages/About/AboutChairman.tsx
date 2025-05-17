@@ -20,7 +20,9 @@ export default function AboutChairman() {
         thank our customers, suppliers, employees and my family for their continious support to achieve this vision.
       </p>
       <a href={qualityPolicy} target="_self" rel="noopener noreferrer">
-        <Button className='btn bg-gradient-linear-100 text-white border-none' rounded="full">Quality Policy</Button>
+        <Button className="btn bg-gradient-linear-100 text-white border-none" rounded="full">
+          Quality Policy
+        </Button>
       </a>
     </ImageContentSection>
   );
