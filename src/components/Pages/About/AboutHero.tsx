@@ -1,5 +1,5 @@
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
@@ -76,7 +76,7 @@ export default function AboutHero() {
           currentIndex = nextIndex;
           isAnimating = false;
           // Restart interval after animation completes
-          intervalId = window.setInterval(rotateContent, 8000);
+          intervalId = window.setInterval(rotateContent, 5000);
         },
       });
 
