@@ -20,12 +20,9 @@ export interface ImageContentSectionProps {
 export default function ImageContentSection({
   image,
   imageAltText = 'Image',
-
   children,
-
   imageLast,
   backgroundClassName,
-
   padding,
   animationDelay = 0,
 }: ImageContentSectionProps) {
@@ -61,13 +58,13 @@ export default function ImageContentSection({
     <div
       ref={containerRef}
       className={clsx({
-        backgroundClassName: `${backgroundClassName} bg-cover bg-center`,
-        padding: padding ? styles.padding : '',
+        [`${backgroundClassName} bg-cover bg-center`]: backgroundClassName,
+       [`${styles.padding}`]: padding,
       })}
     >
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className={clsx('flex items-center', imageLast ? 'md:order-last' : 'md:order-first')}>
-          <img ref={imageRef} className="w-full max-w-xl" src={image} alt={imageAltText} />
+          <img ref={imageRef} className="w-full  " src={image} alt={imageAltText} />
         </div>
         <div ref={childrenRef} className="flex flex-col justify-center gap-4">
           {children}
@@ -76,4 +73,3 @@ export default function ImageContentSection({
     </div>
   );
 }
-

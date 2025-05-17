@@ -17,21 +17,7 @@ export default function Footer() {
       },
     });
 
-    tl.fromTo(
-      '.footer',
-      {
-        opacity: 0,
-        y: 50,
-        scale: 0.95,
-      },
-      {
-        opacity: 1, 
-        y: 0,
-        scale: 1,
-        duration: 0.5,
-        ease: 'power2.out',
-      }
-    );
+    
     tl.fromTo(
       '.footer-logo ,.footer-logo ~ p, [data-gsap="icon"] ',
       {

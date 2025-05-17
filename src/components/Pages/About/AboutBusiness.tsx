@@ -4,13 +4,10 @@ import ImageContentSection from '../../blocks/ImageContentSection/ImageContentSe
 export default function AboutBusiness() {
   return (
     <>
-      <ImageContentSection
-        image={factory1}
-        title="Siyam Industrial Group"
-        introduction="About Our Business"
-        backgroundClassName="bg-section-100"
-      >
-        <p className="text-sm md:text-base">
+      <ImageContentSection image={factory1} padding backgroundClassName="bg-section-100">
+        <span className="  font-bebas text-xl bg-gradient-linear bg-clip-text w-fit text-transparent "> About Our Business </span>
+        <h2 className="text-4xl font-bebas text-primary ">Siyam Industrial Group</h2>
+        <p className="text-lg  ">
           is specialized in developing and manufacturing OE, customized, and aftermarket, core and complete cooling
           products, radiators, charge air coolers, condensers, and cooling modules for all types of applications. For
           over 30 years, we have distinguished ourselves by providing high quality products, with superior services,
