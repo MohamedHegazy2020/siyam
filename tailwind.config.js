@@ -56,7 +56,6 @@ export default {
         light: {
           primary: '#005594',
           secondary: '#D9212C',
-
           accent: '#04233A',
           neutral: '#3d4451',
           'base-100': '#ffffff',

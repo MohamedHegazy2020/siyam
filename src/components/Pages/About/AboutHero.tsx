@@ -3,12 +3,10 @@ import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
-import PrimaryGradientBtn from '../../blocks/Buttons';
-import { usersIcon } from '../../../constants';
+import Button from '../../blocks/Buttons';
 
 export default function AboutHero() {
   gsap.registerPlugin(ScrollTrigger);
-
   const container = useRef<HTMLDivElement | null>(null);
   const heroText = useRef<HTMLHeadingElement | null>(null);
   const heroSubText = useRef<HTMLParagraphElement | null>(null);
@@ -17,6 +15,7 @@ export default function AboutHero() {
   const textContainerRef = useRef<HTMLDivElement | null>(null);
   const backgroundRef = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<HTMLDivElement | null>(null);
+
 
   // Define background images and messages
   const content = [
@@ -162,12 +161,13 @@ export default function AboutHero() {
       {/* Overlay */}
       <div ref={overlayRef} className="absolute inset-0 bg-black opacity-70 transition-opacity duration-500" />
 
-      {/* Content */}
+      
       <div className="hero-content text-white text-center relative z-10">
-        <div className="max-w-6xl mx-auto px-4">
-          <h1 ref={heroText} className="mb-5 text-4xl md:text-5xl font-bold">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center gap-6">
+          <span className='font-bebas '>Innovation Meets Reliability</span>
+          <h1 ref={heroText} className="mb-5 text-4xl md:text-6xl font-bold">
             Siyam Industrial Group is specialized in
-            <div className="h-[1.5em] overflow-hidden">
+            <div className="h-[1.6em] overflow-hidden">
               <span
                 ref={textContainerRef}
                 className="text-transparent block bg-gradient-to-r my-2 from-secondary to-primary bg-clip-text"
@@ -177,22 +177,17 @@ export default function AboutHero() {
             </div>
           </h1>
 
-          <p ref={heroSubText} className="mb-5 text-lg">
+          <p ref={heroSubText} className="mb-5 text-lg font-normal">
             Core and complete cooling products, radiators, charge air coolers, condensers, and cooling modules for all
             types of applications. For over 30 years, we have distinguished ourselves by providing high-quality
             products, with superior services, delivered on time and at a competitive price.
           </p>
 
           <div ref={heroBtn}>
-            <PrimaryGradientBtn className="bg-gradient-linear-100 border-white">
+            <Button className="bg-gradient-linear-100 border-white  text-2xl px-8">
               <Icon icon="lets-icons:video-fill" width="24" height="24" />
-              Get Started
-            </PrimaryGradientBtn>
-          </div>
-
-          <div ref={userIconRef} className="flex items-center justify-center mt-5">
-            <img src={usersIcon} alt="user icons" />
-            <p className="text-white ml-2 text-2xl font-bold">+100k Users</p>
+              Start Now
+            </Button>
           </div>
         </div>
       </div>
