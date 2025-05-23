@@ -23,15 +23,15 @@ export default function AboutHero() {
   const content = [
     {
       image: property1,
-      text: 'Developing Career Experts',
+      text: ' Developing Career Experts',
     },
     {
       image: property2,
-      text: 'Talent customized Experts',
+      text: ' Talent customized Experts',
     },
     {
       image: property3,
-      text: 'Talent Career aftermarket',
+      text: ' Talent Career aftermarket',
     },
   ];
 
@@ -46,7 +46,6 @@ export default function AboutHero() {
       .fromTo(heroSubText.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 }, '-=0.8')
       .fromTo(heroBtn.current, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.8 }, '-=0.6')
       .fromTo(userIconRef.current, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.8 }, '-=0.4');
-
     // Start the content rotation
     startContentRotation();
   }, []);
@@ -77,7 +76,7 @@ export default function AboutHero() {
           currentIndex = nextIndex;
           isAnimating = false;
           // Restart interval after animation completes
-          intervalId = window.setInterval(rotateContent, 5000);
+          intervalId = window.setInterval(rotateContent, 3000);
         },
       });
 
@@ -139,7 +138,7 @@ export default function AboutHero() {
     }
 
     // Start initial rotation
-    intervalId = window.setInterval(rotateContent, 8000);
+    intervalId = window.setInterval(rotateContent, 5000);
 
     // Cleanup function
     return () => {
@@ -168,15 +167,15 @@ export default function AboutHero() {
         <div className="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center gap-6">
           <span className='font-bebas '>Innovation Meets Reliability</span>
           <h1 ref={heroText} className="mb-5 text-4xl md:text-6xl font-bold">
-            Siyam Industrial Group is specialized in
-            <div className="h-[1.6em] overflow-hidden">
+            Siyam Industrial Group <br/> is specialized in 
+            
               <span
                 ref={textContainerRef}
-                className="text-transparent block bg-gradient-to-r my-2 from-secondary to-primary bg-clip-text"
+                className="text-transparent   bg-gradient-to-r my-2 from-secondary to-primary bg-clip-text"
               >
                 {content[0].text}
               </span>
-            </div>
+            
           </h1>
 
           <p ref={heroSubText} className="mb-5 text-lg font-normal">

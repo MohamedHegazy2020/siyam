@@ -1,0 +1,31 @@
+/////////////////////////////////// HOME //////////////////////////////////////
+
+
+- video without animation ✅
+- product-range section will be changed as a design ✅
+- 3d modules will be removed from project ✅
+- What Our Clients Say About Us section will be removed ✅
+- contact-us section will be removed and we will need the part of contact in footer only 
+
+
+///////////////////////////////// ABOUT ///////////////////////////////////////
+
+
+- in the first section the text-font size not be like the same one in figma design and animation of words olso different from the animation on figma ✅
+- in the first section remove part of +100k Users and the photos beside it ✅
+- when i press on start-now button it navigate me to page display me a video only like page in figma design ✅
+- the background of Technical Collaboration section is very dark and we need it to be a white or lite blue 
+- after Meet our professional persons we need to add the cards of childs from figma design ✅
+////////////////////////////// Products ///////////////////////////////////////
+- we need to change the background image of the first section with image that collct rediatars in one photo .
+- product range design will be edited like home page and when i click the product i need to take me to the product details page .
+- check the icons of the last section in this page 
+- remove 3d models too.✅
+/////////////////////////// Product-Details ///////////////////////////////////
+- create design of page from figma design and we will add part below the product details like a photo i will send to developers
+//////////////////////////////// Blog /////////////////////////////////////////
+- add the video slider in the bottom of blog page like figma design .
+////////////////////////////// Contact-Us ///////////////////////////////
+- revise the background colors of page 
+///////////////////////////// Capabilities /////////////////////////////
+- need a new figma design and new implementation in developing 

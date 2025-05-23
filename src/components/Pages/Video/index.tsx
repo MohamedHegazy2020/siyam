@@ -4,7 +4,7 @@ import VideoPlayer from '../../blocks/VideoPlayer';
 const Video = () => {
   return (
     <>
-      <section className="h-screen  bg-cover bg-no-repeat bg-center  flex flex-col items-center justify-center">
+      <section className="h-screen  bg-cover bg-no-repeat bg-center  flex flex-col items-center justify-center py-32">
         <VideoPlayer src={video} />
       </section>
     </>

@@ -19,7 +19,7 @@ export interface ImageContentSectionProps {
 
 export default function ImageContentSection({
   image,
-  imageAltText = 'Image',
+  imageAltText = 'demo',
   children,
   imageLast,
   backgroundClassName,
@@ -28,7 +28,6 @@ export default function ImageContentSection({
 }: ImageContentSectionProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const imageRef = useRef<HTMLImageElement | null>(null);
-  const titleRef = useRef<HTMLHeadingElement | null>(null);
   const childrenRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
@@ -44,7 +43,6 @@ export default function ImageContentSection({
     });
 
     tl.fromTo(imageRef.current, { opacity: 0, y: 50, scale: 0.95 }, { opacity: 1, y: 0, scale: 1 });
-    tl.fromTo(titleRef.current, { opacity: 0, y: 50, scale: 0.95 }, { opacity: 1, y: 0, scale: 1 }, '-=0.5');
 
     tl.fromTo(
       childrenRef.current?.childNodes || [],

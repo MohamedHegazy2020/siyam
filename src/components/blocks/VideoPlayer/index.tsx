@@ -132,7 +132,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
 
   return (
     <div
-      className="relative w-full max-w-3xl mx-auto aspect-video rounded-lg overflow-hidden bg-black shadow-lg"
+      className="relative w-full max-w-[75%] mx-auto aspect-video  overflow-hidden rounded-lg  bg-black shadow-lg"
       tabIndex={0}
     >
       <video
@@ -202,17 +202,19 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
             <button onClick={handleMoreOptions} className="focus:outline-none" title="More options">
               <Icon icon="mdi:dots-vertical" width="24" height="24" color="#fff" />
             </button>
+            <>
             {showOptions && (
-              <div className="absolute right-0 top-10 bg-white text-black rounded shadow-lg py-2 w-40 z-30">
-                <button className="w-full text-left px-4 py-2 hover:bg-gray-100" onClick={handleDownload}>
+              <div className="absolute right-0 bottom-10 bg-white text-black rounded shadow-lg py-2 w-40 z-30">
+                <button className="w-full flex gap-2 text-left px-4 py-2 hover:bg-gray-100" onClick={handleDownload}>
                   <Icon icon="mdi:download" className="inline mr-2" /> Download
                 </button>
-                <button className="w-full text-left px-4 py-2 hover:bg-gray-100" onClick={handlePiP}>
+                <button className="w-full flex  gap-2 text-left px-4 py-2 hover:bg-gray-100" onClick={handlePiP}>
                   <Icon icon="mdi:picture-in-picture-bottom-right" className="inline mr-2" /> Picture in Picture
                 </button>
-                {/* Add more options here */}
+               
               </div>
             )}
+            </>
           </div>
         </div>
       </div>
