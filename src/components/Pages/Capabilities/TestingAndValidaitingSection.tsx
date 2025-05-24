@@ -7,7 +7,7 @@ const TestingAndValidaitingSection = () => {
   return (
     <>
       <section className={'bg-section-100 bg-cover bg-no-repeat ' + styles.padding}>
-        <ImageContentSection image={prodDev2}>
+        <ImageContentSection padding image={prodDev2}>
           <h2 className="text-3xl   text-black">Testing & Validation</h2>
           <p className="text-sm my-4">
             All our products are thoroughly tested at our world class testing laboratory and lab partners in Europe. Our
