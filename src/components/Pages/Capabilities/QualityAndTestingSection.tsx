@@ -7,7 +7,7 @@ const QualityAndTestingSection = () => {
   return (
     <>
       <section className={'bg-accent-900 ' + styles.padding}>
-        <ImageContentSection image={quality1}>
+        <ImageContentSection padding image={quality1}>
           <h2 className="text-3xl   text-white">Quality and testing laboratory</h2>
           <p className="text-white">
             All our products are thoroughly tested at our world class-testing laboratory. The laboratory has all the
@@ -17,8 +17,11 @@ const QualityAndTestingSection = () => {
             elements such as cooling capacity, pressure strength, thermal strength, vibration resistance, and corrosion
             resistance. This ensures that all our products perform at their best, and comply with the given standards
             and specifications.
-          </p>{' '}
+          </p>
         </ImageContentSection>
+        {/* <ImageContentSection image={quality1}  >
+          
+        </ImageContentSection> */}
 
         <ImagesRowSection images={[quality4, quality3, quality2]} />
       </section>

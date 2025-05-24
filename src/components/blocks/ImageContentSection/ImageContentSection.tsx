@@ -41,15 +41,18 @@ export default function ImageContentSection({
       },
       delay: animationDelay,
     });
+    if (imageRef.current) {
+      tl.fromTo(imageRef.current, { opacity: 0, y: 50, scale: 0.95 }, { opacity: 1, y: 0, scale: 1 });
+    }
 
-    tl.fromTo(imageRef.current, { opacity: 0, y: 50, scale: 0.95 }, { opacity: 1, y: 0, scale: 1 });
-
-    tl.fromTo(
-      childrenRef.current?.childNodes || [],
-      { opacity: 0, y: 50, scale: 0.95 },
-      { opacity: 1, y: 0, scale: 1, duration: 1, stagger: 0.2 },
-      '-=0.5'
-    );
+    if (childrenRef.current?.childNodes.length) {
+      tl.fromTo(
+        childrenRef.current.childNodes,
+        { opacity: 0, y: 50, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1, duration: 1, stagger: 0.2 },
+        '-=0.5'
+      );
+    }
   }, [children, animationDelay]);
 
   return (
@@ -57,12 +60,12 @@ export default function ImageContentSection({
       ref={containerRef}
       className={clsx({
         [`${backgroundClassName} bg-cover bg-center`]: backgroundClassName,
-       [`${styles.padding}`]: padding,
+        [`${styles.padding}`]: padding,
       })}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className={clsx('flex items-center', imageLast ? 'md:order-last' : 'md:order-first')}>
-          <img ref={imageRef} className="w-full  " loading='lazy' src={image} alt={imageAltText} />
+          <img ref={imageRef} className="w-full  " loading="lazy" src={image} alt={imageAltText} />
         </div>
         <div ref={childrenRef} className="flex flex-col justify-center gap-4">
           {children}

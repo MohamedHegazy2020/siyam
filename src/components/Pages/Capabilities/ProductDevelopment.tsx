@@ -7,7 +7,7 @@ const ProductDevelopment = () => {
   return (
     <>
       <section className={'bg-accent-900 ' + styles.padding}>
-        <ImageContentSection  image={prodDev1} >
+        <ImageContentSection padding  image={prodDev1} >
           <h2 className="text-3xl   text-white">Product development</h2>
           <p className="text-white text-sm my-2">
             All parts goes through special lab testing to ensure that products meets or exceeds OEM standards and
